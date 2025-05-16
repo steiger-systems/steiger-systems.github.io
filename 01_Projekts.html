@@ -3,35 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <title>Steiger-Systems</title>
-  <link rel="icon" type="image/png" href="Bilder/Adress.png">
-  <link rel="stylesheet" href="CSS-Style/style_01_projekts.css">  
+  <title>Meine Webseite</title>
+  <link rel="stylesheet" href="CSS-Style/style_01_projekts.css">
 </head>
 <body>
+  <!-- Header & Navigation -->
   <header>
-    <nav>
-      <div class="NavbarLogo"> 
-        <a href="index.html">
-          <img src="Bilder/logo.png" alt="Steiger-Systems Logo" width="5%">
-        </a>
-      </div>
-      <ul>
-        <li><a href="03_Kontakt.html">Kontakt</a></li>
-        <li><a href="02_about.html">About me</a></li>
-        <li><a href="01_Projekts.html">Projects</a></li>
-      </ul>
-    </nav> 
+    <div class="container header-inner">
+      <a href="index.html">
+        <img src="Bilder/logo.png" alt="Steiger-Systems Logo" width="10%">
+      </a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="01_Projekts.html">Projekts</a></li>
+          <li><a href="02_about.html">Über</a></li>
+          <li><a href="03_Kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <main>
-    <section>
-      <h2>Projekts</h2>
-      <p>Work is in progress</p>
-    </section>
-  </main>
-  
-  <footer>
-    <p>&copy; 2025 Steiger-Systems. Alle Rechte vorbehalten.</p>
+
+  <!-- Hero-Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Event Titel</h1>
+      <p>Datum &amp; Ort</p>
+      <a href="#register" class="btn">Jetzt anmelden</a>
+    </div>
+  </section>
+
+  <!-- Über das Event -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2>Über das Event</h2>
+      <p>Ein kurzer Beschreibungstext über das Event...</p>
+    </div>
+  </section>
+
+  <!-- Sprecher -->
+  <section id="speakers" class="section speakers">
+    <div class="container">
+      <h2>Sprecher</h2>
+      <div class="speaker-grid">
+        <div class="speaker-card">
+          <img src="sprecher1.jpg" alt="Sprecher 1">
+          <h3>Name 1</h3>
+        </div>
+        <div class="speaker-card">
+          <img src="sprecher2.jpg" alt="Sprecher 2">
+          <h3>Name 2</h3>
+        </div>
+        <!-- Weitere Karten nach Bedarf -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Anmeldung -->
+  <section id="register" class="section register">
+    <div class="container">
+      <h2>Anmeldung</h2>
+      <form action="#" method="POST">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="E-Mail" required>
+        <button type="submit" class="btn">Absenden</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Mein Unternehmen</p>
+      <ul class="footer-links">
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+      </ul>
+    </div>
   </footer>
 </body>
 </html>
