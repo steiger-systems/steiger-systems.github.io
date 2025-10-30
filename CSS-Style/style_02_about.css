@@ -5,20 +5,21 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f5f5f5;
-  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Header & Navigation */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background-color: #1a1a1a;
-  color: #fff;
-  padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #f0f0f0;
   z-index: 1000;
 }
 
@@ -26,124 +27,147 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px 40px;
 }
 
 .NavbarLogo img {
-  height: 50px;
+  height: 45px;
   width: auto;
 }
 
 nav ul {
   list-style-type: none;
   display: flex;
-  gap: 30px;
+  gap: 40px;
   margin: 0;
   padding: 0;
 }
 
 nav a {
-  color: white;
+  color: #1a1a1a;
   text-decoration: none;
-  padding: 8px 15px;
-  transition: background-color 0.3s ease;
-  border-radius: 4px;
+  font-size: 15px;
   font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0066ff;
+  transition: width 0.3s ease;
 }
 
 nav a:hover {
-  background-color: #333;
+  color: #0066ff;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* Container */
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 /* Page Hero */
 .page-hero {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  color: white;
-  padding: 80px 20px;
+  padding: 160px 40px 80px;
   text-align: center;
+  background-color: #ffffff;
 }
 
 .page-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  color: #1a1a1a;
 }
 
 .page-hero p {
-  font-size: 1.3rem;
-  opacity: 0.9;
+  font-size: 20px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* About Content */
 .about-content {
-  padding: 60px 20px;
+  padding: 60px 40px 120px;
+  background-color: #ffffff;
 }
 
 .about-intro {
-  background: white;
-  padding: 50px;
-  border-radius: 10px;
-  margin-bottom: 50px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  max-width: 900px;
+  margin: 0 auto 100px;
+  text-align: center;
 }
 
 .about-intro h2 {
-  color: #1e3c72;
-  font-size: 2rem;
+  color: #1a1a1a;
+  font-size: 36px;
+  font-weight: 600;
   margin-bottom: 20px;
+  letter-spacing: -0.02em;
 }
 
 .about-intro p {
-  color: #555;
-  font-size: 1.15rem;
-  line-height: 1.8;
+  color: #666;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 /* Skills Section */
 .skills-section {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .skills-section h2 {
   text-align: center;
-  color: #1e3c72;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+  color: #1a1a1a;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  letter-spacing: -0.02em;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
 }
 
 .skill-card {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  background: #fafafa;
+  padding: 36px;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
 }
 
 .skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  border-color: #0066ff;
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.08);
 }
 
 .skill-card h3 {
-  color: #1e3c72;
-  font-size: 1.5rem;
+  color: #1a1a1a;
+  font-size: 22px;
+  font-weight: 600;
   margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #ff6b35;
+  letter-spacing: -0.01em;
 }
 
 .skill-card ul {
@@ -153,114 +177,150 @@ nav a:hover {
 
 .skill-card ul li {
   padding: 10px 0;
-  padding-left: 25px;
+  padding-left: 24px;
   position: relative;
-  color: #555;
+  color: #666;
+  font-size: 16px;
 }
 
 .skill-card ul li:before {
-  content: "✓";
+  content: "•";
   position: absolute;
   left: 0;
-  color: #ff6b35;
+  color: #0066ff;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 20px;
 }
 
 /* Technologies */
 .technologies {
-  background: white;
-  padding: 50px;
-  border-radius: 10px;
-  margin-bottom: 50px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  max-width: 1000px;
+  margin: 0 auto 100px;
+  text-align: center;
 }
 
 .technologies h2 {
-  color: #1e3c72;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  text-align: center;
+  color: #1a1a1a;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
 }
 
 .tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 12px;
   justify-content: center;
 }
 
 .tech-tag {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
+  background: #fafafa;
+  color: #1a1a1a;
+  padding: 12px 20px;
+  border-radius: 8px;
   font-weight: 500;
-  font-size: 1rem;
-  transition: transform 0.3s ease;
+  font-size: 15px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
 }
 
 .tech-tag:hover {
-  transform: scale(1.05);
+  border-color: #0066ff;
+  color: #0066ff;
 }
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background-color: #0066ff;
   color: white;
-  padding: 60px 50px;
-  border-radius: 10px;
+  padding: 100px 60px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .cta-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
 
 .cta-section p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
+  font-size: 18px;
+  margin-bottom: 32px;
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Button */
 .btn-primary {
   display: inline-block;
-  padding: 15px 40px;
+  padding: 16px 32px;
+  background-color: white;
+  color: #0066ff;
   text-decoration: none;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  background-color: #ff6b35;
-  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
-  background-color: #e55a2b;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+  background-color: #f5f5f5;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 30px 20px;
-  background-color: #1a1a1a;
-  color: #fff;
-  margin-top: 40px;
+  padding: 60px 40px;
+  background-color: #fafafa;
+  color: #666;
+  border-top: 1px solid #f0f0f0;
+  font-size: 15px;
+  margin-top: 60px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  nav {
+    padding: 16px 24px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .page-hero {
+    padding: 120px 24px 60px;
+  }
+
   .page-hero h1 {
-    font-size: 2rem;
+    font-size: 42px;
+  }
+
+  .about-content {
+    padding: 40px 24px 80px;
   }
 
   .about-intro {
-    padding: 30px;
+    margin-bottom: 60px;
+  }
+
+  .about-intro h2 {
+    font-size: 28px;
+  }
+
+  .skills-section {
+    margin-bottom: 60px;
+  }
+
+  .skills-section h2 {
+    font-size: 36px;
   }
 
   .skills-grid {
@@ -268,15 +328,18 @@ footer {
   }
 
   .technologies {
-    padding: 30px;
+    margin-bottom: 60px;
+  }
+
+  .technologies h2 {
+    font-size: 28px;
   }
 
   .cta-section {
-    padding: 40px 30px;
+    padding: 60px 32px;
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
+  .cta-section h2 {
+    font-size: 32px;
   }
 }
