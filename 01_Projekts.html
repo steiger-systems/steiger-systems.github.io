@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meine Webseite</title>
+  <meta name="robots" content="index, follow">
+  <title>Projekte - Steiger-Systems</title>
+  <link rel="icon" type="image/png" href="Bilder/Adress.png">
   <link rel="stylesheet" href="CSS-Style/style_01_projekts.css">
 </head>
 <body>
-  <!-- Header & Navigation -->
   <header>
+<<<<<<< HEAD
     <div class="container header-inner">
       <a href="index.html">
         <img src="Bilder/logo.png" alt="Steiger-Systems Logo" width="8%">
@@ -29,56 +31,106 @@
       <h1>Projekts</h1>
       <p>Datum &amp; Ort</p>
       <a href="#register" class="btn">More informations</a>
+=======
+    <nav>
+      <div class="NavbarLogo">
+        <a href="index.html">
+          <img src="Bilder/logo.png" alt="Steiger-Systems Logo">
+        </a>
+      </div>
+      <ul>
+        <li><a href="01_Projekts.html">Projekte</a></li>
+        <li><a href="02_about.html">Über mich</a></li>
+        <li><a href="03_Kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Meine Projekte</h1>
+      <p>Realisierte Automatisierungslösungen und Steuerungstechnik</p>
+>>>>>>> 8070025fa6a8b6a5009d8ad22e2b8e284955628d
     </div>
   </section>
 
-  <!-- Über das Event -->
-  <section id="about" class="section about">
+  <section class="projects-section">
     <div class="container">
+<<<<<<< HEAD
       <h2>Smart Home Fernbedinung</h2>
       <p>Ein kurzer Beschreibungstext über das Event...</p>
     </div>
   </section>
+=======
+>>>>>>> 8070025fa6a8b6a5009d8ad22e2b8e284955628d
 
-  <!-- Sprecher -->
-  <section id="speakers" class="section speakers">
-    <div class="container">
-      <h2>Sprecher</h2>
-      <div class="speaker-grid">
-        <div class="speaker-card">
-          <img src="sprecher1.jpg" alt="Sprecher 1">
-          <h3>Name 1</h3>
+      <!-- Holzlift Projekt -->
+      <div class="project-card featured">
+        <div class="project-header">
+          <h2>Holzlift-Steuerung</h2>
+          <span class="project-tag">Aktuelles Projekt</span>
         </div>
-        <div class="speaker-card">
-          <img src="sprecher2.jpg" alt="Sprecher 2">
-          <h3>Name 2</h3>
+        <div class="project-content">
+          <div class="project-description">
+            <h3>Projektbeschreibung</h3>
+            <p>
+              Entwicklung und Realisierung einer vollautomatischen Förderanlage für den Transport von Brennholz
+              vom Kellergeschoss in den Wohnbereich. Die Anlage ermöglicht einen komfortablen und sicheren
+              Transport ohne manuelles Tragen.
+            </p>
+
+            <h3>Technische Details</h3>
+            <ul>
+              <li><strong>Steuerung:</strong> Siemens LOGO! Steuerung</li>
+              <li><strong>Bedienung:</strong> Taster für Start/Stopp-Funktionen</li>
+              <li><strong>Sicherheit:</strong> Endschalter für sichere Positionserkennung</li>
+              <li><strong>Betriebsart:</strong> Automatischer Ablauf mit Sicherheitsfunktionen</li>
+              <li><strong>Positionierung:</strong> Exakte Halteposition durch Endschalter</li>
+            </ul>
+
+            <h3>Funktionsweise</h3>
+            <p>
+              Die Steuerung erfolgt über eine intuitive Tastersteuerung. Nach Betätigung des Start-Tasters
+              fährt die Anlage automatisch vom Keller in den Wohnbereich. Endschalter erkennen die exakte
+              Position und stoppen die Anlage präzise. Nach dem Entladen kann die Anlage per Taster zurück
+              in die Ausgangsposition gefahren werden.
+            </p>
+
+            <h3>Vorteile</h3>
+            <ul>
+              <li>Komfortabler Transport ohne manuelles Tragen</li>
+              <li>Hohe Sicherheit durch Endschalter-Überwachung</li>
+              <li>Einfache Bedienung über Taster</li>
+              <li>Zuverlässige Siemens LOGO! Technologie</li>
+              <li>Energieeffizient und wartungsarm</li>
+            </ul>
+          </div>
+          <div class="project-image">
+            <img src="Bilder/logo.png" alt="Holzlift Projekt">
+            <div class="project-specs">
+              <h4>Projekt-Specs</h4>
+              <p><strong>Jahr:</strong> 2025</p>
+              <p><strong>Kategorie:</strong> Automatisierung</p>
+              <p><strong>Status:</strong> Abgeschlossen</p>
+            </div>
+          </div>
         </div>
-        <!-- Weitere Karten nach Bedarf -->
       </div>
+
+      <!-- Weitere Projekte -->
+      <div class="projects-grid">
+        <div class="project-card-small">
+          <h3>Weitere Projekte in Planung</h3>
+          <p>Haben Sie eine Idee für ein Automatisierungsprojekt? Kontaktieren Sie mich für eine Beratung.</p>
+          <a href="03_Kontakt.html" class="btn-secondary">Projekt anfragen</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Anmeldung -->
-  <section id="register" class="section register">
-    <div class="container">
-      <h2>Anmeldung</h2>
-      <form action="#" method="POST">
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="E-Mail" required>
-        <button type="submit" class="btn">Absenden</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Mein Unternehmen</p>
-      <ul class="footer-links">
-        <li><a href="#">Impressum</a></li>
-        <li><a href="#">Datenschutz</a></li>
-      </ul>
-    </div>
+  <footer>
+    <p>&copy; 2025 Steiger-Systems. Alle Rechte vorbehalten.</p>
   </footer>
 </body>
 </html>
