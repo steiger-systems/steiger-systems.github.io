@@ -305,6 +305,45 @@ nav a:hover::after {
   font-size: 12px;
 }
 
+.spec-wip {
+  color: #d97706;
+  background: rgba(217, 119, 6, 0.09);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.project-tag--dev {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+}
+
+/* Schematic placeholder when no image is available */
+.project-schematic-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #f0f0f8;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px dashed #c8c8e8;
+  color: #9090b8;
+}
+
+.project-schematic-placeholder svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+}
+
+.project-schematic-placeholder span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
 /* ── Projects Grid ── */
 .projects-grid {
   display: grid;

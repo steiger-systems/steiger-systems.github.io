@@ -103,6 +103,84 @@
         </div>
       </div>
 
+      <!-- TempWatch Projekt -->
+      <div class="project-card featured fade-in">
+        <div class="project-header">
+          <div>
+            <span class="project-status">In Entwicklung • 2025</span>
+            <h2>TempWatch</h2>
+          </div>
+          <span class="project-tag project-tag--dev">Eigenentwicklung</span>
+        </div>
+        <div class="project-content">
+          <div class="project-description">
+            <h3>Projektbeschreibung</h3>
+            <p>
+              Entwicklung eines kompakten Multi-Kanal Temperaturüberwachungssystems auf Basis eines ESP32-S3.
+              Das System erfasst bis zu 8 Temperaturkanäle und überträgt die Messdaten wahlweise über CAN-Bus
+              oder via ESPHome (WiFi) an eine Heimautomatisierungs-Zentrale.
+            </p>
+
+            <h3>Technische Details</h3>
+            <ul>
+              <li><strong>Mikrocontroller:</strong> ESP32-S3-WROOM (WiFi + Bluetooth)</li>
+              <li><strong>CAN-Controller:</strong> MCP2515-I/ST via SPI</li>
+              <li><strong>CAN-Transceiver:</strong> SN65HVD230D (3,3V kompatibel)</li>
+              <li><strong>Temperatureingänge:</strong> 8 Kanäle (NTC/PT100/DS18B20)</li>
+              <li><strong>Programmierung:</strong> USB via CP2102N Adapter</li>
+              <li><strong>Versorgung:</strong> 3,3V Onboard-Spannungsversorgung</li>
+            </ul>
+
+            <h3>Kommunikation</h3>
+            <p>
+              Das System unterstützt zwei Übertragungswege: Per <strong>CAN-Bus</strong> (ISO 11898) lässt
+              sich TempWatch direkt in industrielle Netzwerke einbinden. Alternativ ermöglicht die
+              <strong>ESPHome</strong>-Integration eine nahtlose Anbindung an Home Assistant oder andere
+              Smart-Home-Plattformen über WLAN.
+            </p>
+
+            <h3>Vorteile</h3>
+            <ul>
+              <li>Flexibel einsetzbar: CAN-Bus oder WiFi/ESPHome</li>
+              <li>Kompaktes PCB-Design (eigene Leiterplattenentwicklung)</li>
+              <li>Bis zu 8 Temperaturkanäle gleichzeitig</li>
+              <li>Einfache Integration in Home Assistant</li>
+              <li>Open-Source Firmware via ESPHome</li>
+            </ul>
+          </div>
+          <div class="project-image">
+            <div class="project-schematic-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="9" height="9"/>
+                <rect x="13" y="2" width="9" height="9"/>
+                <rect x="13" y="13" width="9" height="9"/>
+                <rect x="2" y="13" width="9" height="9"/>
+              </svg>
+              <span>PCB-Schaltplan</span>
+            </div>
+            <div class="project-specs">
+              <h4>Projekt-Specs</h4>
+              <div class="spec-row">
+                <span class="spec-label">Jahr</span>
+                <span class="spec-value">2025</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Kategorie</span>
+                <span class="spec-value">Embedded / IoT</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Protokolle</span>
+                <span class="spec-value">CAN, ESPHome</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Status</span>
+                <span class="spec-value spec-wip">In Entwicklung</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Weitere Projekte -->
       <div class="projects-grid fade-in">
         <div class="project-card-small">

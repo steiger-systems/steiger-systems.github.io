@@ -104,7 +104,7 @@ nav a:hover::after {
 
 /* ── Hero Section ── */
 .hero {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,7 +112,7 @@ nav a:hover::after {
   position: relative;
   overflow: hidden;
   background: #ffffff;
-  padding: 140px 40px 100px;
+  padding: 160px 40px 100px;
 }
 
 .hero-bg {
@@ -171,23 +171,7 @@ nav a:hover::after {
 
 /* Scroll hint */
 .scroll-hint {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #bbb;
-  animation: scrollBounce 2s ease-in-out infinite;
-  z-index: 1;
-}
-
-.scroll-hint svg {
-  width: 28px;
-  height: 28px;
-}
-
-@keyframes scrollBounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(6px); }
+  display: none;
 }
 
 /* ── Buttons ── */
