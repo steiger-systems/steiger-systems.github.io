@@ -6,7 +6,10 @@
   <meta name="robots" content="index, follow">
   <title>Steiger-Systems</title>
   <link rel="icon" type="image/png" href="Bilder/Adress.png">
-  <link rel="stylesheet" href="CSS-Style/style_00_index.css">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS-Style/style_00_index.css">
 </head>
 <body>
   <header>
@@ -23,30 +26,64 @@
       </ul>
     </nav>
   </header>
+
   <!-- Hero Section -->
   <section class="hero">
+    <div class="hero-bg"></div>
     <div class="hero-content">
+      <span class="badge">Automatisierung &amp; Steuerungstechnik</span>
       <h1>Steiger-Systems</h1>
-      <p class="hero-subtitle">Automatisierung & Steuerungstechnik</p>
-      <p class="hero-description">Von der Idee zur Realisierung - Ihre Projekte in professionellen Händen</p>
-      <a href="01_Projekts.html" class="btn-primary">Meine Projekte ansehen</a>
+      <p class="hero-description">Von der Idee zur Realisierung &ndash; Ihre Projekte in professionellen Händen</p>
+      <div class="hero-actions">
+        <a href="01_Projekts.html" class="btn-primary">Meine Projekte ansehen</a>
+        <a href="03_Kontakt.html" class="btn-ghost">Kontakt aufnehmen</a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section class="services">
+  <section class="services fade-in">
     <div class="container">
-      <h2>Was ich biete</h2>
+      <div class="section-header">
+        <h2>Was ich biete</h2>
+        <p class="section-subtitle">Professionelle Lösungen für Ihre Automatisierungsanforderungen</p>
+      </div>
       <div class="services-grid">
         <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </div>
           <h3>Automatisierung</h3>
           <p>Entwicklung und Umsetzung von Automatisierungslösungen für Ihre individuellen Anforderungen</p>
         </div>
         <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="16" height="16" rx="2"/>
+              <rect x="9" y="9" width="6" height="6"/>
+              <path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M20 9h2M2 15h2M20 15h2"/>
+            </svg>
+          </div>
           <h3>Steuerungstechnik</h3>
           <p>Programmierung und Inbetriebnahme von SPS-Steuerungen (Siemens LOGO, S7, etc.)</p>
         </div>
         <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            </svg>
+          </div>
           <h3>Projektrealisierung</h3>
           <p>Komplette Projektabwicklung von der Planung bis zur fertigen Anlage</p>
         </div>
@@ -54,16 +91,43 @@
     </div>
   </section>
 
-  <!-- Latest Project Section -->
-  <section class="latest-project">
+  <!-- Stats Section -->
+  <section class="stats fade-in">
     <div class="container">
-      <h2>Aktuelles Projekt</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Qualitätsanspruch</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">Siemens</span>
+          <span class="stat-label">LOGO! Expertise</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">CH</span>
+          <span class="stat-label">Standort Schweiz</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">A→Z</span>
+          <span class="stat-label">Vollständige Realisierung</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Project Section -->
+  <section class="latest-project fade-in">
+    <div class="container">
+      <div class="section-header">
+        <h2>Aktuelles Projekt</h2>
+      </div>
       <div class="project-highlight">
         <div class="project-info">
+          <span class="project-badge">Abgeschlossen &bull; 2025</span>
           <h3>Holzlift-Steuerung</h3>
           <p>Automatische Förderanlage für den Transport von Brennholz vom Keller in den Wohnbereich.
           Die Steuerung erfolgt über eine Siemens LOGO mit Tastern und Endschaltern für maximale Sicherheit und Komfort.</p>
-          <a href="01_Projekts.html" class="btn-secondary">Mehr erfahren</a>
+          <a href="01_Projekts.html" class="btn-primary">Mehr erfahren</a>
         </div>
         <div class="project-image">
           <img src="Bilder/logo.png" alt="Steiger-Systems">
@@ -73,16 +137,38 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="cta">
-    <div class="container">
+  <section class="cta fade-in">
+    <div class="cta-inner">
       <h2>Haben Sie ein Projekt im Kopf?</h2>
       <p>Lassen Sie uns gemeinsam Ihre Ideen realisieren</p>
-      <a href="03_Kontakt.html" class="btn-primary">Kontakt aufnehmen</a>
+      <a href="03_Kontakt.html" class="btn-cta">Kontakt aufnehmen</a>
     </div>
   </section>
-  
+
   <footer>
-    <p>&copy; 2025 Steiger-Systems. Alle Rechte vorbehalten.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="Bilder/logo.png" alt="Steiger-Systems Logo" class="footer-logo">
+        <p>Automatisierung &amp; Steuerungstechnik</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="01_Projekts.html">Projekte</a>
+        <a href="02_about.html">Über mich</a>
+        <a href="03_Kontakt.html">Kontakt</a>
+      </nav>
+      <p class="footer-copy">&copy; 2025 Steiger-Systems. Alle Rechte vorbehalten.</p>
+    </div>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
