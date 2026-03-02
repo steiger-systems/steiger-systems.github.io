@@ -330,6 +330,53 @@ nav a:hover::after {
   min-height: 140px;
 }
 
+/* ── Form Feedback Messages ── */
+.form-success,
+.form-error {
+  display: none;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.form-success {
+  background: rgba(22, 163, 74, 0.08);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  color: #166534;
+}
+
+.form-error {
+  background: rgba(220, 38, 38, 0.07);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+}
+
+.form-success svg,
+.form-error svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.form-success strong,
+.form-error strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.form-success p,
+.form-error p {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 14px;
+}
+
 /* ── Submit Button ── */
 .btn-submit {
   display: flex;
