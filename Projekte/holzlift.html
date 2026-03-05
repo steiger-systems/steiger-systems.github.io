@@ -4,26 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>Projekte - Steiger-Systems</title>
-  <link rel="icon" type="image/png" href="Bilder/Adress.png">
+  <title>Holzlift-Steuerung - Steiger-Systems</title>
+  <link rel="icon" type="image/png" href="../Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="CSS-Style/style_01_projekts.css">
+  <link rel="stylesheet" href="../CSS-Style/style_01_projekts.css">
   <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
 </head>
 <body>
   <header>
     <nav>
       <div class="NavbarLogo">
-        <a href="index.html">
-          <img src="Bilder/logo.png" alt="Steiger-Systems Logo">
+        <a href="../index.html">
+          <img src="../Bilder/logo.png" alt="Steiger-Systems Logo">
         </a>
       </div>
       <ul>
-        <li><a href="01_Projekts.html">Projekte</a></li>
-        <li><a href="02_about.html">Über mich</a></li>
-        <li><a href="03_Kontakt.html">Kontakt</a></li>
+        <li><a href="../01_Projekts.html">Projekte</a></li>
+        <li><a href="../02_about.html">Über mich</a></li>
+        <li><a href="../03_Kontakt.html">Kontakt</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Dark mode umschalten">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -42,16 +42,15 @@
 
   <section class="page-hero">
     <div class="container">
-      <span class="badge">Portfolio</span>
-      <h1>Meine Projekte</h1>
-      <p>Realisierte Automatisierungslösungen und Steuerungstechnik</p>
+      <span class="badge">Automatisierung</span>
+      <h1>Holzlift-Steuerung</h1>
+      <p>Vollautomatische Förderanlage für Brennholztransport vom Keller in den Wohnbereich</p>
     </div>
   </section>
 
   <section class="projects-section">
     <div class="container">
 
-      <!-- Holzlift Projekt -->
       <div class="project-card featured fade-in">
         <div class="project-header">
           <div>
@@ -62,14 +61,41 @@
         </div>
         <div class="project-content">
           <div class="project-description">
+            <h3>Projektbeschreibung</h3>
             <p>
-              Vollautomatische Förderanlage für den Transport von Brennholz vom Kellergeschoss in den
-              Wohnbereich. Realisiert mit Siemens LOGO! Steuerung, Tastersteuerung und Endschaltern
-              für sichere Positionserkennung.
+              Entwicklung und Realisierung einer vollautomatischen Förderanlage für den Transport von Brennholz
+              vom Kellergeschoss in den Wohnbereich. Die Anlage ermöglicht einen komfortablen und sicheren
+              Transport ohne manuelles Tragen.
             </p>
-            <a href="Projekte/holzlift.html" class="btn-secondary">Projekt Details →</a>
+
+            <h3>Technische Details</h3>
+            <ul>
+              <li><strong>Steuerung:</strong> Siemens LOGO! Steuerung</li>
+              <li><strong>Bedienung:</strong> Taster für Start/Stopp-Funktionen</li>
+              <li><strong>Sicherheit:</strong> Endschalter für sichere Positionserkennung</li>
+              <li><strong>Betriebsart:</strong> Automatischer Ablauf mit Sicherheitsfunktionen</li>
+              <li><strong>Positionierung:</strong> Exakte Halteposition durch Endschalter</li>
+            </ul>
+
+            <h3>Funktionsweise</h3>
+            <p>
+              Die Steuerung erfolgt über eine intuitive Tastersteuerung. Nach Betätigung des Start-Tasters
+              fährt die Anlage automatisch vom Keller in den Wohnbereich. Endschalter erkennen die exakte
+              Position und stoppen die Anlage präzise. Nach dem Entladen kann die Anlage per Taster zurück
+              in die Ausgangsposition gefahren werden.
+            </p>
+
+            <h3>Vorteile</h3>
+            <ul>
+              <li>Komfortabler Transport ohne manuelles Tragen</li>
+              <li>Hohe Sicherheit durch Endschalter-Überwachung</li>
+              <li>Einfache Bedienung über Taster</li>
+              <li>Zuverlässige Siemens LOGO! Technologie</li>
+              <li>Energieeffizient und wartungsarm</li>
+            </ul>
           </div>
           <div class="project-image">
+            <img src="../Bilder/logo.png" alt="Holzlift Projekt">
             <div class="project-specs">
               <h4>Projekt-Specs</h4>
               <div class="spec-row">
@@ -93,62 +119,8 @@
         </div>
       </div>
 
-      <!-- TempWatch Projekt -->
-      <div class="project-card featured fade-in">
-        <div class="project-header">
-          <div>
-            <span class="project-status">In Entwicklung • 2025</span>
-            <h2>TempWatch</h2>
-          </div>
-          <span class="project-tag project-tag--dev">Eigenentwicklung</span>
-        </div>
-        <div class="project-content">
-          <div class="project-description">
-            <p>
-              Kompaktes Multi-Kanal Temperaturüberwachungssystem auf Basis des ESP32-S3. Erfasst bis zu
-              8 Temperaturkanäle und überträgt die Messdaten wahlweise per CAN-Bus oder via ESPHome
-              an Home Assistant.
-            </p>
-            <a href="Projekte/tempwatch.html" class="btn-secondary">Projekt Details →</a>
-          </div>
-          <div class="project-image">
-            <div class="project-specs">
-              <h4>Projekt-Specs</h4>
-              <div class="spec-row">
-                <span class="spec-label">Jahr</span>
-                <span class="spec-value">2025</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Kategorie</span>
-                <span class="spec-value">Embedded / IoT</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Protokolle</span>
-                <span class="spec-value">CAN, ESPHome</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Status</span>
-                <span class="spec-value spec-wip">In Entwicklung</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Weitere Projekte -->
-      <div class="projects-grid fade-in">
-        <div class="project-card-small">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-          </div>
-          <h3>Weitere Projekte in Planung</h3>
-          <p>Haben Sie eine Idee für ein Automatisierungsprojekt? Kontaktieren Sie mich für eine Beratung.</p>
-          <a href="03_Kontakt.html" class="btn-secondary">Projekt anfragen</a>
-        </div>
+      <div style="text-align: center; margin-top: 20px; padding-bottom: 40px;">
+        <a href="../01_Projekts.html" class="btn-secondary">← Alle Projekte</a>
       </div>
 
     </div>
@@ -157,10 +129,10 @@
   <footer>
     <div class="footer-inner">
       <nav class="footer-nav">
-        <a href="index.html">Startseite</a>
-        <a href="01_Projekts.html">Projekte</a>
-        <a href="02_about.html">Über mich</a>
-        <a href="03_Kontakt.html">Kontakt</a>
+        <a href="../index.html">Startseite</a>
+        <a href="../01_Projekts.html">Projekte</a>
+        <a href="../02_about.html">Über mich</a>
+        <a href="../03_Kontakt.html">Kontakt</a>
       </nav>
       <p class="footer-copy">&copy; 2025 Steiger-Systems. Alle Rechte vorbehalten.</p>
     </div>
@@ -169,14 +141,11 @@
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Dark mode toggle
     const themeToggle = document.getElementById('themeToggle');
     themeToggle.addEventListener('click', () => {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';

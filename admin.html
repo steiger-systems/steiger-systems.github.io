@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin – Steiger-Systems</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0d0d0d;
+      color: #d0d0d0;
+      min-height: 100vh;
+    }
+
+    /* ── Login Screen ── */
+    #login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .login-box {
+      background: #161616;
+      border: 1px solid #252525;
+      border-radius: 16px;
+      padding: 48px;
+      width: 360px;
+      text-align: center;
+    }
+
+    .login-box h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #f0f0f0;
+      margin-bottom: 8px;
+    }
+
+    .login-box p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 32px;
+    }
+
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 12px 16px;
+      background: #0f0f0f;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      color: #d0d0d0;
+      font-size: 15px;
+      margin-bottom: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .login-box input[type="password"]:focus {
+      border-color: #0066ff;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .login-box button:hover { background: #0052cc; }
+
+    .login-error {
+      color: #f87171;
+      font-size: 13px;
+      margin-top: 12px;
+      display: none;
+    }
+
+    /* ── Admin Panel ── */
+    #admin-panel { display: none; }
+
+    .admin-header {
+      background: #111;
+      border-bottom: 1px solid #1e1e1e;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .admin-header h1 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f0f0f0;
+    }
+
+    .admin-header span {
+      font-size: 13px;
+      color: #444;
+    }
+
+    .admin-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0066ff;
+      margin-bottom: 20px;
+    }
+
+    /* ── Form ── */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #888;
+    }
+
+    label span.required { color: #f87171; }
+
+    input[type="text"],
+    select,
+    textarea {
+      background: #111;
+      border: 1px solid #252525;
+      border-radius: 8px;
+      color: #d0d0d0;
+      font-size: 14px;
+      font-family: inherit;
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    input[type="text"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #0066ff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+      line-height: 1.6;
+    }
+
+    select option { background: #111; }
+
+    .hint {
+      font-size: 12px;
+      color: #444;
+      margin-top: 2px;
+    }
+
+    /* ── Tag Style Preview ── */
+    .tag-preview {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: white;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #1e1e1e;
+      margin: 36px 0;
+    }
+
+    /* ── Buttons ── */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .btn-primary {
+      padding: 12px 24px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: #0052cc; }
+
+    .btn-outline {
+      padding: 12px 24px;
+      background: transparent;
+      color: #d0d0d0;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover { border-color: #0066ff; color: #4da6ff; }
+
+    /* ── Output Box ── */
+    .output-box {
+      display: none;
+      margin-top: 32px;
+      background: #111;
+      border: 1px solid #252525;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .output-header {
+      background: #161616;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    .output-header span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #f0f0f0;
+    }
+
+    .copy-btn {
+      padding: 6px 14px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .copy-btn:hover { background: #0052cc; }
+    .copy-btn.copied { background: #16a34a; }
+
+    .output-content {
+      padding: 20px;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 12px;
+      color: #888;
+      white-space: pre;
+      overflow-x: auto;
+      max-height: 320px;
+      overflow-y: auto;
+      line-height: 1.6;
+    }
+
+    /* ── Success Toast ── */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background: #16a34a;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      display: none;
+      z-index: 9999;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    /* ── Info Card ── */
+    .info-card {
+      background: rgba(0, 102, 255, 0.08);
+      border: 1px solid rgba(0, 102, 255, 0.2);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 13px;
+      color: #888;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .info-card strong { color: #4da6ff; }
+
+    @media (max-width: 600px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .admin-header { padding: 16px 20px; }
+      .admin-body { padding: 32px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Login Screen ── -->
+  <div id="login-screen">
+    <div class="login-box">
+      <h1>Admin-Bereich</h1>
+      <p>Steiger-Systems Projektverwaltung</p>
+      <input type="password" id="pw-input" placeholder="Passwort" autocomplete="current-password">
+      <button onclick="checkLogin()">Anmelden</button>
+      <div class="login-error" id="login-error">Falsches Passwort</div>
+    </div>
+  </div>
+
+  <!-- ── Admin Panel ── -->
+  <div id="admin-panel">
+    <div class="admin-header">
+      <h1>Projektverwaltung</h1>
+      <span>Steiger-Systems Admin</span>
+    </div>
+
+    <div class="admin-body">
+
+      <div class="info-card">
+        <strong>Workflow:</strong> Fülle das Formular aus &rarr; Klicke "HTML herunterladen" &rarr;
+        Die Datei kommt in den <strong>Projekte/</strong> Ordner &rarr; Kopiere die Projektkarte in
+        <strong>01_Projekts.html</strong> (vor den "Weitere Projekte" Block) &rarr; Git commit &amp; push.
+      </div>
+
+      <div class="section-title">Neues Projekt</div>
+
+      <!-- Zeile 1: Dateiname + Titel -->
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Dateiname <span class="required">*</span></label>
+          <input type="text" id="f-dateiname" placeholder="z.B. mein-projekt" oninput="sanitizeFilename(this)">
+          <div class="hint">Nur Kleinbuchstaben, Bindestriche. Wird zu: Projekte/<span id="filename-preview">mein-projekt</span>.html</div>
+        </div>
+        <div class="form-group">
+          <label>Projekttitel <span class="required">*</span></label>
+          <input type="text" id="f-titel" placeholder="z.B. Holzlift-Steuerung">
+        </div>
+      </div>
+
+      <!-- Zeile 2: Status + Jahr + Kategorie -->
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Status <span class="required">*</span></label>
+          <select id="f-status">
+            <option value="Abgeschlossen">Abgeschlossen</option>
+            <option value="In Entwicklung" selected>In Entwicklung</option>
+            <option value="Geplant">Geplant</option>
+            <option value="Pausiert">Pausiert</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Jahr <span class="required">*</span></label>
+          <input type="text" id="f-jahr" placeholder="2025" value="2025">
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Kategorie <span class="required">*</span></label>
+          <input type="text" id="f-kategorie" placeholder="z.B. Automatisierung, Embedded / IoT">
+        </div>
+        <div class="form-group">
+          <label>Badge-Text (Hero)</label>
+          <input type="text" id="f-badge" placeholder="z.B. Automatisierung">
+        </div>
+      </div>
+
+      <!-- Zeile 3: Tag + Farbe -->
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Projekt-Tag (Karte)</label>
+          <input type="text" id="f-tag" placeholder="z.B. Eigenentwicklung" oninput="updateTagPreview()">
+        </div>
+        <div class="form-group">
+          <label>Tag-Farbe</label>
+          <select id="f-tagfarbe" onchange="updateTagPreview()">
+            <option value="primary">Blau (Standard)</option>
+            <option value="dev">Lila (Eigenentwicklung)</option>
+            <option value="green">Grün</option>
+            <option value="orange">Orange</option>
+          </select>
+          <div class="tag-preview" id="tag-preview" style="background: linear-gradient(135deg,#0066ff,#0044cc)">Vorschau</div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Texte -->
+      <div class="form-grid">
+        <div class="form-group full-width">
+          <label>Kurzbeschreibung <span class="required">*</span> <em style="font-weight:400">(für Übersichtskarte in 01_Projekts.html, 1–2 Sätze)</em></label>
+          <textarea id="f-kurz" rows="3" placeholder="Kurze Zusammenfassung des Projekts..."></textarea>
+        </div>
+        <div class="form-group full-width">
+          <label>Vollständige Projektbeschreibung <span class="required">*</span></label>
+          <textarea id="f-beschreibung" rows="5" placeholder="Detaillierte Beschreibung des Projekts..."></textarea>
+        </div>
+        <div class="form-group full-width">
+          <label>Technische Details <em style="font-weight:400">(eine Zeile pro Punkt, Format: <code style="color:#4da6ff">Schlüssel: Wert</code>)</em></label>
+          <textarea id="f-techdetails" rows="6" placeholder="Mikrocontroller: ESP32-S3&#10;Spannung: 3,3V&#10;Schnittstelle: CAN-Bus"></textarea>
+        </div>
+        <div class="form-group full-width">
+          <label>Funktionsweise / Kommunikation <em style="font-weight:400">(optional, Fliesstext)</em></label>
+          <textarea id="f-funktion" rows="4" placeholder="Beschreibung der Funktionsweise..."></textarea>
+        </div>
+        <div class="form-group full-width">
+          <label>Vorteile <em style="font-weight:400">(eine Zeile pro Punkt)</em></label>
+          <textarea id="f-vorteile" rows="5" placeholder="Komfortabler Transport&#10;Hohe Sicherheit&#10;Einfache Bedienung"></textarea>
+        </div>
+      </div>
+
+      <!-- Specs Panel -->
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label>Zusätzliche Specs (Seitenleiste) <em style="font-weight:400">(Format: <code style="color:#4da6ff">Schlüssel: Wert</code>, eine pro Zeile)</em></label>
+        <textarea id="f-specs" rows="4" placeholder="Protokolle: CAN, ESPHome&#10;Controller: Siemens LOGO!"></textarea>
+        <div class="hint">Jahr, Kategorie und Status werden automatisch hinzugefügt.</div>
+      </div>
+
+      <!-- Bild -->
+      <div class="form-group" style="margin-bottom: 32px;">
+        <label>Bildpfad <em style="font-weight:400">(optional, relativ zum Projekte/-Ordner)</em></label>
+        <input type="text" id="f-bild" placeholder="z.B. ../Bilder/mein-projekt.jpg">
+        <div class="hint">Leer lassen = Platzhalter-Grafik wird angezeigt.</div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-primary" onclick="downloadHTML()">HTML herunterladen</button>
+        <button class="btn-outline" onclick="showCardHTML()">Projektkarte anzeigen</button>
+        <button class="btn-outline" onclick="resetForm()">Formular leeren</button>
+      </div>
+
+      <!-- Output: Projektkarte -->
+      <div class="output-box" id="card-output">
+        <div class="output-header">
+          <span>Projektkarte – in 01_Projekts.html einfügen (vor "Weitere Projekte")</span>
+          <button class="copy-btn" onclick="copyOutput('card-output-content', this)">Kopieren</button>
+        </div>
+        <div class="output-content" id="card-output-content"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ── Passwort ──────────────────────────────────────────────────────
+    // Passwort hier ändern:
+    const ADMIN_PASSWORD = 'steiger2025';
+
+    function checkLogin() {
+      const val = document.getElementById('pw-input').value;
+      if (val === ADMIN_PASSWORD) {
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('admin-panel').style.display = 'block';
+      } else {
+        document.getElementById('login-error').style.display = 'block';
+        document.getElementById('pw-input').value = '';
+        document.getElementById('pw-input').focus();
+      }
+    }
+
+    document.getElementById('pw-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') checkLogin();
+    });
+
+    // ── Hilfsfunktionen ───────────────────────────────────────────────
+    function sanitizeFilename(el) {
+      el.value = el.value
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z0-9\-]/g, '');
+      document.getElementById('filename-preview').textContent = el.value || 'mein-projekt';
+    }
+
+    function esc(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function updateTagPreview() {
+      const tag = document.getElementById('f-tag').value || 'Tag';
+      const farbe = document.getElementById('f-tagfarbe').value;
+      const colors = {
+        primary: 'linear-gradient(135deg,#0066ff,#0044cc)',
+        dev:     'linear-gradient(135deg,#7c3aed,#5b21b6)',
+        green:   'linear-gradient(135deg,#16a34a,#15803d)',
+        orange:  'linear-gradient(135deg,#d97706,#b45309)',
+      };
+      const preview = document.getElementById('tag-preview');
+      preview.style.background = colors[farbe];
+      preview.textContent = tag;
+    }
+
+    function getTagClass(farbe) {
+      const map = { primary: '', dev: ' project-tag--dev', green: ' project-tag--green', orange: ' project-tag--orange' };
+      return map[farbe] || '';
+    }
+
+    function getStatusClass(status) {
+      if (status === 'Abgeschlossen') return 'spec-done';
+      if (status === 'In Entwicklung') return 'spec-wip';
+      return '';
+    }
+
+    function buildTechList(raw) {
+      if (!raw.trim()) return '';
+      return raw.split('\n')
+        .filter(l => l.trim())
+        .map(l => {
+          const idx = l.indexOf(':');
+          if (idx > 0) {
+            const key = esc(l.slice(0, idx).trim());
+            const val = esc(l.slice(idx + 1).trim());
+            return `              <li><strong>${key}:</strong> ${val}</li>`;
+          }
+          return `              <li>${esc(l.trim())}</li>`;
+        }).join('\n');
+    }
+
+    function buildVorteilList(raw) {
+      if (!raw.trim()) return '';
+      return raw.split('\n')
+        .filter(l => l.trim())
+        .map(l => `              <li>${esc(l.trim())}</li>`)
+        .join('\n');
+    }
+
+    function buildSpecRows(raw, status, jahr, kategorie) {
+      let rows = '';
+      rows += `
+              <div class="spec-row">
+                <span class="spec-label">Jahr</span>
+                <span class="spec-value">${esc(jahr)}</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Kategorie</span>
+                <span class="spec-value">${esc(kategorie)}</span>
+              </div>`;
+      if (raw.trim()) {
+        raw.split('\n').filter(l => l.trim()).forEach(l => {
+          const idx = l.indexOf(':');
+          if (idx > 0) {
+            const key = esc(l.slice(0, idx).trim());
+            const val = esc(l.slice(idx + 1).trim());
+            rows += `
+              <div class="spec-row">
+                <span class="spec-label">${key}</span>
+                <span class="spec-value">${val}</span>
+              </div>`;
+          }
+        });
+      }
+      const cls = getStatusClass(status);
+      rows += `
+              <div class="spec-row">
+                <span class="spec-label">Status</span>
+                <span class="spec-value${cls ? ' ' + cls : ''}">${esc(status)}</span>
+              </div>`;
+      return rows;
+    }
+
+    function getFormData() {
+      return {
+        dateiname:   document.getElementById('f-dateiname').value.trim(),
+        titel:       document.getElementById('f-titel').value.trim(),
+        status:      document.getElementById('f-status').value,
+        jahr:        document.getElementById('f-jahr').value.trim(),
+        kategorie:   document.getElementById('f-kategorie').value.trim(),
+        badge:       document.getElementById('f-badge').value.trim(),
+        tag:         document.getElementById('f-tag').value.trim(),
+        tagfarbe:    document.getElementById('f-tagfarbe').value,
+        kurz:        document.getElementById('f-kurz').value.trim(),
+        beschreibung:document.getElementById('f-beschreibung').value.trim(),
+        techdetails: document.getElementById('f-techdetails').value,
+        funktion:    document.getElementById('f-funktion').value.trim(),
+        vorteile:    document.getElementById('f-vorteile').value,
+        specs:       document.getElementById('f-specs').value,
+        bild:        document.getElementById('f-bild').value.trim(),
+      };
+    }
+
+    function validate(d) {
+      if (!d.dateiname) { alert('Dateiname fehlt'); return false; }
+      if (!d.titel)     { alert('Projekttitel fehlt'); return false; }
+      if (!d.kategorie) { alert('Kategorie fehlt'); return false; }
+      if (!d.kurz)      { alert('Kurzbeschreibung fehlt'); return false; }
+      if (!d.beschreibung) { alert('Projektbeschreibung fehlt'); return false; }
+      return true;
+    }
+
+    // ── HTML generieren ───────────────────────────────────────────────
+    function generateDetailHTML(d) {
+      const statusLabel = `${esc(d.status)} • ${esc(d.jahr)}`;
+      const tagClass = getTagClass(d.tagfarbe);
+      const techItems = buildTechList(d.techdetails);
+      const vorteilItems = buildVorteilList(d.vorteile);
+      const specRows = buildSpecRows(d.specs, d.status, d.jahr, d.kategorie);
+      const badgeText = d.badge || d.kategorie;
+
+      let bildHTML = '';
+      if (d.bild) {
+        bildHTML = `<img src="${esc(d.bild)}" alt="${esc(d.titel)}" style="width:100%;border-radius:14px;margin-bottom:20px;">`;
+      } else {
+        bildHTML = `<div class="project-schematic-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="9" height="9"/><rect x="13" y="2" width="9" height="9"/>
+                <rect x="13" y="13" width="9" height="9"/><rect x="2" y="13" width="9" height="9"/>
+              </svg>
+              <span>${esc(d.titel)}</span>
+            </div>`;
+      }
+
+      let funktionBlock = '';
+      if (d.funktion) {
+        funktionBlock = `
+            <h3>Funktionsweise</h3>
+            <p>${esc(d.funktion)}</p>`;
+      }
+
+      let techBlock = '';
+      if (techItems) {
+        techBlock = `
+            <h3>Technische Details</h3>
+            <ul>
+${techItems}
+            </ul>`;
+      }
+
+      let vorteilBlock = '';
+      if (vorteilItems) {
+        vorteilBlock = `
+            <h3>Vorteile</h3>
+            <ul>
+${vorteilItems}
+            </ul>`;
+      }
+
+      return `<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>${esc(d.titel)} - Steiger-Systems</title>
+  <link rel="icon" type="image/png" href="../Bilder/Adress.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS-Style/style_01_projekts.css">
+  <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');<\/script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="NavbarLogo">
+        <a href="../index.html">
+          <img src="../Bilder/logo.png" alt="Steiger-Systems Logo">
+        </a>
+      </div>
+      <ul>
+        <li><a href="../01_Projekts.html">Projekte</a></li>
+        <li><a href="../02_about.html">\xdcber mich</a></li>
+        <li><a href="../03_Kontakt.html">Kontakt</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Dark mode umschalten">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge">${esc(badgeText)}</span>
+      <h1>${esc(d.titel)}</h1>
+      <p>${esc(d.kurz)}</p>
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <div class="container">
+
+      <div class="project-card featured fade-in">
+        <div class="project-header">
+          <div>
+            <span class="project-status">${statusLabel}</span>
+            <h2>${esc(d.titel)}</h2>
+          </div>${d.tag ? `
+          <span class="project-tag${tagClass}">${esc(d.tag)}</span>` : ''}
+        </div>
+        <div class="project-content">
+          <div class="project-description">
+            <h3>Projektbeschreibung</h3>
+            <p>${esc(d.beschreibung)}</p>${techBlock}${funktionBlock}${vorteilBlock}
+          </div>
+          <div class="project-image">
+            ${bildHTML}
+            <div class="project-specs">
+              <h4>Projekt-Specs</h4>${specRows}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px; padding-bottom: 40px;">
+        <a href="../01_Projekts.html" class="btn-secondary">\u2190 Alle Projekte</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="../index.html">Startseite</a>
+        <a href="../01_Projekts.html">Projekte</a>
+        <a href="../02_about.html">\xdcber mich</a>
+        <a href="../03_Kontakt.html">Kontakt</a>
+      </nav>
+      <p class="footer-copy">&copy; ${esc(d.jahr)} Steiger-Systems. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+  <\/script>
+</body>
+</html>`;
+    }
+
+    function generateCardHTML(d) {
+      const statusLabel = `${esc(d.status)} • ${esc(d.jahr)}`;
+      const tagClass = getTagClass(d.tagfarbe);
+      const specRows = buildSpecRows(d.specs, d.status, d.jahr, d.kategorie);
+
+      return `      <!-- ${esc(d.titel)} -->
+      <div class="project-card featured fade-in">
+        <div class="project-header">
+          <div>
+            <span class="project-status">${statusLabel}</span>
+            <h2>${esc(d.titel)}</h2>
+          </div>${d.tag ? `
+          <span class="project-tag${tagClass}">${esc(d.tag)}</span>` : ''}
+        </div>
+        <div class="project-content">
+          <div class="project-description">
+            <p>${esc(d.kurz)}</p>
+            <a href="Projekte/${esc(d.dateiname)}.html" class="btn-secondary">Projekt Details \u2192</a>
+          </div>
+          <div class="project-image">
+            <div class="project-specs">
+              <h4>Projekt-Specs</h4>${specRows}
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+
+    // ── Aktionen ──────────────────────────────────────────────────────
+    function downloadHTML() {
+      const d = getFormData();
+      if (!validate(d)) return;
+
+      const html = generateDetailHTML(d);
+      const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${d.dateiname}.html`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast(`${d.dateiname}.html heruntergeladen – in Projekte/ ablegen`);
+    }
+
+    function showCardHTML() {
+      const d = getFormData();
+      if (!validate(d)) return;
+
+      const card = generateCardHTML(d);
+      const box = document.getElementById('card-output');
+      const content = document.getElementById('card-output-content');
+      content.textContent = card;
+      box.style.display = 'block';
+      box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function copyOutput(id, btn) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Kopiert!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Kopieren'; btn.classList.remove('copied'); }, 2000);
+      });
+    }
+
+    function resetForm() {
+      ['f-dateiname','f-titel','f-kategorie','f-badge','f-tag','f-kurz',
+       'f-beschreibung','f-techdetails','f-funktion','f-vorteile','f-specs','f-bild']
+        .forEach(id => document.getElementById(id).value = '');
+      document.getElementById('f-status').value = 'In Entwicklung';
+      document.getElementById('f-tagfarbe').value = 'primary';
+      document.getElementById('f-jahr').value = new Date().getFullYear();
+      document.getElementById('filename-preview').textContent = 'mein-projekt';
+      document.getElementById('card-output').style.display = 'none';
+      updateTagPreview();
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 3500);
+    }
+
+    // Init
+    updateTagPreview();
+    document.getElementById('f-jahr').value = new Date().getFullYear();
+  </script>
+</body>
+</html>
