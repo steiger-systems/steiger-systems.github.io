@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem \"c:\\\\Users\\\\steig\\\\OneDrive\\\\Projects\\\\Lerneinheiten\\\\Webseite Steiger-Systems\\\\steigersystems.github.io\" -Recurse -File)",
+      "Bash(Select-Object Name, DirectoryName)",
+      "Bash(Sort-Object DirectoryName, Name)"
+    ]
+  }
+}
