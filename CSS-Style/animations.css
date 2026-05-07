@@ -1,0 +1,214 @@
+/* ═══════════════════════════════════════════════
+   STEIGER-SYSTEMS — Shared Animations & Effects
+   ═══════════════════════════════════════════════ */
+
+/* ── 1. Smooth Scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── 2. Enhanced Fade-In Timing (cubic-bezier override) ── */
+.fade-in {
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* ── 3. Hero Staggered Line Reveal ── */
+/* Cancels the single heroFadeIn on the container,
+   animates each child element individually */
+.hero-content {
+  animation: none !important;
+}
+
+@keyframes heroLineReveal {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content > * {
+  opacity: 0;
+  animation: heroLineReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-content > *:nth-child(1) { animation-delay: 0.05s; }  /* badge */
+.hero-content > *:nth-child(2) { animation-delay: 0.22s; }  /* h1 */
+.hero-content > *:nth-child(3) { animation-delay: 0.38s; }  /* description */
+.hero-content > *:nth-child(4) { animation-delay: 0.52s; }  /* buttons */
+
+/* ── 4. Page Hero Stagger (Projekte / About / Kontakt) ── */
+@keyframes pageHeroReveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-hero .badge { opacity: 0; animation: pageHeroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
+.page-hero h1     { opacity: 0; animation: pageHeroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both; }
+.page-hero p      { opacity: 0; animation: pageHeroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.33s both; }
+
+/* ── 5. Staggered Card Reveals (CSS-driven, triggered by parent .visible) ── */
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Service cards */
+.services.visible .service-card {
+  animation: cardReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.services.visible .service-card:nth-child(1) { animation-delay: 0.08s; }
+.services.visible .service-card:nth-child(2) { animation-delay: 0.18s; }
+.services.visible .service-card:nth-child(3) { animation-delay: 0.28s; }
+
+/* Stats items */
+.stats.visible .stat-item {
+  animation: cardReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.stats.visible .stat-item:nth-child(1) { animation-delay: 0.05s; }
+.stats.visible .stat-item:nth-child(2) { animation-delay: 0.13s; }
+.stats.visible .stat-item:nth-child(3) { animation-delay: 0.21s; }
+.stats.visible .stat-item:nth-child(4) { animation-delay: 0.29s; }
+
+/* Skill cards */
+.skills-section.visible .skill-card {
+  animation: cardReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.skills-section.visible .skill-card:nth-child(1) { animation-delay: 0.05s; }
+.skills-section.visible .skill-card:nth-child(2) { animation-delay: 0.14s; }
+.skills-section.visible .skill-card:nth-child(3) { animation-delay: 0.23s; }
+.skills-section.visible .skill-card:nth-child(4) { animation-delay: 0.32s; }
+
+/* Shop product cards */
+.shop-grid.visible .product-card {
+  animation: cardReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.shop-grid.visible .product-card:nth-child(1) { animation-delay: 0.05s; }
+.shop-grid.visible .product-card:nth-child(2) { animation-delay: 0.13s; }
+.shop-grid.visible .product-card:nth-child(3) { animation-delay: 0.21s; }
+.shop-grid.visible .product-card:nth-child(4) { animation-delay: 0.29s; }
+.shop-grid.visible .product-card:nth-child(5) { animation-delay: 0.37s; }
+.shop-grid.visible .product-card:nth-child(6) { animation-delay: 0.45s; }
+
+/* ── 6. Cursor Glow ── */
+.cursor-glow {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.055) 0%, transparent 65%);
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  will-change: transform;
+  transition: opacity 0.4s ease;
+}
+
+[data-theme="dark"] .cursor-glow {
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.10) 0%, transparent 65%);
+}
+
+/* Hide on touch / mobile */
+@media (hover: none), (max-width: 768px) {
+  .cursor-glow { display: none; }
+}
+
+/* ── 7. Button Wipe Effect (::before sweep left→right) ── */
+@media (hover: hover) {
+  .btn-primary,
+  .btn-ghost,
+  .btn-secondary,
+  .btn-cta,
+  .btn-submit {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before,
+  .btn-ghost::before,
+  .btn-secondary::before,
+  .btn-cta::before,
+  .btn-submit::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.4s ease-out;
+    pointer-events: none;
+  }
+
+  /* Overlay colors per button type */
+  .btn-primary::before   { background: rgba(255, 255, 255, 0.11); }
+  .btn-ghost::before     { background: rgba(0, 102, 255, 0.06); }
+  .btn-secondary::before { background: rgba(0, 102, 255, 0.05); }
+  .btn-cta::before       { background: rgba(0,   0,   0,   0.06); }
+  .btn-submit::before    { background: rgba(255, 255, 255, 0.10); }
+
+  .btn-primary:hover::before,
+  .btn-ghost:hover::before,
+  .btn-secondary:hover::before,
+  .btn-cta:hover::before,
+  .btn-submit:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+/* ── 8. 3D Card Tilt Setup ── */
+.service-card,
+.skill-card,
+.project-card-small,
+.project-card.featured,
+.project-highlight {
+  will-change: transform;
+}
+
+/* Disable tilt on touch devices */
+@media (hover: none) {
+  .service-card,
+  .skill-card,
+  .project-card-small,
+  .project-card.featured,
+  .project-highlight {
+    will-change: auto;
+  }
+}
+
+/* ── 9. Marquee (tech-list) ── */
+.tech-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  padding: 4px 0;
+}
+
+.tech-marquee-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.tech-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Ensure .tech-list retains original display when NOT converted to marquee */
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* ── 10. Counter Number animation helper ── */
+.stat-number {
+  display: inline-block;
+}
