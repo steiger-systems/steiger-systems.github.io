@@ -1,0 +1,24 @@
+# Jekyll-Konfiguration für GitHub Pages
+# Clean URLs: Jede Seite definiert ihr permalink + redirect_from im Front Matter.
+# jekyll-redirect-from erzeugt an den alten .html-Adressen Weiterleitungsseiten
+# (Meta-Refresh + rel=canonical), damit alte Links und Google-Rankings erhalten bleiben.
+
+title: Steiger-Systems
+url: "https://www.steigersystems.ch"
+lang: de
+timezone: Europe/Zurich
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+# Nichts in Layouts einpacken — die Seiten sind vollständige HTML-Dokumente
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: null
+
+exclude:
+  - README.md
+  - CLAUDE.md

@@ -1,21 +1,49 @@
 /* ═══════════════════════════════════════════════
    STEIGER-SYSTEMS — Shared Animations & Interactions
+   Dark Glass Redesign
    ═══════════════════════════════════════════════ */
 
 (function () {
   'use strict';
 
-  /* ── 1. Dark Mode Toggle ── */
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouchDevice = window.matchMedia('(hover: none)').matches;
+
+  /* ── 1. Theme Toggle (Dark ist Standard) ── */
   const themeToggle = document.getElementById('themeToggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
     });
   }
 
-  /* ── 2. Scroll Reveal — IntersectionObserver ── */
+  /* ── 2. Mobile Navigation ── */
+  const navBurger = document.getElementById('navBurger');
+  if (navBurger) {
+    navBurger.addEventListener('click', () => {
+      document.body.classList.toggle('nav-open');
+    });
+    document.querySelectorAll('nav ul a').forEach(link => {
+      link.addEventListener('click', () => document.body.classList.remove('nav-open'));
+    });
+  }
+
+  /* ── 3. Header Scroll State ── */
+  const header = document.querySelector('header');
+  if (header) {
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ── 4. Scroll Reveal — IntersectionObserver ── */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -27,9 +55,8 @@
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  /* ── 3. Cursor Glow ── */
-  const isTouchDevice = window.matchMedia('(hover: none)').matches;
-  if (!isTouchDevice && window.innerWidth > 768) {
+  /* ── 5. Cursor Glow ── */
+  if (!isTouchDevice && !reducedMotion && window.innerWidth > 768) {
     const glow = document.createElement('div');
     glow.className = 'cursor-glow';
     document.body.appendChild(glow);
@@ -48,15 +75,11 @@
       }
     });
 
-    document.addEventListener('mouseleave', () => {
-      glow.style.opacity = '0';
-    });
-    document.addEventListener('mouseenter', () => {
-      glow.style.opacity = '1';
-    });
+    document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { glow.style.opacity = '1'; });
   }
 
-  /* ── 4. 3D Card Tilt ── */
+  /* ── 6. 3D Card Tilt ── */
   const tiltSelectors = [
     '.service-card',
     '.skill-card',
@@ -66,7 +89,7 @@
     '.product-card',
   ];
 
-  if (!isTouchDevice) {
+  if (!isTouchDevice && !reducedMotion) {
     document.querySelectorAll(tiltSelectors.join(', ')).forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
@@ -87,7 +110,7 @@
     });
   }
 
-  /* ── 5. Counter Animation ── */
+  /* ── 7. Counter Animation ── */
   function animateCounter(el) {
     const text = el.textContent.trim();
     const match = text.match(/^(\d+)(.*)$/);
@@ -101,8 +124,7 @@
     function tick(now) {
       const elapsed  = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Cubic ease-out
-      const eased    = 1 - Math.pow(1 - progress, 3);
+      const eased    = 1 - Math.pow(1 - progress, 3); // cubic ease-out
       el.textContent = Math.round(eased * target) + suffix;
       if (progress < 1) requestAnimationFrame(tick);
     }
@@ -113,7 +135,7 @@
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        animateCounter(entry.target);
+        if (!reducedMotion) animateCounter(entry.target);
         counterObserver.unobserve(entry.target);
       }
     });
@@ -125,19 +147,17 @@
     }
   });
 
-  /* ── 6. Marquee (tech-list) ── */
+  /* ── 8. Marquee (tech-list) ── */
   const techList = document.querySelector('.tech-list');
-  if (techList) {
+  if (techList && !reducedMotion) {
     const items = Array.from(techList.children);
     if (items.length > 0) {
-      // Build wrapper + track
       const wrapper = document.createElement('div');
       wrapper.className = 'tech-marquee-wrapper';
 
       const track = document.createElement('div');
       track.className = 'tech-marquee-track';
 
-      // Duplicate items for seamless loop
       [...items, ...items.map(i => i.cloneNode(true))].forEach(item => {
         track.appendChild(item);
       });
@@ -145,6 +165,101 @@
       wrapper.appendChild(track);
       techList.parentNode.replaceChild(wrapper, techList);
     }
+  }
+
+  /* ── 9. Hero Partikel-Canvas ── */
+  const canvas = document.getElementById('heroCanvas');
+  if (canvas && !reducedMotion) {
+    const ctx = canvas.getContext('2d');
+    const hero = canvas.parentElement;
+    let particles = [];
+    let width = 0, height = 0;
+    let running = true;
+
+    const CYAN = [34, 211, 238];
+    const VIOLET = [129, 140, 248];
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = hero.clientWidth;
+      height = hero.clientHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function spawn() {
+      const count = Math.min(60, Math.floor(width / 24));
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: 1 + Math.random() * 1.8,
+        vx: (Math.random() - 0.5) * 0.28,
+        vy: (Math.random() - 0.5) * 0.28,
+        c: Math.random() > 0.45 ? CYAN : VIOLET,
+        a: 0.25 + Math.random() * 0.5,
+      }));
+    }
+
+    function frame() {
+      if (!running) return;
+      ctx.clearRect(0, 0, width, height);
+
+      // Linien zwischen nahen Partikeln
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const p = particles[i], q = particles[j];
+          const dx = p.x - q.x, dy = p.y - q.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < 130) {
+            const alpha = (1 - dist / 130) * 0.14;
+            ctx.strokeStyle = `rgba(${p.c[0]}, ${p.c[1]}, ${p.c[2]}, ${alpha})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Punkte
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < -10) p.x = width + 10;
+        if (p.x > width + 10) p.x = -10;
+        if (p.y < -10) p.y = height + 10;
+        if (p.y > height + 10) p.y = -10;
+
+        ctx.fillStyle = `rgba(${p.c[0]}, ${p.c[1]}, ${p.c[2]}, ${p.a})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      requestAnimationFrame(frame);
+    }
+
+    // Pausieren, wenn Hero nicht sichtbar (Performance)
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const wasRunning = running;
+        running = entry.isIntersecting;
+        if (running && !wasRunning) requestAnimationFrame(frame);
+      });
+    }, { threshold: 0 });
+    heroObserver.observe(hero);
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { resize(); spawn(); }, 150);
+    });
+
+    resize();
+    spawn();
+    requestAnimationFrame(frame);
   }
 
 })();
