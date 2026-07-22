@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/steig/OneDrive/Projects/Lerneinheiten/Webseite Steiger-Systems/steigersystems.github.io/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\steig\\OneDrive\\Projects\\Lerneinheiten\\Webseite Steiger-Systems\\steigersystems.github.io\\CSS-Style",
+      "c:\\Users\\steig\\OneDrive\\Projects\\Lerneinheiten\\Webseite Steiger-Systems\\steigersystems.github.io"
+    ]
+  }
+}

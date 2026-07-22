@@ -15,18 +15,16 @@ redirect_from:
   <link rel="icon" type="image/png" href="/Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/CSS-Style/main.css">
-  <script>if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');</script>
 </head>
 <body>
   <header>
     <nav>
-      <div class="NavbarLogo">
-        <a href="/">
-          <img src="/Bilder/logo.png" alt="Steiger-Systems Logo">
-        </a>
-      </div>
+      <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
+      </a>
       <ul>
         <li><a href="/projekte/">Projekte</a></li>
         <li><a href="/about/">Über mich</a></li>
@@ -34,18 +32,6 @@ redirect_from:
         <li><a href="/shop/">Shop</a></li>
       </ul>
       <div class="nav-right">
-        <button class="theme-toggle" id="themeToggle" aria-label="Farbschema umschalten">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-        </button>
         <button class="nav-burger" id="navBurger" aria-label="Menü öffnen">
           <span></span><span></span><span></span>
         </button>
@@ -55,10 +41,13 @@ redirect_from:
 
   <!-- Hero Section -->
   <section class="hero">
-    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-frame" aria-hidden="true">
+      <span class="corner-tl">REV. 2025.03</span>
+      <span class="corner-br">CH · 47.16° N / 9.52° E</span>
+    </div>
     <div class="hero-content">
-      <span class="badge">Automatisierung &amp; Steuerungstechnik &middot; Schweiz</span>
-      <h1>Ihre Idee.<br><span class="grad">Sauber automatisiert.</span></h1>
+      <span class="kicker">Automatisierung &amp; Steuerungstechnik · Schweiz</span>
+      <h1>Ihre Idee.<br>Sauber automatisiert.</h1>
       <p class="hero-description">SPS-Programmierung, Steuerungsbau und eigene Embedded-Entwicklung &ndash; von der Planung bis zur laufenden Anlage.</p>
       <div class="hero-actions">
         <a href="/projekte/" class="btn-primary">Projekte ansehen</a>
@@ -76,67 +65,48 @@ redirect_from:
   <section class="services fade-in">
     <div class="container">
       <div class="section-header">
+        <span class="kicker">Leistungen</span>
         <h2>Was ich biete</h2>
         <p class="section-subtitle">Professionelle Lösungen für Ihre Automatisierungsanforderungen</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-            </svg>
-          </div>
-          <h3>Automatisierung</h3>
-          <p>Entwicklung und Umsetzung von Automatisierungslösungen für Ihre individuellen Anforderungen</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="4" y="4" width="16" height="16" rx="2"/>
-              <rect x="9" y="9" width="6" height="6"/>
-              <path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M20 9h2M2 15h2M20 15h2"/>
-            </svg>
-          </div>
-          <h3>Steuerungstechnik</h3>
-          <p>Programmierung und Inbetriebnahme von SPS-Steuerungen (Siemens LOGO, S7, etc.)</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-            </svg>
-          </div>
-          <h3>Projektrealisierung</h3>
-          <p>Komplette Projektabwicklung von der Planung bis zur fertigen Anlage</p>
-        </div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-number">01</span>
+        <h3>Automatisierung</h3>
+        <p>Entwicklung und Umsetzung von Automatisierungslösungen für Ihre individuellen Anforderungen.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-number">02</span>
+        <h3>Steuerungstechnik</h3>
+        <p>Programmierung und Inbetriebnahme von SPS-Steuerungen (Siemens LOGO!, S7, etc.).</p>
+      </div>
+      <div class="service-card">
+        <span class="service-number">03</span>
+        <h3>Projektrealisierung</h3>
+        <p>Komplette Projektabwicklung von der Planung bis zur fertigen Anlage.</p>
       </div>
     </div>
   </section>
 
   <!-- Stats Section -->
   <section class="stats fade-in">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Qualitätsanspruch</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">Siemens</span>
-          <span class="stat-label">LOGO! Expertise</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">CH</span>
-          <span class="stat-label">Standort Schweiz</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">A→Z</span>
-          <span class="stat-label">Vollständige Realisierung</span>
-        </div>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Qualitätsanspruch</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Siemens</span>
+        <span class="stat-label">LOGO! Expertise</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">CH</span>
+        <span class="stat-label">Standort Schweiz</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">A→Z</span>
+        <span class="stat-label">Vollständige Realisierung</span>
       </div>
     </div>
   </section>
@@ -145,11 +115,12 @@ redirect_from:
   <section class="latest-project fade-in">
     <div class="container">
       <div class="section-header">
-        <h2>Aktuelles Projekt</h2>
+        <span class="kicker">Aktuelles Projekt</span>
+        <h2>TempWatch</h2>
       </div>
       <div class="project-highlight">
         <div class="project-info">
-          <span class="project-badge project-badge--wip">In Entwicklung &bull; 2025</span>
+          <span class="project-badge project-badge--wip">In Entwicklung &middot; 2025</span>
           <h3>TempWatch</h3>
           <p>Kompaktes Multi-Kanal Temperaturüberwachungssystem auf Basis des ESP32-S3. Erfasst bis zu 8 Temperaturkanäle und überträgt die Messdaten wahlweise per CAN-Bus oder via ESPHome an Home Assistant.</p>
           <div class="project-tech-tags">
@@ -162,11 +133,11 @@ redirect_from:
         </div>
         <div class="project-image">
           <div class="project-image-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="2" y="2" width="9" height="9"/><rect x="13" y="2" width="9" height="9"/>
               <rect x="13" y="13" width="9" height="9"/><rect x="2" y="13" width="9" height="9"/>
             </svg>
-            <span>TempWatch PCB</span>
+            <span>TempWatch · PCB Rev. 02</span>
           </div>
         </div>
       </div>
@@ -177,15 +148,18 @@ redirect_from:
   <section class="cta fade-in">
     <div class="cta-inner">
       <h2>Haben Sie ein Projekt im Kopf?</h2>
-      <p>Lassen Sie uns gemeinsam Ihre Ideen realisieren</p>
-      <a href="/kontakt/" class="btn-cta">Kontakt aufnehmen</a>
+      <p>Lassen Sie uns gemeinsam Ihre Ideen realisieren.</p>
+      <a href="/kontakt/" class="btn-primary">Kontakt aufnehmen</a>
     </div>
   </section>
 
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="/Bilder/logo.png" alt="Steiger-Systems Logo" class="footer-logo">
+        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
+        </a>
         <p>Automatisierung &amp; Steuerungstechnik</p>
       </div>
       <nav class="footer-nav">

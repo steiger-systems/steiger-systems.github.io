@@ -3,7 +3,23 @@
     "allow": [
       "Bash(Get-ChildItem \"c:\\\\Users\\\\steig\\\\OneDrive\\\\Projects\\\\Lerneinheiten\\\\Webseite Steiger-Systems\\\\steigersystems.github.io\" -Recurse -File)",
       "Bash(Select-Object Name, DirectoryName)",
-      "Bash(Sort-Object DirectoryName, Name)"
+      "Bash(Sort-Object DirectoryName, Name)",
+      "Skill(artifact-design)",
+      "Artifact",
+      "Bash(git rm *)",
+      "Bash(python preview_build.py)",
+      "Bash(python -m http.server 8742)",
+      "Bash(python -c ' *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh run *)",
+      "Bash(curl -s \"https://api.github.com/repos/steiger-systems/steiger-systems.github.io/actions/runs?per_page=1\")",
+      "Bash(python -c \"import json,sys; r=json.load\\(sys.stdin\\)['workflow_runs'][0]; print\\(r['name'], '|', r['status'], '|', r['conclusion'], '|', r['head_sha'][:7]\\)\")",
+      "Bash(python -m http.server 8743)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://127.0.0.1:8743/index.html)",
+      "PowerShell(Get-CimInstance *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 2 http://127.0.0.1:8743/index.html)"
     ]
   }
 }

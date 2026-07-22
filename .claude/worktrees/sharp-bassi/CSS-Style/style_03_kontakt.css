@@ -1,0 +1,582 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scroll Animations ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Header & Navigation ── */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 40px;
+}
+
+.NavbarLogo img {
+  height: 42px;
+  width: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0066ff, #4da6ff);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #0066ff;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(0, 102, 255, 0.07);
+  color: #0055dd;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 100px;
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 102, 255, 0.14);
+}
+
+/* ── Page Hero ── */
+.page-hero {
+  padding: 160px 40px 80px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.page-hero h1 {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  margin-bottom: 16px;
+  color: #0d0d0d;
+}
+
+.page-hero p {
+  font-size: 20px;
+  color: #666;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Contact Section ── */
+.contact-section {
+  padding: 60px 40px 120px;
+  background-color: #ffffff;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Contact Info ── */
+.contact-info {
+  background: #f9f9fb;
+  padding: 48px;
+  border-radius: 20px;
+  border: 1px solid #ececec;
+}
+
+.contact-info h2 {
+  color: #0d0d0d;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.contact-info .intro {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.contact-details {
+  margin-bottom: 36px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.detail-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 102, 255, 0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0066ff;
+  flex-shrink: 0;
+}
+
+.detail-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.detail-item h3 {
+  color: #0d0d0d;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  letter-spacing: -0.01em;
+}
+
+.detail-item p {
+  color: #555;
+  font-size: 15px;
+}
+
+/* ── Services Offered ── */
+.services-offered {
+  background: white;
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid #e8e8e8;
+}
+
+.services-offered h3 {
+  color: #0d0d0d;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.services-offered ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services-offered ul li {
+  padding: 9px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #555;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.services-offered ul li:last-child {
+  border-bottom: none;
+}
+
+.services-offered ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #0066ff;
+  border-radius: 50%;
+}
+
+/* ── Contact Form Container ── */
+.contact-form-container {
+  background: #f9f9fb;
+  padding: 48px;
+  border-radius: 20px;
+  border: 1px solid #ececec;
+}
+
+.contact-form-container h3 {
+  color: #0d0d0d;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+/* ── Contact Form ── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 13px 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: white;
+  color: #1a1a1a;
+  -webkit-appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #bbb;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0066ff;
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* ── Form Feedback Messages ── */
+.form-success,
+.form-error {
+  display: none;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.form-success {
+  background: rgba(22, 163, 74, 0.08);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  color: #166534;
+}
+
+.form-error {
+  background: rgba(220, 38, 38, 0.07);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+}
+
+.form-success svg,
+.form-error svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.form-success strong,
+.form-error strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.form-success p,
+.form-error p {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+/* ── Submit Button ── */
+.btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #0066ff 0%, #0050dd 100%);
+  color: white;
+  padding: 15px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.28);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.btn-submit svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 102, 255, 0.38);
+}
+
+/* ── Footer ── */
+footer {
+  padding: 60px 40px;
+  background-color: #f9f9fb;
+  border-top: 1px solid #ececec;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.footer-nav a {
+  color: #555;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: #0066ff;
+}
+
+.footer-copy {
+  color: #aaa;
+  font-size: 13px;
+}
+
+/* ── Theme Toggle Button ── */
+.theme-toggle {
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover { border-color: #0066ff; color: #0066ff; }
+.theme-toggle svg { width: 18px; height: 18px; }
+.icon-sun { display: none; }
+[data-theme="dark"] .icon-sun { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
+
+/* ── Dark Mode ── */
+[data-theme="dark"] body { background-color: #0f0f0f; color: #d0d0d0; }
+
+[data-theme="dark"] header {
+  background-color: rgba(15, 15, 15, 0.97);
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="dark"] nav a { color: #d0d0d0; }
+[data-theme="dark"] .theme-toggle { border-color: #2e2e2e; color: #d0d0d0; }
+[data-theme="dark"] .theme-toggle:hover { border-color: #4da6ff; color: #4da6ff; }
+
+[data-theme="dark"] .badge {
+  background: rgba(0, 102, 255, 0.15);
+  border-color: rgba(0, 102, 255, 0.3);
+}
+
+[data-theme="dark"] .page-hero { background-color: #0f0f0f; }
+[data-theme="dark"] .page-hero h1 { color: #f2f2f2; }
+[data-theme="dark"] .page-hero p { color: #888; }
+
+[data-theme="dark"] .contact-section { background-color: #0f0f0f; }
+
+[data-theme="dark"] .contact-info,
+[data-theme="dark"] .contact-form-container {
+  background: #161616;
+  border-color: #252525;
+}
+
+[data-theme="dark"] .contact-info h2 { color: #f2f2f2; }
+[data-theme="dark"] .contact-info .intro { color: #888; }
+
+[data-theme="dark"] .detail-item { border-color: #222; }
+[data-theme="dark"] .detail-icon { background: rgba(0, 102, 255, 0.18); }
+[data-theme="dark"] .detail-item h3 { color: #ddd; }
+[data-theme="dark"] .detail-item p { color: #888; }
+
+[data-theme="dark"] .services-offered {
+  background: #111;
+  border-color: #252525;
+}
+
+[data-theme="dark"] .services-offered h3 { color: #f0f0f0; }
+
+[data-theme="dark"] .services-offered ul li {
+  color: #888;
+  border-color: #222;
+}
+
+[data-theme="dark"] .contact-form-container h3 { color: #f2f2f2; }
+[data-theme="dark"] .form-group label { color: #bbb; }
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+  background-color: #111;
+  border-color: #2e2e2e;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+  border-color: #4da6ff;
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.15);
+}
+
+[data-theme="dark"] footer { background-color: #0a0a0a; border-color: #1e1e1e; }
+[data-theme="dark"] .footer-nav a { color: #666; }
+[data-theme="dark"] .footer-nav a:hover { color: #4da6ff; }
+[data-theme="dark"] .footer-copy { color: #3a3a3a; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 24px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .page-hero {
+    padding: 120px 24px 60px;
+  }
+
+  .page-hero h1 {
+    font-size: 44px;
+  }
+
+  .contact-section {
+    padding: 40px 24px 80px;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contact-info,
+  .contact-form-container {
+    padding: 32px 24px;
+  }
+
+  .contact-form-container h3 {
+    font-size: 22px;
+  }
+
+  .footer-nav {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
