@@ -15,7 +15,7 @@ redirect_from:
   <link rel="icon" type="image/png" href="/Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/CSS-Style/main.css">
 
   <!--
@@ -35,28 +35,27 @@ redirect_from:
 
   <!-- ── Header ── -->
   <header>
-    <nav>
-      <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
-      </a>
-      <ul>
-        <li><a href="/projekte/">Projekte</a></li>
-        <li><a href="/about/">Über mich</a></li>
-        <li><a href="/kontakt/">Kontakt</a></li>
-        <li><a href="/shop/" aria-current="page">Shop</a></li>
-      </ul>
+    <nav class="top container">
+      <div class="nav-left">
+        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">STEIGER-SYSTEMS</a>
+        <ul id="navMenu">
+          <li><a href="/projekte/">Projekte</a></li>
+          <li><a href="/about/">Über mich</a></li>
+          <li><a href="/kontakt/">Kontakt</a></li>
+          <li><a href="/shop/" aria-current="page">Shop</a></li>
+        </ul>
+      </div>
       <div class="nav-right">
-        <!-- Cart icon -->
+        <a href="/kontakt/" class="btn-nav">Anfrage senden</a>
         <button class="cart-btn" id="cartBtn" aria-label="Warenkorb öffnen">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
           </svg>
           <span class="cart-badge" id="cartBadge">0</span>
         </button>
-        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen">
-          <span></span><span></span><span></span>
+        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
+          <span></span><span></span>
         </button>
       </div>
     </nav>
@@ -65,7 +64,7 @@ redirect_from:
   <!-- ── Page Hero ── -->
   <section class="page-hero">
     <div class="container">
-      <span class="badge">Hardware &amp; Elektronik</span>
+      <div class="label"><span>Shop</span><span>—</span><span>Hardware &amp; Elektronik</span></div>
       <h1>Shop</h1>
       <p>Platinen, Bauteile und Druckdateien aus meinen Projekten.</p>
     </div>
@@ -90,7 +89,7 @@ redirect_from:
       </div>
 
       <!-- Product Grid -->
-      <div class="shop-grid fade-in" id="shopGrid">
+      <div class="shop-grid" id="shopGrid">
 
         <!-- Products are rendered by JS from the products array below -->
 
@@ -100,14 +99,8 @@ redirect_from:
 
   <!-- ── Footer ── -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
-        </a>
-        <p>Automatisierung &amp; Steuerungstechnik</p>
-      </div>
+    <div class="container footer-inner">
+      <span>&copy; {{ site.time | date: "%Y" }} Steiger-Systems · Renato Steiger · Schweiz</span>
       <nav class="footer-nav">
         <a href="/">Startseite</a>
         <a href="/projekte/">Projekte</a>
@@ -115,7 +108,6 @@ redirect_from:
         <a href="/kontakt/">Kontakt</a>
         <a href="/shop/">Shop</a>
       </nav>
-      <p class="footer-copy">&copy; {{ site.time | date: "%Y" }} Steiger-Systems</p>
     </div>
   </footer>
 
@@ -131,10 +123,6 @@ redirect_from:
       </button>
       <div class="modal-img-side" id="modalImgSide">
         <div class="modal-img-placeholder" id="modalImgPlaceholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
           <span id="modalImgLabel"></span>
         </div>
       </div>
@@ -442,11 +430,7 @@ redirect_from:
         card.innerHTML = `
           <div class="product-img-wrap">
             <div class="product-img-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <span>${product.name}</span>
+              <span>Foto / ${product.name}</span>
             </div>
             <span class="product-category-tag">${product.categoryLabel}</span>
           </div>
@@ -523,7 +507,7 @@ redirect_from:
       modalCategory.textContent = product.categoryLabel;
       modalLongDesc.textContent = product.longDesc;
       modalPrice.textContent    = formatPrice(product.price);
-      modalImgLabel.textContent = product.name;
+      modalImgLabel.textContent = 'Foto / ' + product.name;
       modalQty.value = 1;
       productModal.classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -716,7 +700,7 @@ redirect_from:
       let valid = true;
       requiredFields.forEach(f => {
         if (!f.value.trim()) {
-          f.style.borderColor = '#e53e3e';
+          f.style.borderColor = 'var(--err)';
           valid = false;
         } else {
           f.style.borderColor = '';

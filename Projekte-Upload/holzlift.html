@@ -15,25 +15,25 @@ redirect_from:
   <link rel="icon" type="image/png" href="/Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/CSS-Style/main.css">
 </head>
 <body>
   <header>
-    <nav>
-      <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
-      </a>
-      <ul>
-        <li><a href="/projekte/" aria-current="page">Projekte</a></li>
-        <li><a href="/about/">Über mich</a></li>
-        <li><a href="/kontakt/">Kontakt</a></li>
-        <li><a href="/shop/">Shop</a></li>
-      </ul>
+    <nav class="top container">
+      <div class="nav-left">
+        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">STEIGER-SYSTEMS</a>
+        <ul id="navMenu">
+          <li><a href="/projekte/" aria-current="page">Projekte</a></li>
+          <li><a href="/about/">Über mich</a></li>
+          <li><a href="/kontakt/">Kontakt</a></li>
+          <li><a href="/shop/">Shop</a></li>
+        </ul>
+      </div>
       <div class="nav-right">
-        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen">
-          <span></span><span></span><span></span>
+        <a href="/kontakt/" class="btn-nav">Anfrage senden</a>
+        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
+          <span></span><span></span>
         </button>
       </div>
     </nav>
@@ -41,7 +41,7 @@ redirect_from:
 
   <section class="page-hero">
     <div class="container">
-      <span class="badge">Automatisierung</span>
+      <div class="label"><span>Projekt</span><span>—</span><span>Automatisierung</span></div>
       <h1>Holzlift-Steuerung</h1>
       <p>Ein Lift bringt Brennholz vom Keller in den Wohnbereich &ndash; per Tastendruck.</p>
     </div>
@@ -50,10 +50,10 @@ redirect_from:
   <section class="projects-section">
     <div class="container">
 
-      <div class="project-card featured fade-in">
+      <article class="project-card">
         <div class="project-header">
           <div>
-            <span class="project-status">Abgeschlossen • 2025</span>
+            <span class="project-status">Abgeschlossen · 2025</span>
             <h2>Holzlift-Steuerung</h2>
           </div>
           <span class="project-tag">Automatisierung</span>
@@ -68,7 +68,7 @@ redirect_from:
             </p>
 
             <h3>Technik</h3>
-            <ul>
+            <ul class="dash-list">
               <li><strong>Steuerung:</strong> Siemens LOGO!</li>
               <li><strong>Bedienung:</strong> Taster für Start und Stopp</li>
               <li><strong>Positionen:</strong> Endschalter erkennen die Endpositionen</li>
@@ -82,7 +82,7 @@ redirect_from:
             </p>
 
             <h3>Was es bringt</h3>
-            <ul>
+            <ul class="dash-list">
               <li>Kein Holztragen mehr</li>
               <li>Einfache Bedienung über Taster</li>
               <li>Lift stoppt zuverlässig an der Endposition</li>
@@ -90,52 +90,30 @@ redirect_from:
             </ul>
           </div>
           <div class="project-image">
-            <div class="project-schematic-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <span>Bild folgt</span>
+            <div class="placeholder">
+              <div class="media-caption"><span>Foto / Holzlift</span><span>—</span><span>folgt</span></div>
             </div>
             <div class="project-specs">
               <h4>Eckdaten</h4>
-              <div class="spec-row">
-                <span class="spec-label">Jahr</span>
-                <span class="spec-value">2025</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Kategorie</span>
-                <span class="spec-value">Automatisierung</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Steuerung</span>
-                <span class="spec-value">Siemens LOGO!</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Status</span>
-                <span class="spec-value spec-done">Abgeschlossen</span>
-              </div>
+              <div class="spec-row"><span class="spec-label">Jahr</span><span class="spec-value">2025</span></div>
+              <div class="spec-row"><span class="spec-label">Kategorie</span><span class="spec-value">Automatisierung</span></div>
+              <div class="spec-row"><span class="spec-label">Steuerung</span><span class="spec-value">Siemens LOGO!</span></div>
+              <div class="spec-row"><span class="spec-label">Status</span><span class="spec-value">Abgeschlossen</span></div>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
       <div class="back-link">
-        <a href="/projekte/" class="btn-secondary">← Alle Projekte</a>
+        <a href="/projekte/" class="btn-outline">← Alle Projekte</a>
       </div>
 
     </div>
   </section>
 
   <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
-        </a>
-        <p>Automatisierung &amp; Steuerungstechnik</p>
-      </div>
+    <div class="container footer-inner">
+      <span>&copy; {{ site.time | date: "%Y" }} Steiger-Systems · Renato Steiger · Schweiz</span>
       <nav class="footer-nav">
         <a href="/">Startseite</a>
         <a href="/projekte/">Projekte</a>
@@ -143,7 +121,6 @@ redirect_from:
         <a href="/kontakt/">Kontakt</a>
         <a href="/shop/">Shop</a>
       </nav>
-      <p class="footer-copy">&copy; {{ site.time | date: "%Y" }} Steiger-Systems</p>
     </div>
   </footer>
 

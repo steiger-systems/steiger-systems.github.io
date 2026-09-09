@@ -16,25 +16,25 @@ redirect_from:
   <link rel="icon" type="image/png" href="/Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/CSS-Style/main.css">
 </head>
 <body>
   <header>
-    <nav>
-      <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
-      </a>
-      <ul>
-        <li><a href="/projekte/">Projekte</a></li>
-        <li><a href="/about/" aria-current="page">Über mich</a></li>
-        <li><a href="/kontakt/">Kontakt</a></li>
-        <li><a href="/shop/">Shop</a></li>
-      </ul>
+    <nav class="top container">
+      <div class="nav-left">
+        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">STEIGER-SYSTEMS</a>
+        <ul id="navMenu">
+          <li><a href="/projekte/">Projekte</a></li>
+          <li><a href="/about/" aria-current="page">Über mich</a></li>
+          <li><a href="/kontakt/">Kontakt</a></li>
+          <li><a href="/shop/">Shop</a></li>
+        </ul>
+      </div>
       <div class="nav-right">
-        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen">
-          <span></span><span></span><span></span>
+        <a href="/kontakt/" class="btn-nav">Anfrage senden</a>
+        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
+          <span></span><span></span>
         </button>
       </div>
     </nav>
@@ -42,7 +42,7 @@ redirect_from:
 
   <section class="page-hero">
     <div class="container">
-      <span class="badge">Über mich</span>
+      <div class="label"><span>Über mich</span></div>
       <h1>Renato Steiger</h1>
       <p>Ich programmiere Steuerungen, baue sie auf und bringe Anlagen zum Laufen.</p>
     </div>
@@ -50,77 +50,49 @@ redirect_from:
 
   <section class="about-content">
     <div class="container">
-      <div class="about-intro fade-in">
-        <div class="intro-text">
-          <h2>Wer dahintersteckt</h2>
-          <p>
-            Steiger-Systems, das bin ich: Renato Steiger. Ich programmiere SPS-Steuerungen, zeichne Schaltpläne,
-            verdrahte und nehme Anlagen in Betrieb. Daneben entwickle ich eigene Elektronik, zum Beispiel TempWatch.
-            Mir ist wichtig, dass eine Lösung im Alltag funktioniert und nicht nur auf dem Papier.
-          </p>
-        </div>
+      <div class="about-intro">
+        <h2>Wer dahintersteckt</h2>
+        <p>
+          Steiger-Systems, das bin ich: Renato Steiger. Ich programmiere SPS-Steuerungen, zeichne Schaltpläne,
+          verdrahte und nehme Anlagen in Betrieb. Daneben entwickle ich eigene Elektronik, zum Beispiel TempWatch.
+          Mir ist wichtig, dass eine Lösung im Alltag funktioniert und nicht nur auf dem Papier.
+        </p>
       </div>
 
-      <div class="skills-section fade-in">
+      <div class="skills-section">
         <h2>Was ich kann</h2>
         <div class="skills-grid">
           <div class="skill-card">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="4" y="4" width="16" height="16" rx="2"/>
-                <rect x="9" y="9" width="6" height="6"/>
-                <path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M20 9h2M2 15h2M20 15h2"/>
-              </svg>
-            </div>
+            <div class="step-num">01</div>
             <h3>SPS-Programmierung</h3>
-            <ul>
+            <ul class="dash-list">
               <li>Siemens LOGO! und S7</li>
               <li>Programme schreiben und anpassen</li>
               <li>Fehler suchen und beheben</li>
             </ul>
           </div>
-
           <div class="skill-card">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-              </svg>
-            </div>
+            <div class="step-num">02</div>
             <h3>Elektrotechnik</h3>
-            <ul>
+            <ul class="dash-list">
               <li>Schaltpläne zeichnen</li>
               <li>Verdrahten und installieren</li>
               <li>Anlagen in Betrieb nehmen</li>
             </ul>
           </div>
-
           <div class="skill-card">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-              </svg>
-            </div>
+            <div class="step-num">03</div>
             <h3>Automatisierung</h3>
-            <ul>
+            <ul class="dash-list">
               <li>Abläufe automatisieren</li>
               <li>Sensoren und Aktoren anbinden</li>
               <li>Taster- und Endschalter-Steuerungen</li>
             </ul>
           </div>
-
           <div class="skill-card">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-                <polyline points="10 9 9 9 8 9"/>
-              </svg>
-            </div>
+            <div class="step-num">04</div>
             <h3>Projektabwicklung</h3>
-            <ul>
+            <ul class="dash-list">
               <li>Planung von Anfang bis Ende</li>
               <li>Absprache mit Ihnen, ohne Umwege</li>
               <li>Dokumentation und Übergabe</li>
@@ -129,7 +101,7 @@ redirect_from:
         </div>
       </div>
 
-      <div class="technologies fade-in">
+      <div class="technologies">
         <h2>Womit ich arbeite</h2>
         <div class="tech-list">
           <span class="tech-tag">Siemens LOGO!</span>
@@ -145,25 +117,17 @@ redirect_from:
         </div>
       </div>
 
-      <div class="cta-section fade-in">
+      <div class="cta-section">
         <h2>Haben Sie ein Projekt?</h2>
-        <p>
-          Egal ob Automatisierung, Steuerung oder eigene Elektronik: Schreiben Sie mir, worum es geht.
-        </p>
-        <a href="/kontakt/" class="btn-primary">Kontakt aufnehmen</a>
+        <p>Egal ob Automatisierung, Steuerung oder eigene Elektronik: Schreiben Sie mir, worum es geht.</p>
+        <a href="/kontakt/" class="btn-primary">Anfrage senden</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
-        </a>
-        <p>Automatisierung &amp; Steuerungstechnik</p>
-      </div>
+    <div class="container footer-inner">
+      <span>&copy; {{ site.time | date: "%Y" }} Steiger-Systems · Renato Steiger · Schweiz</span>
       <nav class="footer-nav">
         <a href="/">Startseite</a>
         <a href="/projekte/">Projekte</a>
@@ -171,7 +135,6 @@ redirect_from:
         <a href="/kontakt/">Kontakt</a>
         <a href="/shop/">Shop</a>
       </nav>
-      <p class="footer-copy">&copy; {{ site.time | date: "%Y" }} Steiger-Systems</p>
     </div>
   </footer>
 
