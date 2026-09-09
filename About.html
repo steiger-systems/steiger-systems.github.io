@@ -102,18 +102,24 @@ redirect_from:
       </div>
 
       <div class="technologies">
-        <h2>Womit ich arbeite</h2>
-        <div class="tech-list">
-          <span class="tech-tag">Siemens LOGO!</span>
-          <span class="tech-tag">Siemens S7</span>
-          <span class="tech-tag">Schaltplan</span>
-          <span class="tech-tag">Elektroinstallation</span>
-          <span class="tech-tag">Sensorik &amp; Aktorik</span>
-          <span class="tech-tag">ESP32</span>
-          <span class="tech-tag">ESPHome</span>
-          <span class="tech-tag">CAN-Bus</span>
-          <span class="tech-tag">PCB-Design</span>
-          <span class="tech-tag">3D-Druck</span>
+        <div class="deco deco--sys" aria-hidden="true"></div>
+        <div class="section-head">
+          <h2>Womit ich arbeite</h2>
+          <div class="label"><span>Stand {{ site.time | date: "%Y" }}</span></div>
+        </div>
+        <div class="sys-grid">
+          <span class="cross cross--tl" aria-hidden="true">+</span>
+          <span class="cross cross--tr" aria-hidden="true">+</span>
+          <div class="sys-cell"><div class="sys-cat">SPS</div><div class="sys-title">Siemens LOGO!</div><div class="sys-detail">Kleinsteuerungen, Logikprogramme</div></div>
+          <div class="sys-cell"><div class="sys-cat">SPS</div><div class="sys-title">Siemens S7</div><div class="sys-detail">Programmierung, Inbetriebnahme</div></div>
+          <div class="sys-cell"><div class="sys-cat">Planung</div><div class="sys-title">Schaltplan</div><div class="sys-detail">Elektroplanung, Stückliste</div></div>
+          <div class="sys-cell"><div class="sys-cat">Elektro</div><div class="sys-title">Installation</div><div class="sys-detail">Verdrahtung, Inbetriebnahme</div></div>
+          <div class="sys-cell"><div class="sys-cat">Sensorik</div><div class="sys-title">Sensoren &amp; Aktoren</div><div class="sys-detail">Taster, Endschalter, Fühler</div></div>
+          <div class="sys-cell"><div class="sys-cat">Embedded</div><div class="sys-title">ESP32</div><div class="sys-detail">ESPHome, Home Assistant</div></div>
+          <div class="sys-cell"><div class="sys-cat">Bus</div><div class="sys-title">CAN-Bus</div><div class="sys-detail">MCP2515, ISO 11898</div></div>
+          <div class="sys-cell"><div class="sys-cat">Elektronik</div><div class="sys-title">Eigene Hardware</div><div class="sys-detail">PCB-Design, 3D-Druck</div></div>
+          <span class="cross cross--bl" aria-hidden="true">+</span>
+          <span class="cross cross--br" aria-hidden="true">+</span>
         </div>
       </div>
 
@@ -126,15 +132,10 @@ redirect_from:
   </section>
 
   <footer>
-    <div class="container footer-inner">
-      <span>&copy; {{ site.time | date: "%Y" }} Steiger-Systems · Renato Steiger · Schweiz</span>
-      <nav class="footer-nav">
-        <a href="/">Startseite</a>
-        <a href="/projekte/">Projekte</a>
-        <a href="/about/">Über mich</a>
-        <a href="/kontakt/">Kontakt</a>
-        <a href="/shop/">Shop</a>
-      </nav>
+    <div class="container footer-grid">
+      <div class="footer-col"><span class="accent">Steiger-Systems</span><br><span class="soft">Renato Steiger</span></div>
+      <div class="footer-col"><a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a><br>Schweiz</div>
+      <div class="footer-col"><a href="/">Startseite</a> · <a href="/projekte/">Projekte</a> · <a href="/about/">Über mich</a> · <a href="/kontakt/">Kontakt</a> · <a href="/shop/">Shop</a><br>&copy; {{ site.time | date: "%Y" }}</div>
     </div>
   </footer>
 
