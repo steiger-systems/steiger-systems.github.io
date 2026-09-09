@@ -6,6 +6,14 @@
 (function () {
   'use strict';
 
+  // Leiste liegt transparent über dem Hero; ab 10px Scroll dunkler Grund + Hairline
+  const header = document.querySelector('header');
+  if (header) {
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   const burger = document.getElementById('navBurger');
   if (!burger) return;
 
