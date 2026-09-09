@@ -53,7 +53,7 @@ redirect_from:
       <article class="project-card">
         <div class="project-header">
           <div>
-            <span class="project-status">Abgeschlossen · 2025</span>
+            <span class="project-status">Abgeschlossen · <b>2025</b></span>
             <h2>Holzlift-Steuerung</h2>
           </div>
           <span class="project-tag">Automatisierung</span>
@@ -112,15 +112,10 @@ redirect_from:
   </section>
 
   <footer>
-    <div class="container footer-inner">
-      <span>&copy; {{ site.time | date: "%Y" }} Steiger-Systems · Renato Steiger · Schweiz</span>
-      <nav class="footer-nav">
-        <a href="/">Startseite</a>
-        <a href="/projekte/">Projekte</a>
-        <a href="/about/">Über mich</a>
-        <a href="/kontakt/">Kontakt</a>
-        <a href="/shop/">Shop</a>
-      </nav>
+    <div class="container footer-grid">
+      <div class="footer-col"><span class="accent">Steiger-Systems</span><br><span class="soft">Renato Steiger</span></div>
+      <div class="footer-col"><a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a><br>Schweiz</div>
+      <div class="footer-col"><a href="/">Startseite</a> · <a href="/projekte/">Projekte</a> · <a href="/about/">Über mich</a> · <a href="/kontakt/">Kontakt</a> · <a href="/shop/">Shop</a><br>&copy; {{ site.time | date: "%Y" }}</div>
     </div>
   </footer>
 
