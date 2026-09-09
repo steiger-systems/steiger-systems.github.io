@@ -16,25 +16,25 @@ redirect_from:
   <link rel="icon" type="image/png" href="/Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/CSS-Style/main.css">
 </head>
 <body>
   <header>
-    <nav>
-      <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
-      </a>
-      <ul>
-        <li><a href="/projekte/">Projekte</a></li>
-        <li><a href="/about/">Über mich</a></li>
-        <li><a href="/kontakt/" aria-current="page">Kontakt</a></li>
-        <li><a href="/shop/">Shop</a></li>
-      </ul>
+    <nav class="top container">
+      <div class="nav-left">
+        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">STEIGER-SYSTEMS</a>
+        <ul id="navMenu">
+          <li><a href="/projekte/">Projekte</a></li>
+          <li><a href="/about/">Über mich</a></li>
+          <li><a href="/kontakt/" aria-current="page">Kontakt</a></li>
+          <li><a href="/shop/">Shop</a></li>
+        </ul>
+      </div>
       <div class="nav-right">
-        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen">
-          <span></span><span></span><span></span>
+        <a href="#contactForm" class="btn-nav">Anfrage senden</a>
+        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
+          <span></span><span></span>
         </button>
       </div>
     </nav>
@@ -42,149 +42,97 @@ redirect_from:
 
   <section class="page-hero">
     <div class="container">
-      <span class="badge">Kontakt</span>
+      <div class="label"><span>Kontakt</span></div>
       <h1>Schreiben Sie mir</h1>
       <p>Kurz beschreiben, worum es geht &ndash; ich melde mich.</p>
     </div>
   </section>
 
   <section class="contact-section">
-    <div class="container">
-      <div class="contact-content fade-in">
-        <div class="contact-info">
-          <h2>Steiger-Systems</h2>
-          <p class="intro">
-            Sie haben eine Anlage, die automatisiert werden soll? Eine Steuerung, die nicht mehr richtig läuft?
-            Oder eine Idee für eine eigene Elektronik? Schreiben Sie mir. Ich schaue es mir an und sage Ihnen
-            ehrlich, was geht.
-          </p>
+    <div class="container contact-content">
+      <div class="contact-info">
+        <h2>Steiger-Systems</h2>
+        <p class="intro">
+          Sie haben eine Anlage, die automatisiert werden soll? Eine Steuerung, die nicht mehr richtig läuft?
+          Oder eine Idee für eine eigene Elektronik? Schreiben Sie mir. Ich schaue es mir an und sage Ihnen
+          ehrlich, was geht.
+        </p>
 
-          <div class="contact-details">
-            <div class="detail-item">
-              <div class="detail-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div>
-                <h3>E-Mail</h3>
-                <p><a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a></p>
-              </div>
-            </div>
-
-            <div class="detail-item">
-              <div class="detail-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-              </div>
-              <div>
-                <h3>Telefon</h3>
-                <p>Nummer auf Anfrage</p>
-              </div>
-            </div>
-
-            <div class="detail-item">
-              <div class="detail-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-              </div>
-              <div>
-                <h3>Standort</h3>
-                <p>Schweiz</p>
-              </div>
-            </div>
+        <div class="contact-details">
+          <div class="detail-item">
+            <h3>E-Mail</h3>
+            <p><a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a></p>
           </div>
-
-          <div class="services-offered">
-            <h3>Das mache ich</h3>
-            <ul>
-              <li>SPS-Programmierung (Siemens LOGO!, S7)</li>
-              <li>Anlagen automatisieren</li>
-              <li>Steuerungen aufbauen</li>
-              <li>Planung und Umsetzung</li>
-              <li>Inbetriebnahme und Wartung</li>
-            </ul>
+          <div class="detail-item">
+            <h3>Telefon</h3>
+            <p>Nummer auf Anfrage</p>
+          </div>
+          <div class="detail-item">
+            <h3>Standort</h3>
+            <p>Schweiz</p>
           </div>
         </div>
 
-        <div class="contact-form-container">
-          <h3>Nachricht senden</h3>
-
-          <div class="form-success" id="formSuccess">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            <div>
-              <strong>Nachricht gesendet</strong>
-              <p>Danke &ndash; ich melde mich so bald wie möglich.</p>
-            </div>
-          </div>
-
-          <div class="form-error" id="formError">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-            <div>
-              <strong>Senden hat nicht geklappt</strong>
-              <p>Bitte noch einmal versuchen oder direkt an steiger.development@gmail.com schreiben.</p>
-            </div>
-          </div>
-
-          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xreawegg" method="POST">
-            <div class="form-group">
-              <label for="name">Name *</label>
-              <input type="text" id="name" name="name" placeholder="Ihr Name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email">E-Mail *</label>
-              <input type="email" id="email" name="email" placeholder="ihre@email.ch" required>
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Telefon</label>
-              <input type="tel" id="phone" name="phone" placeholder="Optional">
-            </div>
-
-            <div class="form-group">
-              <label for="subject">Betreff *</label>
-              <input type="text" id="subject" name="subject" placeholder="Worum geht es?" required>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Nachricht *</label>
-              <textarea id="message" name="message" rows="6" placeholder="Was soll gebaut oder gelöst werden? Ein paar Sätze reichen." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-submit" id="submitBtn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="22" y1="2" x2="11" y2="13"/>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-              </svg>
-              Nachricht senden
-            </button>
-          </form>
+        <div class="services-offered">
+          <h3>Das mache ich</h3>
+          <ul class="dash-list">
+            <li>SPS-Programmierung (Siemens LOGO!, S7)</li>
+            <li>Anlagen automatisieren</li>
+            <li>Steuerungen aufbauen</li>
+            <li>Planung und Umsetzung</li>
+            <li>Inbetriebnahme und Wartung</li>
+          </ul>
         </div>
+      </div>
+
+      <div class="contact-form-container">
+        <h3>Nachricht senden</h3>
+
+        <div class="form-success" id="formSuccess">
+          <strong>Nachricht gesendet</strong>
+          <p>Danke &ndash; ich melde mich so bald wie möglich.</p>
+        </div>
+
+        <div class="form-error" id="formError">
+          <strong>Senden hat nicht geklappt</strong>
+          <p>Bitte noch einmal versuchen oder direkt an steiger.development@gmail.com schreiben.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xreawegg" method="POST">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-Mail *</label>
+            <input type="email" id="email" name="email" placeholder="ihre@email.ch" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" placeholder="Optional">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Betreff *</label>
+            <input type="text" id="subject" name="subject" placeholder="Worum geht es?" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Nachricht *</label>
+            <textarea id="message" name="message" rows="6" placeholder="Was soll gebaut oder gelöst werden? Ein paar Sätze reichen." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">Nachricht senden</button>
+        </form>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
-        </a>
-        <p>Automatisierung &amp; Steuerungstechnik</p>
-      </div>
+    <div class="container footer-inner">
+      <span>&copy; {{ site.time | date: "%Y" }} Steiger-Systems · Renato Steiger · Schweiz</span>
       <nav class="footer-nav">
         <a href="/">Startseite</a>
         <a href="/projekte/">Projekte</a>
@@ -192,7 +140,6 @@ redirect_from:
         <a href="/kontakt/">Kontakt</a>
         <a href="/shop/">Shop</a>
       </nav>
-      <p class="footer-copy">&copy; {{ site.time | date: "%Y" }} Steiger-Systems</p>
     </div>
   </footer>
 
@@ -203,7 +150,7 @@ redirect_from:
     const submitBtn = document.getElementById('submitBtn');
     const successMsg = document.getElementById('formSuccess');
     const errorMsg = document.getElementById('formError');
-    const submitBtnHTML = submitBtn.innerHTML;
+    const submitBtnText = submitBtn.textContent;
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -221,16 +168,16 @@ redirect_from:
 
         if (response.ok) {
           form.style.display = 'none';
-          successMsg.style.display = 'flex';
+          successMsg.style.display = 'block';
           return;
         }
       } catch (err) {
         // Netzwerkfehler: unten Fehlermeldung zeigen
       }
 
-      errorMsg.style.display = 'flex';
+      errorMsg.style.display = 'block';
       submitBtn.disabled = false;
-      submitBtn.innerHTML = submitBtnHTML;
+      submitBtn.textContent = submitBtnText;
     });
   </script>
 </body>
