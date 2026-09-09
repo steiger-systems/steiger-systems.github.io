@@ -39,44 +39,7 @@
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  /* ── 4. Counter Animation ── */
-  function animateCounter(el) {
-    const text = el.textContent.trim();
-    const match = text.match(/^(\d+)(.*)$/);
-    if (!match) return;
-
-    const target  = parseInt(match[1], 10);
-    const suffix  = match[2];
-    const duration = 1200;
-    const startTime = performance.now();
-
-    function tick(now) {
-      const elapsed  = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased    = 1 - Math.pow(1 - progress, 3); // cubic ease-out
-      el.textContent = Math.round(eased * target) + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
-    }
-
-    requestAnimationFrame(tick);
-  }
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        if (!reducedMotion) animateCounter(entry.target);
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  document.querySelectorAll('.stat-number').forEach(el => {
-    if (/^\d+/.test(el.textContent.trim())) {
-      counterObserver.observe(el);
-    }
-  });
-
-  /* ── 5. Marquee (tech-list) ── */
+  /* ── 4. Marquee (tech-list) ── */
   const techList = document.querySelector('.tech-list');
   if (techList && !reducedMotion) {
     const items = Array.from(techList.children);

@@ -9,43 +9,29 @@ redirect_from:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="TempWatch — Multi-Kanal Temperaturüberwachung mit ESP32-S3, CAN-Bus und ESPHome/Home-Assistant-Integration. Eigenes PCB-Design von Steiger-Systems.">
+  <meta name="description" content="TempWatch: Eigene Platine auf Basis eines ESP32-S3, die bis zu 8 Temperaturen misst und die Werte per CAN-Bus oder ESPHome an Home Assistant sendet.">
   <title>TempWatch — Steiger-Systems</title>
   <link rel="canonical" href="https://www.steigersystems.ch/projekte/tempwatch/">
   <link rel="icon" type="image/png" href="/Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/CSS-Style/main.css">
-  <script>if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');</script>
 </head>
 <body>
   <header>
     <nav>
-      <div class="NavbarLogo">
-        <a href="/">
-          <img src="/Bilder/logo.png" alt="Steiger-Systems Logo">
-        </a>
-      </div>
+      <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
+      </a>
       <ul>
-        <li><a href="/projekte/">Projekte</a></li>
+        <li><a href="/projekte/" aria-current="page">Projekte</a></li>
         <li><a href="/about/">Über mich</a></li>
         <li><a href="/kontakt/">Kontakt</a></li>
         <li><a href="/shop/">Shop</a></li>
       </ul>
       <div class="nav-right">
-        <button class="theme-toggle" id="themeToggle" aria-label="Farbschema umschalten">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-        </button>
         <button class="nav-burger" id="navBurger" aria-label="Menü öffnen">
           <span></span><span></span><span></span>
         </button>
@@ -57,7 +43,7 @@ redirect_from:
     <div class="container">
       <span class="badge">Embedded / IoT</span>
       <h1>TempWatch</h1>
-      <p>Kompaktes Multi-Kanal Temperaturüberwachungssystem auf Basis des ESP32-S3</p>
+      <p>Eine kleine Platine, die bis zu 8 Temperaturen misst und die Werte per CAN-Bus oder WLAN weitergibt.</p>
     </div>
   </section>
 
@@ -74,38 +60,37 @@ redirect_from:
         </div>
         <div class="project-content">
           <div class="project-description">
-            <h3>Projektbeschreibung</h3>
+            <h3>Worum es geht</h3>
             <p>
-              Entwicklung eines kompakten Multi-Kanal Temperaturüberwachungssystems auf Basis eines ESP32-S3.
-              Das System erfasst bis zu 8 Temperaturkanäle und überträgt die Messdaten wahlweise über CAN-Bus
-              oder via ESPHome (WiFi) an eine Heimautomatisierungs-Zentrale.
+              TempWatch ist eine eigene Platine auf Basis eines ESP32-S3. Sie misst bis zu 8 Temperaturen
+              gleichzeitig und schickt die Werte entweder über CAN-Bus oder per WLAN (ESPHome) an Home Assistant
+              oder eine andere Zentrale.
             </p>
 
-            <h3>Technische Details</h3>
+            <h3>Technik</h3>
             <ul>
-              <li><strong>Mikrocontroller:</strong> ESP32-S3-WROOM (WiFi + Bluetooth)</li>
-              <li><strong>CAN-Controller:</strong> MCP2515-I/ST via SPI</li>
-              <li><strong>CAN-Transceiver:</strong> SN65HVD230D (3,3V kompatibel)</li>
-              <li><strong>Temperatureingänge:</strong> 8 Kanäle (NTC/PT100/DS18B20)</li>
-              <li><strong>Programmierung:</strong> USB via CP2102N Adapter</li>
-              <li><strong>Versorgung:</strong> 3,3V Onboard-Spannungsversorgung</li>
+              <li><strong>Mikrocontroller:</strong> ESP32-S3-WROOM (WLAN + Bluetooth)</li>
+              <li><strong>CAN-Controller:</strong> MCP2515-I/ST über SPI</li>
+              <li><strong>CAN-Transceiver:</strong> SN65HVD230D (3,3 V)</li>
+              <li><strong>Temperatureingänge:</strong> 8 Kanäle (NTC / PT100 / DS18B20)</li>
+              <li><strong>Programmierung:</strong> USB über CP2102N</li>
+              <li><strong>Versorgung:</strong> 3,3 V, Spannungsregler auf der Platine</li>
             </ul>
 
             <h3>Kommunikation</h3>
             <p>
-              Das System unterstützt zwei Übertragungswege: Per <strong>CAN-Bus</strong> (ISO 11898) lässt
-              sich TempWatch direkt in industrielle Netzwerke einbinden. Alternativ ermöglicht die
-              <strong>ESPHome</strong>-Integration eine nahtlose Anbindung an Home Assistant oder andere
-              Smart-Home-Plattformen über WLAN.
+              Zwei Wege sind möglich. Über <strong>CAN-Bus</strong> (ISO 11898) hängt TempWatch direkt an einem
+              Industrie- oder Fahrzeugnetzwerk. Über <strong>ESPHome</strong> und WLAN landen die Werte in Home
+              Assistant oder einer anderen Smart-Home-Plattform.
             </p>
 
-            <h3>Vorteile</h3>
+            <h3>Was es bringt</h3>
             <ul>
-              <li>Flexibel einsetzbar: CAN-Bus oder WiFi/ESPHome</li>
-              <li>Kompaktes PCB-Design (eigene Leiterplattenentwicklung)</li>
-              <li>Bis zu 8 Temperaturkanäle gleichzeitig</li>
-              <li>Einfache Integration in Home Assistant</li>
-              <li>Open-Source Firmware via ESPHome</li>
+              <li>CAN-Bus oder WLAN, je nach Einsatz</li>
+              <li>Eigene, kompakte Platine</li>
+              <li>Bis zu 8 Kanäle gleichzeitig</li>
+              <li>Läuft direkt mit Home Assistant</li>
+              <li>Firmware auf Basis von ESPHome (Open Source)</li>
             </ul>
           </div>
           <div class="project-image">
@@ -116,10 +101,10 @@ redirect_from:
                 <rect x="13" y="13" width="9" height="9"/>
                 <rect x="2" y="13" width="9" height="9"/>
               </svg>
-              <span>PCB-Schaltplan</span>
+              <span>Bild folgt</span>
             </div>
             <div class="project-specs">
-              <h4>Projekt-Specs</h4>
+              <h4>Eckdaten</h4>
               <div class="spec-row">
                 <span class="spec-label">Jahr</span>
                 <span class="spec-value">2025</span>
@@ -141,7 +126,7 @@ redirect_from:
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 20px; padding-bottom: 40px;">
+      <div class="back-link">
         <a href="/projekte/" class="btn-secondary">← Alle Projekte</a>
       </div>
 
@@ -151,7 +136,10 @@ redirect_from:
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="/Bilder/logo.png" alt="Steiger-Systems Logo" class="footer-logo">
+        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">STEIGER<span class="brand-slash">/</span>SYSTEMS</span>
+        </a>
         <p>Automatisierung &amp; Steuerungstechnik</p>
       </div>
       <nav class="footer-nav">
@@ -161,7 +149,7 @@ redirect_from:
         <a href="/kontakt/">Kontakt</a>
         <a href="/shop/">Shop</a>
       </nav>
-      <p class="footer-copy">&copy; 2025 Steiger-Systems. Alle Rechte vorbehalten.</p>
+      <p class="footer-copy">&copy; {{ site.time | date: "%Y" }} Steiger-Systems</p>
     </div>
   </footer>
 
