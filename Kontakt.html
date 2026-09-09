@@ -10,7 +10,7 @@ redirect_from:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="Kontaktieren Sie Steiger-Systems für Ihr Automatisierungs- oder Steuerungstechnik-Projekt. SPS-Programmierung, Projektplanung und Realisierung aus der Schweiz.">
+  <meta name="description" content="Kontakt zu Steiger-Systems: Automatisierung, Steuerungstechnik und SPS-Programmierung aus der Schweiz. Kurz schreiben, worum es geht – ich melde mich.">
   <title>Kontakt — Steiger-Systems</title>
   <link rel="canonical" href="https://www.steigersystems.ch/kontakt/">
   <link rel="icon" type="image/png" href="/Bilder/Adress.png">
@@ -43,8 +43,8 @@ redirect_from:
   <section class="page-hero">
     <div class="container">
       <span class="badge">Kontakt</span>
-      <h1>Projekt besprechen</h1>
-      <p>Lassen Sie uns gemeinsam Ihre Ideen realisieren</p>
+      <h1>Schreiben Sie mir</h1>
+      <p>Kurz beschreiben, worum es geht &ndash; ich melde mich.</p>
     </div>
   </section>
 
@@ -54,8 +54,9 @@ redirect_from:
         <div class="contact-info">
           <h2>Steiger-Systems</h2>
           <p class="intro">
-            Haben Sie ein Projekt im Bereich Automatisierung oder Steuerungstechnik?
-            Ich freue mich darauf, von Ihren Ideen zu hören und gemeinsam eine Lösung zu entwickeln.
+            Sie haben eine Anlage, die automatisiert werden soll? Eine Steuerung, die nicht mehr richtig läuft?
+            Oder eine Idee für eine eigene Elektronik? Schreiben Sie mir. Ich schaue es mir an und sage Ihnen
+            ehrlich, was geht.
           </p>
 
           <div class="contact-details">
@@ -67,8 +68,8 @@ redirect_from:
                 </svg>
               </div>
               <div>
-                <h3>Email</h3>
-                <p>steiger.development@gmail.com</p>
+                <h3>E-Mail</h3>
+                <p><a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a></p>
               </div>
             </div>
 
@@ -80,7 +81,7 @@ redirect_from:
               </div>
               <div>
                 <h3>Telefon</h3>
-                <p>Auf Anfrage verfügbar</p>
+                <p>Nummer auf Anfrage</p>
               </div>
             </div>
 
@@ -99,12 +100,12 @@ redirect_from:
           </div>
 
           <div class="services-offered">
-            <h3>Leistungen</h3>
+            <h3>Das mache ich</h3>
             <ul>
-              <li>SPS-Programmierung (Siemens LOGO, S7)</li>
-              <li>Automatisierungslösungen</li>
-              <li>Steuerungstechnik</li>
-              <li>Projektplanung und -realisierung</li>
+              <li>SPS-Programmierung (Siemens LOGO!, S7)</li>
+              <li>Anlagen automatisieren</li>
+              <li>Steuerungen aufbauen</li>
+              <li>Planung und Umsetzung</li>
               <li>Inbetriebnahme und Wartung</li>
             </ul>
           </div>
@@ -119,8 +120,8 @@ redirect_from:
               <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
             <div>
-              <strong>Nachricht gesendet!</strong>
-              <p>Vielen Dank – ich melde mich so bald wie möglich bei Ihnen.</p>
+              <strong>Nachricht gesendet</strong>
+              <p>Danke &ndash; ich melde mich so bald wie möglich.</p>
             </div>
           </div>
 
@@ -131,8 +132,8 @@ redirect_from:
               <line x1="12" y1="16" x2="12.01" y2="16"/>
             </svg>
             <div>
-              <strong>Fehler beim Senden</strong>
-              <p>Bitte versuchen Sie es erneut oder schreiben Sie direkt an steiger.development@gmail.com</p>
+              <strong>Senden hat nicht geklappt</strong>
+              <p>Bitte noch einmal versuchen oder direkt an steiger.development@gmail.com schreiben.</p>
             </div>
           </div>
 
@@ -143,7 +144,7 @@ redirect_from:
             </div>
 
             <div class="form-group">
-              <label for="email">Email *</label>
+              <label for="email">E-Mail *</label>
               <input type="email" id="email" name="email" placeholder="ihre@email.ch" required>
             </div>
 
@@ -158,8 +159,8 @@ redirect_from:
             </div>
 
             <div class="form-group">
-              <label for="message">Ihre Nachricht *</label>
-              <textarea id="message" name="message" rows="6" placeholder="Beschreiben Sie Ihr Projekt oder Ihre Anfrage..." required></textarea>
+              <label for="message">Nachricht *</label>
+              <textarea id="message" name="message" rows="6" placeholder="Was soll gebaut oder gelöst werden? Ein paar Sätze reichen." required></textarea>
             </div>
 
             <button type="submit" class="btn-submit" id="submitBtn">
@@ -191,17 +192,18 @@ redirect_from:
         <a href="/kontakt/">Kontakt</a>
         <a href="/shop/">Shop</a>
       </nav>
-      <p class="footer-copy">&copy; 2025 Steiger-Systems. Alle Rechte vorbehalten.</p>
+      <p class="footer-copy">&copy; {{ site.time | date: "%Y" }} Steiger-Systems</p>
     </div>
   </footer>
 
   <script src="/JS/animations.js" defer></script>
   <script>
-    // Formspree AJAX submit
+    // Formspree: Formular per fetch senden, Seite bleibt stehen
     const form = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const successMsg = document.getElementById('formSuccess');
     const errorMsg = document.getElementById('formError');
+    const submitBtnHTML = submitBtn.innerHTML;
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -220,16 +222,15 @@ redirect_from:
         if (response.ok) {
           form.style.display = 'none';
           successMsg.style.display = 'flex';
-        } else {
-          errorMsg.style.display = 'flex';
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Nachricht senden';
+          return;
         }
       } catch (err) {
-        errorMsg.style.display = 'flex';
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Nachricht senden';
+        // Netzwerkfehler: unten Fehlermeldung zeigen
       }
+
+      errorMsg.style.display = 'flex';
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = submitBtnHTML;
     });
   </script>
 </body>

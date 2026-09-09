@@ -9,7 +9,7 @@ redirect_from:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="Shop von Steiger-Systems: Hardware, Elektronik und 3D-Druck — ESP32-Boards, TempWatch PCB-Kits, CAN-Bus Module und mehr.">
+  <meta name="description" content="Shop von Steiger-Systems: Platinen, Bauteile und Druckdateien aus meinen Projekten. Der Shop öffnet bald.">
   <title>Shop — Steiger-Systems</title>
   <link rel="canonical" href="https://www.steigersystems.ch/shop/">
   <link rel="icon" type="image/png" href="/Bilder/Adress.png">
@@ -21,7 +21,7 @@ redirect_from:
   <!--
     ─────────────────────────────────────────────────
     ZAHLUNGS-KONFIGURATION
-    Ersetze die folgenden Werte mit deinen echten Keys:
+    Die folgenden Werte durch die echten Keys ersetzen:
 
     Stripe:  https://dashboard.stripe.com → API Keys → Publishable key
     PayPal:  https://developer.paypal.com → My Apps & Credentials → Client ID
@@ -67,13 +67,19 @@ redirect_from:
     <div class="container">
       <span class="badge">Hardware &amp; Elektronik</span>
       <h1>Shop</h1>
-      <p>Qualitätsprodukte aus den Bereichen Automatisierung, Elektronik und 3D-Druck</p>
+      <p>Platinen, Bauteile und Druckdateien aus meinen Projekten.</p>
     </div>
   </section>
 
   <!-- ── Shop Section ── -->
   <section class="shop-section">
     <div class="container">
+
+      <!-- Hinweis: Shop noch nicht offen (siehe SHOP_OPEN im Script unten) -->
+      <div class="shop-notice" id="shopNotice" hidden>
+        <span class="shop-notice-tag">Bald verfügbar</span>
+        <p>Der Shop ist noch nicht offen. Was Sie hier sehen, ist eine Vorschau. Interesse an einem Produkt? <a href="/kontakt/">Schreiben Sie mir.</a></p>
+      </div>
 
       <!-- Filter Bar -->
       <div class="shop-filters" id="shopFilters">
@@ -109,7 +115,7 @@ redirect_from:
         <a href="/kontakt/">Kontakt</a>
         <a href="/shop/">Shop</a>
       </nav>
-      <p class="footer-copy">&copy; 2025 Steiger-Systems. Alle Rechte vorbehalten.</p>
+      <p class="footer-copy">&copy; {{ site.time | date: "%Y" }} Steiger-Systems</p>
     </div>
   </footer>
 
@@ -137,7 +143,8 @@ redirect_from:
         <h2 class="modal-name" id="modalName"></h2>
         <p class="modal-long-desc" id="modalLongDesc"></p>
         <p class="modal-price" id="modalPrice"></p>
-        <div class="modal-qty-row">
+        <p class="modal-soon" id="modalSoon" hidden>Noch nicht bestellbar. <a href="/kontakt/">Per E-Mail anfragen</a></p>
+        <div class="modal-qty-row" id="modalQtyRow">
           <label for="modalQty">Menge:</label>
           <input type="number" id="modalQty" class="qty-input" value="1" min="1" max="99">
         </div>
@@ -166,7 +173,7 @@ redirect_from:
         </button>
       </div>
       <div class="cart-items" id="cartItems">
-        <p class="cart-empty" id="cartEmpty">Dein Warenkorb ist leer.</p>
+        <p class="cart-empty" id="cartEmpty">Ihr Warenkorb ist leer.</p>
       </div>
       <div class="cart-footer">
         <div class="cart-totals">
@@ -245,7 +252,7 @@ redirect_from:
         <div class="order-summary" id="checkoutSummary2"></div>
 
         <div class="payment-methods">
-          <h3>Wähle eine Zahlungsmethode</h3>
+          <h3>Zahlungsmethode wählen</h3>
           <div class="payment-options">
             <button class="payment-option" id="payStripe" data-method="stripe">
               <!-- Credit card icon -->
@@ -266,7 +273,7 @@ redirect_from:
 
           <!-- Stripe info text -->
           <div class="stripe-info" id="stripeInfo">
-            Du wirst auf die sichere Stripe-Zahlungsseite weitergeleitet, um deine Kreditkartendaten einzugeben.
+            Sie werden auf die Zahlungsseite von Stripe weitergeleitet und geben dort Ihre Kartendaten ein.
           </div>
 
           <!-- PayPal Buttons container -->
@@ -292,8 +299,8 @@ redirect_from:
               <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
           </div>
-          <h3>Bestellung erfolgreich!</h3>
-          <p>Vielen Dank für deine Bestellung. Du erhältst in Kürze eine Bestätigungs-E-Mail.</p>
+          <h3>Bestellung eingegangen</h3>
+          <p>Vielen Dank für Ihre Bestellung. Sie erhalten in Kürze eine Bestätigung per E-Mail.</p>
         </div>
       </div>
 
@@ -302,10 +309,11 @@ redirect_from:
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- ── PayPal SDK ──                            -->
-  <!-- Ersetze YOUR_PAYPAL_CLIENT_ID mit deiner    -->
-  <!-- Client-ID aus dem PayPal Developer Portal.  -->
+  <!-- Sobald die Client-ID aus dem PayPal         -->
+  <!-- Developer Portal da ist: YOUR_PAYPAL_CLIENT_ID -->
+  <!-- ersetzen und die Zeile einkommentieren.     -->
   <!-- ═══════════════════════════════════════════ -->
-  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=CHF" defer></script>
+  <!-- <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=CHF" defer></script> -->
 
   <!-- Shared animations -->
   <script src="/JS/animations.js" defer></script>
@@ -326,12 +334,16 @@ redirect_from:
     ───────────────────────────────────────────── */
     const SHIPPING_COST = 7.90;
 
+    /* SHOP_OPEN: false = Vorschau (Produkte sichtbar, kein Warenkorb, keine Kasse).
+       Auf true stellen, sobald Stripe-Links und PayPal-Client-ID eingetragen sind. */
+    const SHOP_OPEN = false;
+
     const products = [
       {
         id: 1,
         name: 'ESP32-S3 Dev Kit',
-        shortDesc: 'Leistungsstarkes Entwicklungsboard mit WiFi & BT 5.0, 8 MB Flash, 2 MB PSRAM.',
-        longDesc: 'Das ESP32-S3 Entwicklungsboard ist ideal für IoT-Projekte, Embedded-Entwicklung und Prototypen. Es verfügt über Dual-Core Xtensa LX7 @ 240 MHz, integriertes WiFi 802.11 b/g/n, Bluetooth 5.0, 8 MB Flash und 2 MB PSRAM. USB-C Anschluss, 40 GPIO-Pins und kompatibel mit dem Arduino-Framework und ESP-IDF.',
+        shortDesc: 'Entwicklungsboard mit WLAN und Bluetooth 5.0, 8 MB Flash, 2 MB PSRAM.',
+        longDesc: 'Entwicklungsboard für IoT-Projekte und Prototypen. Dual-Core Xtensa LX7 mit 240 MHz, WLAN 802.11 b/g/n, Bluetooth 5.0, 8 MB Flash, 2 MB PSRAM, USB-C und 40 GPIO-Pins. Läuft mit Arduino und ESP-IDF.',
         price: 29.90,
         category: 'hardware',
         categoryLabel: 'Hardware',
@@ -340,8 +352,8 @@ redirect_from:
       {
         id: 2,
         name: 'TempWatch PCB Kit',
-        shortDesc: 'Komplettes PCB-Kit für das TempWatch Multi-Kanal Temperaturüberwachungssystem.',
-        longDesc: 'Das TempWatch PCB Kit enthält alles für den Aufbau des TempWatch Temperaturüberwachungssystems: bestückte Hauptplatine (ESP32-S3 basiert), 8× NTC-Anschlüsse, CAN-Bus Transceiver, USB-C Ladebuchse, Klemmleisten und vollständige Dokumentation. Erfasst bis zu 8 Kanäle, überträgt via CAN-Bus oder ESPHome zu Home Assistant.',
+        shortDesc: 'Platine und Teile für das TempWatch Temperatur-Messsystem.',
+        longDesc: 'Alles für den Aufbau von TempWatch: bestückte Hauptplatine mit ESP32-S3, 8 NTC-Anschlüsse, CAN-Bus-Transceiver, USB-C-Buchse, Klemmen und Anleitung. Misst bis zu 8 Kanäle und sendet per CAN-Bus oder ESPHome an Home Assistant.',
         price: 49.90,
         category: 'hardware',
         categoryLabel: 'Hardware',
@@ -350,8 +362,8 @@ redirect_from:
       {
         id: 3,
         name: 'Siemens LOGO! Programmier-Guide',
-        shortDesc: 'Praxisnaher Guide für die Programmierung von Siemens LOGO! Steuerungen (PDF, DE).',
-        longDesc: 'Dieser umfassende Praxisguide richtet sich an Einsteiger und Fortgeschrittene in der Siemens LOGO! Programmierung. Inhalt: Funktionsbausteine, Zeitrelais, Merker, analoge Ein-/Ausgänge, Netzwerkkommunikation und reale Projektbeispiele aus der Automatisierungspraxis. Sofort als PDF-Download verfügbar nach dem Kauf.',
+        shortDesc: 'Anleitung für die Programmierung von Siemens LOGO! Steuerungen (PDF, Deutsch).',
+        longDesc: 'Für Einsteiger und Fortgeschrittene: Funktionsbausteine, Zeitrelais, Merker, analoge Ein- und Ausgänge, Netzwerk und Beispiele aus echten Projekten. Nach dem Kauf als PDF zum Herunterladen.',
         price: 14.90,
         category: 'prints',
         categoryLabel: 'Prints & Dateien',
@@ -360,8 +372,8 @@ redirect_from:
       {
         id: 4,
         name: 'PCB Design Service',
-        shortDesc: 'Individuelles PCB-Layout nach deinen Anforderungen — Schaltplan bis fertiger Gerber.',
-        longDesc: 'Du hast eine Schaltungsidee und benötigst ein professionelles PCB-Layout? Dieser Service umfasst: Schaltplanreview, PCB-Layout (bis 100×100 mm, 2-lagig), DRC/ERC-Prüfung, Gerber-Dateien und Stückliste. Lieferzeit: 5–7 Werktage. Nach dem Kauf wirst du per E-Mail kontaktiert, um die Details zu besprechen.',
+        shortDesc: 'Ich zeichne Ihr PCB-Layout – vom Schaltplan bis zu den Gerber-Dateien.',
+        longDesc: 'Sie haben eine Schaltung und brauchen ein Layout? Enthalten: Schaltplan-Review, Layout bis 100×100 mm (2-lagig), DRC/ERC-Prüfung, Gerber-Dateien und Stückliste. Dauer: 5 bis 7 Werktage. Nach dem Kauf melde ich mich per E-Mail, um die Details zu klären.',
         price: 79.90,
         category: 'zubehoer',
         categoryLabel: 'Zubehör',
@@ -370,8 +382,8 @@ redirect_from:
       {
         id: 5,
         name: 'CAN-Bus Breakout Board',
-        shortDesc: 'Kompaktes Breakout-Board für MCP2515 CAN-Controller mit SPI-Interface.',
-        longDesc: 'Das CAN-Bus Breakout Board basiert auf dem MCP2515 Controller und TJA1050 Transceiver. Es ermöglicht die einfache Integration von CAN-Bus Kommunikation in Arduino, ESP32 und ähnliche Mikrocontroller-Projekte via SPI. Inklusive Schraubklemmen für den CAN-Bus Anschluss (CAN-H / CAN-L), 120 Ω Abschlusswiderstand (zuschaltbar) und Spannungsversorgung 3.3–5 V.',
+        shortDesc: 'Breakout-Board mit MCP2515 CAN-Controller und SPI-Anschluss.',
+        longDesc: 'MCP2515-Controller und TJA1050-Transceiver. Damit lässt sich CAN-Bus per SPI an Arduino, ESP32 und ähnliche Mikrocontroller anbinden. Mit Schraubklemmen für CAN-H/CAN-L, zuschaltbarem 120-Ω-Abschlusswiderstand und 3,3 bis 5 V Versorgung.',
         price: 19.90,
         category: 'hardware',
         categoryLabel: 'Hardware',
@@ -380,8 +392,8 @@ redirect_from:
       {
         id: 6,
         name: 'Holzlift STL-Paket',
-        shortDesc: '3D-Druckdateien für alle Kunststoffteile der Holzlift-Steuerungsbox.',
-        longDesc: 'Komplettes STL-Dateipaket für die 3D-druckbaren Teile des Holzlift-Projekts: Steuerungsgehäuse, Kabelführungen, Halterungen für Endschalter und Taster. Optimiert für FDM-Druck (PLA/PETG), kein Support-Material notwendig. Enthält alle benötigten Teile für den kompletten Nachbau der Anlage. Sofortiger Download nach Kauf.',
+        shortDesc: '3D-Druckdateien für die Kunststoffteile der Holzlift-Steuerungsbox.',
+        longDesc: 'Alle STL-Dateien für die gedruckten Teile des Holzlift-Projekts: Gehäuse für die Steuerung, Kabelführungen, Halter für Endschalter und Taster. Für FDM-Druck mit PLA oder PETG, ohne Stützmaterial. Download direkt nach dem Kauf.',
         price: 9.90,
         category: 'prints',
         categoryLabel: 'Prints & Dateien',
@@ -443,13 +455,14 @@ redirect_from:
             <div class="product-desc">${product.shortDesc}</div>
             <div class="product-footer">
               <div class="product-price">${formatPrice(product.price)}</div>
+              ${SHOP_OPEN ? `
               <button class="btn-add-cart" data-id="${product.id}">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
                 </svg>
                 In den Warenkorb
-              </button>
+              </button>` : `<span class="product-soon">Bald verfügbar</span>`}
             </div>
           </div>
         `;
@@ -459,12 +472,15 @@ redirect_from:
         card.querySelector('.product-name').addEventListener('click', () => openModal(product.id));
         card.querySelector('.product-desc').addEventListener('click', () => openModal(product.id));
 
-        /* add to cart button */
-        card.querySelector('.btn-add-cart').addEventListener('click', (e) => {
-          e.stopPropagation();
-          addToCart(product.id, 1);
-          animateCartBadge();
-        });
+        /* add to cart button (nur wenn Shop offen) */
+        const addBtn = card.querySelector('.btn-add-cart');
+        if (addBtn) {
+          addBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            addToCart(product.id, 1);
+            animateCartBadge();
+          });
+        }
 
         shopGrid.appendChild(card);
       });
@@ -744,7 +760,7 @@ redirect_from:
         window.location.href = product.stripeLinkUrl;
       } else {
         /* Placeholder: show alert until real Stripe links are configured */
-        alert('Stripe-Zahlung: Bitte konfiguriere zuerst die Stripe Payment Link URLs in shop.html (products[].stripeLinkUrl).\n\nFür Bestellungen mit mehreren Produkten empfiehlt sich die Stripe Checkout API mit einem Backend (z.B. Netlify Functions).');
+        alert('Die Zahlung per Karte ist noch nicht eingerichtet. Bitte schreiben Sie mir per E-Mail.');
       }
     });
 
@@ -755,7 +771,7 @@ redirect_from:
       if (paypalInited) return;
       if (typeof paypal === 'undefined') {
         document.getElementById('paypalContainer').innerHTML =
-          '<p style="font-size:13px;color:#999;padding:12px 0;">PayPal SDK konnte nicht geladen werden. Bitte konfiguriere deine Client-ID in shop.html.</p>';
+          '<p style="font-size:13px;color:#999;padding:12px 0;">PayPal ist noch nicht eingerichtet. Bitte schreiben Sie mir per E-Mail.</p>';
         return;
       }
 
@@ -798,7 +814,7 @@ redirect_from:
 
         onError: function (err) {
           console.error('PayPal Fehler:', err);
-          alert('PayPal-Zahlung fehlgeschlagen. Bitte erneut versuchen.');
+          alert('Die PayPal-Zahlung hat nicht geklappt. Bitte noch einmal versuchen.');
         },
       }).render('#paypal-button-container');
     }
@@ -815,6 +831,17 @@ redirect_from:
         }
       });
     }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+
+    /* Vorschau-Modus: Hinweis zeigen, Warenkorb und Kasse ausblenden */
+    if (!SHOP_OPEN) {
+      document.getElementById('shopNotice').hidden = false;
+      document.getElementById('cartBtn').hidden = true;
+      document.getElementById('modalSoon').hidden = false;
+      document.getElementById('modalQtyRow').hidden = true;
+      document.getElementById('modalAddCartBtn').hidden = true;
+      cart = [];
+      saveCart();
+    }
 
     renderProducts('all');
     updateCartBadge();

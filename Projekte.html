@@ -10,7 +10,7 @@ redirect_from:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="Realisierte Automatisierungsprojekte von Steiger-Systems: Holzlift-Steuerung mit Siemens LOGO!, TempWatch Temperaturüberwachung mit ESP32-S3 und mehr.">
+  <meta name="description" content="Projekte von Steiger-Systems: Holzlift-Steuerung mit Siemens LOGO! und TempWatch, eine eigene Platine zur Temperaturmessung mit ESP32-S3.">
   <title>Projekte — Steiger-Systems</title>
   <link rel="canonical" href="https://www.steigersystems.ch/projekte/">
   <link rel="icon" type="image/png" href="/Bilder/Adress.png">
@@ -42,36 +42,35 @@ redirect_from:
 
   <section class="page-hero">
     <div class="container">
-      <span class="badge">Portfolio</span>
+      <span class="badge">Projekte</span>
       <h1>Meine Projekte</h1>
-      <p>Realisierte Automatisierungslösungen und Steuerungstechnik</p>
+      <p>Was ich bisher gebaut habe.</p>
     </div>
   </section>
 
   <section class="projects-section">
     <div class="container">
 
-      <!-- Holzlift Projekt -->
+      <!-- Holzlift -->
       <div class="project-card featured fade-in">
         <div class="project-header">
           <div>
             <span class="project-status">Abgeschlossen • 2025</span>
             <h2>Holzlift-Steuerung</h2>
           </div>
-          <span class="project-tag">Abgeschlossen</span>
+          <span class="project-tag">Automatisierung</span>
         </div>
         <div class="project-content">
           <div class="project-description">
             <p>
-              Vollautomatische Förderanlage für den Transport von Brennholz vom Kellergeschoss in den
-              Wohnbereich. Realisiert mit Siemens LOGO! Steuerung, Tastersteuerung und Endschaltern
-              für sichere Positionserkennung.
+              Ein Lift, der Brennholz vom Keller in den Wohnbereich bringt. Gesteuert mit einer Siemens LOGO!,
+              bedient über Taster. Endschalter sorgen dafür, dass der Lift an der richtigen Stelle stoppt.
             </p>
-            <a href="/projekte/holzlift/" class="btn-secondary">Projekt Details →</a>
+            <a href="/projekte/holzlift/" class="btn-secondary">Details →</a>
           </div>
           <div class="project-image">
             <div class="project-specs">
-              <h4>Projekt-Specs</h4>
+              <h4>Eckdaten</h4>
               <div class="spec-row">
                 <span class="spec-label">Jahr</span>
                 <span class="spec-value">2025</span>
@@ -93,7 +92,7 @@ redirect_from:
         </div>
       </div>
 
-      <!-- TempWatch Projekt -->
+      <!-- TempWatch -->
       <div class="project-card featured fade-in">
         <div class="project-header">
           <div>
@@ -105,15 +104,14 @@ redirect_from:
         <div class="project-content">
           <div class="project-description">
             <p>
-              Kompaktes Multi-Kanal Temperaturüberwachungssystem auf Basis des ESP32-S3. Erfasst bis zu
-              8 Temperaturkanäle und überträgt die Messdaten wahlweise per CAN-Bus oder via ESPHome
-              an Home Assistant.
+              Eine kleine Platine auf Basis eines ESP32-S3, die bis zu 8 Temperaturen misst. Die Werte gehen
+              per CAN-Bus oder über ESPHome an Home Assistant.
             </p>
-            <a href="/projekte/tempwatch/" class="btn-secondary">Projekt Details →</a>
+            <a href="/projekte/tempwatch/" class="btn-secondary">Details →</a>
           </div>
           <div class="project-image">
             <div class="project-specs">
-              <h4>Projekt-Specs</h4>
+              <h4>Eckdaten</h4>
               <div class="spec-row">
                 <span class="spec-label">Jahr</span>
                 <span class="spec-value">2025</span>
@@ -145,9 +143,9 @@ redirect_from:
               <line x1="12" y1="16" x2="12.01" y2="16"/>
             </svg>
           </div>
-          <h3>Weitere Projekte in Planung</h3>
-          <p>Haben Sie eine Idee für ein Automatisierungsprojekt? Kontaktieren Sie mich für eine Beratung.</p>
-          <a href="/kontakt/" class="btn-secondary">Projekt anfragen</a>
+          <h3>Weitere Projekte folgen</h3>
+          <p>Sie haben selbst etwas, das automatisiert werden soll? Schreiben Sie mir kurz, worum es geht.</p>
+          <a href="/kontakt/" class="btn-secondary">Kontakt aufnehmen</a>
         </div>
       </div>
 
@@ -170,7 +168,7 @@ redirect_from:
         <a href="/kontakt/">Kontakt</a>
         <a href="/shop/">Shop</a>
       </nav>
-      <p class="footer-copy">&copy; 2025 Steiger-Systems. Alle Rechte vorbehalten.</p>
+      <p class="footer-copy">&copy; {{ site.time | date: "%Y" }} Steiger-Systems</p>
     </div>
   </footer>
 
