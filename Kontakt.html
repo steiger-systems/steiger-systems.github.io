@@ -10,22 +10,20 @@ redirect_from:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <meta name="color-scheme" content="light dark">
   <meta name="description" content="Kontakt zu Steiger-Systems: eigene Elektronik, Firmware und kleinere Steuerungen aus der Schweiz. Kurz schreiben, worum es geht – ich melde mich.">
   <title>Kontakt — Steiger-Systems</title>
   <link rel="canonical" href="https://www.steigersystems.ch/kontakt/">
   <link rel="icon" type="image/png" href="/Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('ss-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}d.setAttribute('data-theme',t)})();</script>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/CSS-Style/main.css">
 </head>
 <body>
   <header>
     <nav class="top container">
       <div class="nav-left">
-        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite">Steiger-Systems</a>
+        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite"><span class="brand-ring" aria-hidden="true"></span>STEIGER-SYSTEMS</a>
         <ul id="navMenu">
           <li><a href="/#leistungen">Leistungen</a></li>
           <li><a href="/projekte/">Projekte</a></li>
@@ -35,6 +33,7 @@ redirect_from:
         </ul>
       </div>
       <div class="nav-right">
+        <a href="#contactForm" class="btn-nav">Anfrage</a>
         <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
           <span></span><span></span>
         </button>
@@ -42,42 +41,54 @@ redirect_from:
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
+  <section class="page-hero">
     <div class="container">
-      <div class="hero-content richtext">
-        <h1>Schreiben Sie mir</h1>
-        <p class="lead">Kurz beschreiben, worum es geht &ndash; ich melde mich.</p>
-      </div>
+      <div class="label"><span>Kontakt</span></div>
+      <h1>Schreiben Sie mir</h1>
+      <p>Kurz beschreiben, worum es geht &ndash; ich melde mich.</p>
     </div>
   </section>
 
-  <!-- Formular-Block -->
-  <section class="block">
-    <div class="container form-block">
-      <div class="form-intro richtext">
+  <section class="contact-section">
+    <div class="container contact-content">
+      <div class="contact-info">
         <h2>Steiger-Systems</h2>
-        <p>
+        <p class="intro">
           Sie haben eine Idee für eine eigene Elektronik? Brauchen eine Platine mit passender Firmware?
           Oder eine kleine Steuerung mit LOGO!? Schreiben Sie mir. Ich schaue es mir an und sage Ihnen
           ehrlich, was geht.
         </p>
-        <ul>
-          <li><strong>E-Mail:</strong> <a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a></li>
-          <li><strong>Telefon:</strong> Nummer auf Anfrage</li>
-          <li><strong>Standort:</strong> Schweiz</li>
-        </ul>
-        <h3>Das mache ich</h3>
-        <ul>
-          <li>Eigene Platinen entwickeln (KiCad)</li>
-          <li>Firmware für den ESP32 in C/C++</li>
-          <li>ESPHome und Home Assistant</li>
-          <li>Gehäuse konstruieren und drucken</li>
-          <li>Einfache Steuerungen mit Siemens LOGO!</li>
-        </ul>
+
+        <div class="contact-details">
+          <div class="detail-item">
+            <h3>E-Mail</h3>
+            <p><a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a></p>
+          </div>
+          <div class="detail-item">
+            <h3>Telefon</h3>
+            <p>Nummer auf Anfrage</p>
+          </div>
+          <div class="detail-item">
+            <h3>Standort</h3>
+            <p>Schweiz</p>
+          </div>
+        </div>
+
+        <div class="services-offered">
+          <h3>Das mache ich</h3>
+          <ul class="dash-list">
+            <li>Eigene Platinen entwickeln (KiCad)</li>
+            <li>Firmware für den ESP32 in C/C++</li>
+            <li>ESPHome und Home Assistant</li>
+            <li>Gehäuse konstruieren und drucken</li>
+            <li>Einfache Steuerungen mit Siemens LOGO!</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="form-box">
+      <div class="contact-form-container">
+        <h3>Nachricht senden</h3>
+
         <div class="form-success" id="formSuccess">
           <strong>Nachricht gesendet</strong>
           <p>Danke &ndash; ich melde mich so bald wie möglich.</p>
@@ -121,28 +132,10 @@ redirect_from:
   </section>
 
   <footer>
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="/" class="brand brand--footer" aria-label="Steiger-Systems — Startseite">Steiger-Systems</a>
-        <p class="footer-meta">&copy; {{ site.time | date: "%Y" }} · Renato Steiger · Schweiz</p>
-      </div>
-      <div class="footer-right">
-        <label class="theme-select">
-          <span class="sr-only">Farbschema</span>
-          <select id="themeSelect">
-            <option value="auto">Auto</option>
-            <option value="light">Hell</option>
-            <option value="dark">Dunkel</option>
-          </select>
-        </label>
-        <nav class="footer-nav" aria-label="Fusszeile">
-          <a href="/projekte/">Projekte</a>
-          <a href="/about/">Über mich</a>
-          <a href="/kontakt/">Kontakt</a>
-          <a href="/shop/">Shop</a>
-          <a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a>
-        </nav>
-      </div>
+    <div class="container footer-grid">
+      <div class="footer-col"><span class="accent">Steiger-Systems</span><br><span class="soft">Renato Steiger</span></div>
+      <div class="footer-col"><a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a><br>Schweiz</div>
+      <div class="footer-col"><a href="/">Startseite</a> · <a href="/projekte/">Projekte</a> · <a href="/about/">Über mich</a> · <a href="/kontakt/">Kontakt</a> · <a href="/shop/">Shop</a><br>&copy; {{ site.time | date: "%Y" }}</div>
     </div>
   </footer>
 
