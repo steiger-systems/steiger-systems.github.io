@@ -12,118 +12,210 @@ redirect_from:
   <meta name="description" content="TempWatch: Eigene Platine auf Basis eines ESP32-S3, die bis zu 8 Temperaturen misst und die Werte per CAN-Bus oder ESPHome an Home Assistant sendet.">
   <title>TempWatch — Steiger-Systems</title>
   <link rel="canonical" href="https://www.steigersystems.ch/projekte/tempwatch/">
-  <link rel="icon" type="image/png" href="/Bilder/Adress.png">
+  <link rel="icon" type="image/svg+xml" href="/Bilder/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/CSS-Style/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/CSS-Style/hardtech.css">
 </head>
 <body>
-  <header>
-    <nav class="top container">
-      <div class="nav-left">
-        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite"><span class="brand-ring" aria-hidden="true"></span>STEIGER-SYSTEMS</a>
-        <ul id="navMenu">
-          <li><a href="/#leistungen">Leistungen</a></li>
-          <li><a href="/projekte/" aria-current="page">Projekte</a></li>
-          <li><a href="/about/">Über mich</a></li>
-          <li><a href="/kontakt/">Kontakt</a></li>
-          <li><a href="/shop/">Shop</a></li>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="header">
+  <div class="bar">
+    <span class="bar__tag">Projekt</span>
+    <a href="/projekte/tempwatch/">TempWatch: eigene Platine mit ESP32-S3 und CAN-Bus – in Entwicklung</a>
+  </div>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a class="logo" href="/" aria-label="Steiger-Systems — Startseite">
+      <svg class="logo__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1A11 11 0 0 1 23 12A11 11 0 0 1 12 23H3A2 2 0 0 1 1 21V12A11 11 0 0 1 12 1Z"/><circle cx="12" cy="12" r="3.2"/></svg>
+      <span class="logo__word">Steiger<span class="logo__dash">-</span>Systems</span>
+    </a>
+    <div class="nav__links">
+      <a href="/#leistungen">Leistungen</a>
+      <a href="/projekte/" aria-current="page">Projekte</a>
+      <a href="/about/">Über mich</a>
+      <a href="/kontakt/">Kontakt</a>
+      <a href="/shop/">Shop</a>
+    </div>
+    <div class="nav__right">
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+<div class="menu" id="menu" aria-hidden="true" inert>
+  <a href="/#leistungen">Leistungen</a>
+  <a href="/projekte/" aria-current="page">Projekte</a>
+  <a href="/about/">Über mich</a>
+  <a href="/kontakt/">Kontakt</a>
+  <a href="/shop/">Shop</a>
+  <a class="label" href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a>
+</div>
+
+<main id="inhalt">
+<!-- ============ 01 EIGENENTWICKLUNG ============ -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="sec-num"><b>01</b><span class="label">Projekt · Eigenentwicklung</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h1 class="split">TempWatch</h1>
+        <p class="lead reveal">Eine kleine Platine, die bis zu 8 Temperaturen misst und die Werte per CAN-Bus oder WLAN weitergibt.</p>
+        <dl class="meta reveal">
+          <div><dt>Status</dt><dd>In Entwicklung</dd></div>
+          <div><dt>Jahr</dt><dd>2025</dd></div>
+          <div><dt>Protokolle</dt><dd>CAN, ESPHome</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 PLATINE (gepinnter Showcase) ============ -->
+<section class="product">
+  <div class="wrap">
+    <div class="sec-num"><b>02</b><span class="label">Worum es geht</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div class="prose reveal">
+        <p class="lead">TempWatch ist eine eigene Platine auf Basis eines ESP32-S3. Sie misst bis zu 8 Temperaturen gleichzeitig und schickt die Werte entweder über CAN-Bus oder per WLAN (ESPHome) an Home Assistant oder eine andere Zentrale.</p>
+      </div>
+    </div>
+  </div>
+  <div class="showcase">
+    <div class="showcase__stage">
+      <div class="showcase__frame">
+        <!-- TODO: eigenes freigestelltes Produkt-Render, 1600×900 -->
+        <svg class="showcase__img" viewBox="0 0 1600 900" role="img" aria-label="TempWatch-Platine mit markierten Baugruppen"><use href="/Bilder/zeichnungen.svg#tempwatch-board"/></svg>
+
+        <div class="callout" style="--x: 30%; --y: 51.5%;" data-side="left">
+          <span class="callout__dot"></span><span class="callout__line"></span>
+          <div class="callout__box">
+            <h3><span class="callout__num">01</span>Mikrocontroller</h3>
+            <dl>
+              <div><dt>Modul</dt><dd>ESP32-S3-WROOM</dd></div>
+              <div><dt>Funk</dt><dd>WLAN + Bluetooth</dd></div>
+              <div><dt>Versorgung</dt><dd>3,3 V</dd></div>
+            </dl>
+          </div>
+        </div>
+        <div class="callout" style="--x: 30%; --y: 29.5%;">
+          <span class="callout__dot"></span><span class="callout__line"></span>
+          <div class="callout__box"><h3><span class="callout__num">02</span>ESPHome</h3><p>Per WLAN landen die Werte in Home Assistant oder einer anderen Smart-Home-Plattform.</p></div>
+        </div>
+        <div class="callout" style="--x: 72.2%; --y: 24.4%;">
+          <span class="callout__dot"></span><span class="callout__line"></span>
+          <div class="callout__box"><h3><span class="callout__num">03</span>CAN-Bus</h3><p>MCP2515 und SN65HVD230D nach ISO 11898 – direkt an ein Industrie- oder Fahrzeugnetzwerk.</p></div>
+        </div>
+        <div class="callout" style="--x: 62.5%; --y: 80%;">
+          <span class="callout__dot"></span><span class="callout__line"></span>
+          <div class="callout__box"><h3><span class="callout__num">04</span>8 Temperatureingänge</h3><p>NTC, PT100 oder DS18B20 – bis zu 8 Kanäle gleichzeitig.</p></div>
+        </div>
+        <div class="callout" style="--x: 25%; --y: 74%;">
+          <span class="callout__dot"></span><span class="callout__line"></span>
+          <div class="callout__box"><h3><span class="callout__num">05</span>USB</h3><p>Programmierung über USB mit dem CP2102N.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 TECHNIK ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-num"><b>03</b><span class="label">Technik</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h2 class="split">Technik</h2>
+        <dl class="sheet" data-stagger>
+          <div><dt>Mikrocontroller</dt><dd>ESP32-S3-WROOM <span>· WLAN + Bluetooth</span></dd></div>
+          <div><dt>CAN-Controller</dt><dd>MCP2515-I/ST <span>· über SPI</span></dd></div>
+          <div><dt>CAN-Transceiver</dt><dd>SN65HVD230D <span>· 3,3 V</span></dd></div>
+          <div><dt>Temperatureingänge</dt><dd>8 Kanäle <span>· NTC / PT100 / DS18B20</span></dd></div>
+          <div><dt>Programmierung</dt><dd>USB <span>· über CP2102N</span></dd></div>
+          <div><dt>Versorgung</dt><dd>3,3 V <span>· Spannungsregler auf der Platine</span></dd></div>
+          <div><dt>Kategorie</dt><dd>Embedded / IoT</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 KOMMUNIKATION ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-num"><b>04</b><span class="label">Kommunikation</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div class="prose reveal">
+        <h2 class="split">Zwei Wege sind möglich.</h2>
+        <p class="lead">Über <strong>CAN-Bus</strong> (ISO 11898) hängt TempWatch direkt an einem Industrie- oder Fahrzeugnetzwerk. Über <strong>ESPHome</strong> und WLAN landen die Werte in Home Assistant oder einer anderen Smart-Home-Plattform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 WAS ES BRINGT ============ -->
+<section class="section section--end">
+  <div class="wrap">
+    <div class="sec-num"><b>05</b><span class="label">Was es bringt</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h2 class="split">Was es bringt</h2>
+        <ul class="list" data-stagger>
+          <li>CAN-Bus oder WLAN, je nach Einsatz</li>
+          <li>Eigene, kompakte Platine</li>
+          <li>Bis zu 8 Kanäle gleichzeitig</li>
+          <li>Läuft direkt mit Home Assistant</li>
+          <li>Firmware auf Basis von ESPHome (Open Source)</li>
         </ul>
-      </div>
-      <div class="nav-right">
-        <a href="/kontakt/" class="btn-nav">Anfrage</a>
-        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
-          <span></span><span></span>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <section class="page-hero">
-    <div class="container">
-      <div class="label"><span>Projekt</span><span>—</span><span>Embedded / IoT</span></div>
-      <h1>TempWatch</h1>
-      <p>Eine kleine Platine, die bis zu 8 Temperaturen misst und die Werte per CAN-Bus oder WLAN weitergibt.</p>
-    </div>
-  </section>
-
-  <section class="projects-section">
-    <div class="container">
-
-      <article class="project-card">
-        <div class="project-header">
-          <div>
-            <span class="project-status">In Entwicklung · <b>2025</b></span>
-            <h2>TempWatch</h2>
-          </div>
-          <span class="project-tag">Eigenentwicklung</span>
+        <div class="contact__links reveal">
+          <a class="link-arrow link-arrow--back" href="/projekte/">Alle Projekte</a>
+          <a class="link-arrow" href="/kontakt/">Anfrage senden</a>
         </div>
-        <div class="project-content">
-          <div class="project-description">
-            <h3>Worum es geht</h3>
-            <p>
-              TempWatch ist eine eigene Platine auf Basis eines ESP32-S3. Sie misst bis zu 8 Temperaturen
-              gleichzeitig und schickt die Werte entweder über CAN-Bus oder per WLAN (ESPHome) an Home Assistant
-              oder eine andere Zentrale.
-            </p>
-
-            <h3>Technik</h3>
-            <ul class="dash-list">
-              <li><strong>Mikrocontroller:</strong> ESP32-S3-WROOM (WLAN + Bluetooth)</li>
-              <li><strong>CAN-Controller:</strong> MCP2515-I/ST über SPI</li>
-              <li><strong>CAN-Transceiver:</strong> SN65HVD230D (3,3 V)</li>
-              <li><strong>Temperatureingänge:</strong> 8 Kanäle (NTC / PT100 / DS18B20)</li>
-              <li><strong>Programmierung:</strong> USB über CP2102N</li>
-              <li><strong>Versorgung:</strong> 3,3 V, Spannungsregler auf der Platine</li>
-            </ul>
-
-            <h3>Kommunikation</h3>
-            <p>
-              Zwei Wege sind möglich. Über <strong>CAN-Bus</strong> (ISO 11898) hängt TempWatch direkt an einem
-              Industrie- oder Fahrzeugnetzwerk. Über <strong>ESPHome</strong> und WLAN landen die Werte in Home
-              Assistant oder einer anderen Smart-Home-Plattform.
-            </p>
-
-            <h3>Was es bringt</h3>
-            <ul class="dash-list">
-              <li>CAN-Bus oder WLAN, je nach Einsatz</li>
-              <li>Eigene, kompakte Platine</li>
-              <li>Bis zu 8 Kanäle gleichzeitig</li>
-              <li>Läuft direkt mit Home Assistant</li>
-              <li>Firmware auf Basis von ESPHome (Open Source)</li>
-            </ul>
-          </div>
-          <div class="project-image">
-            <div class="placeholder">
-              <div class="media-caption"><span>Foto / TempWatch</span><span>—</span><span>folgt</span></div>
-            </div>
-            <div class="project-specs">
-              <h4>Eckdaten</h4>
-              <div class="spec-row"><span class="spec-label">Jahr</span><span class="spec-value">2025</span></div>
-              <div class="spec-row"><span class="spec-label">Kategorie</span><span class="spec-value">Embedded / IoT</span></div>
-              <div class="spec-row"><span class="spec-label">Protokolle</span><span class="spec-value">CAN, ESPHome</span></div>
-              <div class="spec-row"><span class="spec-label">Status</span><span class="spec-value spec-wip">In Entwicklung</span></div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <div class="back-link">
-        <a href="/projekte/" class="btn-outline">← Alle Projekte</a>
       </div>
-
     </div>
-  </section>
+  </div>
+</section>
+</main>
 
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-col"><span class="accent">Steiger-Systems</span><br><span class="soft">Renato Steiger</span></div>
-      <div class="footer-col"><a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a><br>Schweiz</div>
-      <div class="footer-col"><a href="/">Startseite</a> · <a href="/projekte/">Projekte</a> · <a href="/about/">Über mich</a> · <a href="/kontakt/">Kontakt</a> · <a href="/shop/">Shop</a><br>&copy; {{ site.time | date: "%Y" }}</div>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="/" aria-label="Steiger-Systems — Startseite">
+          <svg class="logo__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1A11 11 0 0 1 23 12A11 11 0 0 1 12 23H3A2 2 0 0 1 1 21V12A11 11 0 0 1 12 1Z"/><circle cx="12" cy="12" r="3.2"/></svg>
+          <span class="logo__word">Steiger<span class="logo__dash">-</span>Systems</span>
+        </a>
+        <!-- TODO: vollständige Adresse (als Kartenlink), sobald sie öffentlich sein darf -->
+        <address>Renato Steiger<br>Schweiz</address>
+      </div>
+      <div><span class="label">Steiger-Systems</span>
+        <ul><li><a href="/#leistungen">Leistungen</a></li><li><a href="/about/">Über mich</a></li><li><a href="/kontakt/">Kontakt</a></li></ul>
+      </div>
+      <div><span class="label">Projekte</span>
+        <ul><li><a href="/projekte/">Alle Projekte</a></li><li><a href="/projekte/tempwatch/">TempWatch</a></li><li><a href="/projekte/holzlift/">Holzlift</a></li><li><a href="/shop/">Shop</a></li></ul>
+      </div>
+      <div><span class="label">Kontakt</span>
+        <ul><li><a href="mailto:steiger.development@gmail.com">E-Mail</a></li><li><a href="/kontakt/">Formular</a></li></ul>
+      </div>
     </div>
-  </footer>
+    <div class="footer__bottom label">
+      <!-- TODO: Impressum und Datenschutz verlinken, sobald die Seiten existieren -->
+      <span>Steiger-Systems | Schweiz</span>
+      <span>© <span id="year">2026</span> Steiger-Systems</span>
+    </div>
+  </div>
+</footer>
 
-  <script src="/JS/animations.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+<script src="/JS/hardtech.js" defer></script>
 </body>
 </html>

@@ -12,114 +12,163 @@ redirect_from:
   <meta name="description" content="Holzlift-Steuerung: Ein Lift bringt Brennholz vom Keller in den Wohnbereich. Gesteuert mit Siemens LOGO!, Tastern und Endschaltern. Ein Projekt von Steiger-Systems.">
   <title>Holzlift-Steuerung — Steiger-Systems</title>
   <link rel="canonical" href="https://www.steigersystems.ch/projekte/holzlift/">
-  <link rel="icon" type="image/png" href="/Bilder/Adress.png">
+  <link rel="icon" type="image/svg+xml" href="/Bilder/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/CSS-Style/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/CSS-Style/hardtech.css">
 </head>
 <body>
-  <header>
-    <nav class="top container">
-      <div class="nav-left">
-        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite"><span class="brand-ring" aria-hidden="true"></span>STEIGER-SYSTEMS</a>
-        <ul id="navMenu">
-          <li><a href="/#leistungen">Leistungen</a></li>
-          <li><a href="/projekte/" aria-current="page">Projekte</a></li>
-          <li><a href="/about/">Über mich</a></li>
-          <li><a href="/kontakt/">Kontakt</a></li>
-          <li><a href="/shop/">Shop</a></li>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="header">
+  <div class="bar">
+    <span class="bar__tag">Projekt</span>
+    <a href="/projekte/tempwatch/">TempWatch: eigene Platine mit ESP32-S3 und CAN-Bus – in Entwicklung</a>
+  </div>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a class="logo" href="/" aria-label="Steiger-Systems — Startseite">
+      <svg class="logo__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1A11 11 0 0 1 23 12A11 11 0 0 1 12 23H3A2 2 0 0 1 1 21V12A11 11 0 0 1 12 1Z"/><circle cx="12" cy="12" r="3.2"/></svg>
+      <span class="logo__word">Steiger<span class="logo__dash">-</span>Systems</span>
+    </a>
+    <div class="nav__links">
+      <a href="/#leistungen">Leistungen</a>
+      <a href="/projekte/" aria-current="page">Projekte</a>
+      <a href="/about/">Über mich</a>
+      <a href="/kontakt/">Kontakt</a>
+      <a href="/shop/">Shop</a>
+    </div>
+    <div class="nav__right">
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+<div class="menu" id="menu" aria-hidden="true" inert>
+  <a href="/#leistungen">Leistungen</a>
+  <a href="/projekte/" aria-current="page">Projekte</a>
+  <a href="/about/">Über mich</a>
+  <a href="/kontakt/">Kontakt</a>
+  <a href="/shop/">Shop</a>
+  <a class="label" href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a>
+</div>
+
+<main id="inhalt">
+<!-- ============ 01 PROJEKT ============ -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="sec-num"><b>01</b><span class="label">Projekt · Automatisierung</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h1 class="split">Holzlift-Steuerung</h1>
+        <p class="lead reveal">Ein Lift bringt Brennholz vom Keller in den Wohnbereich – per Tastendruck.</p>
+        <dl class="meta reveal">
+          <div><dt>Status</dt><dd>Abgeschlossen</dd></div>
+          <div><dt>Jahr</dt><dd>2025</dd></div>
+          <div><dt>Steuerung</dt><dd>Siemens LOGO!</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="media-frame reveal">
+      <!-- TODO: eigenes Foto der Holzlift-Anlage (16:10) statt Zeichnung -->
+      <svg viewBox="0 0 800 500" role="img" aria-label="Schema des Holzlifts: Kabine zwischen Keller und Wohnbereich"><use href="/Bilder/zeichnungen.svg#holzlift"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 WORUM ES GEHT ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-num"><b>02</b><span class="label">Worum es geht</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div class="prose reveal">
+        <p class="lead">Brennholz von Hand die Treppe hochzutragen ist mühsam. Der Holzlift übernimmt das: Holz im Keller einladen, Taster drücken, oben ausladen. Ich habe die Steuerung dafür geplant, aufgebaut und in Betrieb genommen.</p>
+        <h2 class="h3">So funktioniert es</h2>
+        <p>Ein Druck auf den Start-Taster, und der Lift fährt vom Keller nach oben. Der Endschalter stoppt ihn an der richtigen Stelle. Nach dem Ausladen fährt er per Taster wieder in die Ausgangsposition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 TECHNIK ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-num"><b>03</b><span class="label">Technik</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h2 class="split">Technik</h2>
+        <dl class="sheet" data-stagger>
+          <div><dt>Steuerung</dt><dd>Siemens LOGO!</dd></div>
+          <div><dt>Bedienung</dt><dd>Taster für Start und Stopp</dd></div>
+          <div><dt>Positionen</dt><dd>Endschalter erkennen die Endpositionen</dd></div>
+          <div><dt>Ablauf</dt><dd>fährt automatisch bis zur Endposition und stoppt dort</dd></div>
+          <div><dt>Kategorie</dt><dd>Automatisierung</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 WAS ES BRINGT ============ -->
+<section class="section section--end">
+  <div class="wrap">
+    <div class="sec-num"><b>04</b><span class="label">Was es bringt</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h2 class="split">Was es bringt</h2>
+        <ul class="list" data-stagger>
+          <li>Kein Holztragen mehr</li>
+          <li>Einfache Bedienung über Taster</li>
+          <li>Lift stoppt zuverlässig an der Endposition</li>
+          <li>Wenig Wartung</li>
         </ul>
-      </div>
-      <div class="nav-right">
-        <a href="/kontakt/" class="btn-nav">Anfrage</a>
-        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
-          <span></span><span></span>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <section class="page-hero">
-    <div class="container">
-      <div class="label"><span>Projekt</span><span>—</span><span>Automatisierung</span></div>
-      <h1>Holzlift-Steuerung</h1>
-      <p>Ein Lift bringt Brennholz vom Keller in den Wohnbereich &ndash; per Tastendruck.</p>
-    </div>
-  </section>
-
-  <section class="projects-section">
-    <div class="container">
-
-      <article class="project-card">
-        <div class="project-header">
-          <div>
-            <span class="project-status">Abgeschlossen · <b>2025</b></span>
-            <h2>Holzlift-Steuerung</h2>
-          </div>
-          <span class="project-tag">Automatisierung</span>
+        <div class="contact__links reveal">
+          <a class="link-arrow link-arrow--back" href="/projekte/">Alle Projekte</a>
+          <a class="link-arrow" href="/kontakt/">Anfrage senden</a>
         </div>
-        <div class="project-content">
-          <div class="project-description">
-            <h3>Worum es geht</h3>
-            <p>
-              Brennholz von Hand die Treppe hochzutragen ist mühsam. Der Holzlift übernimmt das: Holz im Keller
-              einladen, Taster drücken, oben ausladen. Ich habe die Steuerung dafür geplant, aufgebaut und in
-              Betrieb genommen.
-            </p>
-
-            <h3>Technik</h3>
-            <ul class="dash-list">
-              <li><strong>Steuerung:</strong> Siemens LOGO!</li>
-              <li><strong>Bedienung:</strong> Taster für Start und Stopp</li>
-              <li><strong>Positionen:</strong> Endschalter erkennen die Endpositionen</li>
-              <li><strong>Ablauf:</strong> fährt automatisch bis zur Endposition und stoppt dort</li>
-            </ul>
-
-            <h3>So funktioniert es</h3>
-            <p>
-              Ein Druck auf den Start-Taster, und der Lift fährt vom Keller nach oben. Der Endschalter stoppt ihn
-              an der richtigen Stelle. Nach dem Ausladen fährt er per Taster wieder in die Ausgangsposition.
-            </p>
-
-            <h3>Was es bringt</h3>
-            <ul class="dash-list">
-              <li>Kein Holztragen mehr</li>
-              <li>Einfache Bedienung über Taster</li>
-              <li>Lift stoppt zuverlässig an der Endposition</li>
-              <li>Wenig Wartung</li>
-            </ul>
-          </div>
-          <div class="project-image">
-            <div class="placeholder">
-              <div class="media-caption"><span>Foto / Holzlift</span><span>—</span><span>folgt</span></div>
-            </div>
-            <div class="project-specs">
-              <h4>Eckdaten</h4>
-              <div class="spec-row"><span class="spec-label">Jahr</span><span class="spec-value">2025</span></div>
-              <div class="spec-row"><span class="spec-label">Kategorie</span><span class="spec-value">Automatisierung</span></div>
-              <div class="spec-row"><span class="spec-label">Steuerung</span><span class="spec-value">Siemens LOGO!</span></div>
-              <div class="spec-row"><span class="spec-label">Status</span><span class="spec-value">Abgeschlossen</span></div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <div class="back-link">
-        <a href="/projekte/" class="btn-outline">← Alle Projekte</a>
       </div>
-
     </div>
-  </section>
+  </div>
+</section>
+</main>
 
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-col"><span class="accent">Steiger-Systems</span><br><span class="soft">Renato Steiger</span></div>
-      <div class="footer-col"><a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a><br>Schweiz</div>
-      <div class="footer-col"><a href="/">Startseite</a> · <a href="/projekte/">Projekte</a> · <a href="/about/">Über mich</a> · <a href="/kontakt/">Kontakt</a> · <a href="/shop/">Shop</a><br>&copy; {{ site.time | date: "%Y" }}</div>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="/" aria-label="Steiger-Systems — Startseite">
+          <svg class="logo__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1A11 11 0 0 1 23 12A11 11 0 0 1 12 23H3A2 2 0 0 1 1 21V12A11 11 0 0 1 12 1Z"/><circle cx="12" cy="12" r="3.2"/></svg>
+          <span class="logo__word">Steiger<span class="logo__dash">-</span>Systems</span>
+        </a>
+        <!-- TODO: vollständige Adresse (als Kartenlink), sobald sie öffentlich sein darf -->
+        <address>Renato Steiger<br>Schweiz</address>
+      </div>
+      <div><span class="label">Steiger-Systems</span>
+        <ul><li><a href="/#leistungen">Leistungen</a></li><li><a href="/about/">Über mich</a></li><li><a href="/kontakt/">Kontakt</a></li></ul>
+      </div>
+      <div><span class="label">Projekte</span>
+        <ul><li><a href="/projekte/">Alle Projekte</a></li><li><a href="/projekte/tempwatch/">TempWatch</a></li><li><a href="/projekte/holzlift/">Holzlift</a></li><li><a href="/shop/">Shop</a></li></ul>
+      </div>
+      <div><span class="label">Kontakt</span>
+        <ul><li><a href="mailto:steiger.development@gmail.com">E-Mail</a></li><li><a href="/kontakt/">Formular</a></li></ul>
+      </div>
     </div>
-  </footer>
+    <div class="footer__bottom label">
+      <!-- TODO: Impressum und Datenschutz verlinken, sobald die Seiten existieren -->
+      <span>Steiger-Systems | Schweiz</span>
+      <span>© <span id="year">2026</span> Steiger-Systems</span>
+    </div>
+  </div>
+</footer>
 
-  <script src="/JS/animations.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+<script src="/JS/hardtech.js" defer></script>
 </body>
 </html>
