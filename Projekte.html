@@ -13,121 +13,157 @@ redirect_from:
   <meta name="description" content="Projekte von Steiger-Systems: TempWatch, eine eigene Platine zur Temperaturmessung mit ESP32-S3, und eine Holzlift-Steuerung mit Siemens LOGO!.">
   <title>Projekte — Steiger-Systems</title>
   <link rel="canonical" href="https://www.steigersystems.ch/projekte/">
-  <link rel="icon" type="image/png" href="/Bilder/Adress.png">
+  <link rel="icon" type="image/svg+xml" href="/Bilder/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/CSS-Style/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/CSS-Style/hardtech.css">
 </head>
 <body>
-  <header>
-    <nav class="top container">
-      <div class="nav-left">
-        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite"><span class="brand-ring" aria-hidden="true"></span>STEIGER-SYSTEMS</a>
-        <ul id="navMenu">
-          <li><a href="/#leistungen">Leistungen</a></li>
-          <li><a href="/projekte/" aria-current="page">Projekte</a></li>
-          <li><a href="/about/">Über mich</a></li>
-          <li><a href="/kontakt/">Kontakt</a></li>
-          <li><a href="/shop/">Shop</a></li>
-        </ul>
-      </div>
-      <div class="nav-right">
-        <a href="/kontakt/" class="btn-nav">Anfrage</a>
-        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
-          <span></span><span></span>
-        </button>
-      </div>
-    </nav>
-  </header>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="label"><span>Projekte</span></div>
-      <h1>Meine Projekte</h1>
-      <p>Was ich bisher gebaut habe.</p>
+<header class="header">
+  <div class="bar">
+    <span class="bar__tag">Projekt</span>
+    <a href="/projekte/tempwatch/">TempWatch: eigene Platine mit ESP32-S3 und CAN-Bus – in Entwicklung</a>
+  </div>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a class="logo" href="/" aria-label="Steiger-Systems — Startseite">
+      <svg class="logo__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1A11 11 0 0 1 23 12A11 11 0 0 1 12 23H3A2 2 0 0 1 1 21V12A11 11 0 0 1 12 1Z"/><circle cx="12" cy="12" r="3.2"/></svg>
+      <span class="logo__word">Steiger<span class="logo__dash">-</span>Systems</span>
+    </a>
+    <div class="nav__links">
+      <a href="/#leistungen">Leistungen</a>
+      <a href="/projekte/" aria-current="page">Projekte</a>
+      <a href="/about/">Über mich</a>
+      <a href="/kontakt/">Kontakt</a>
+      <a href="/shop/">Shop</a>
     </div>
-  </section>
+    <div class="nav__right">
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+<div class="menu" id="menu" aria-hidden="true" inert>
+  <a href="/#leistungen">Leistungen</a>
+  <a href="/projekte/" aria-current="page">Projekte</a>
+  <a href="/about/">Über mich</a>
+  <a href="/kontakt/">Kontakt</a>
+  <a href="/shop/">Shop</a>
+  <a class="label" href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a>
+</div>
 
-  <section class="projects-section">
-    <div class="container">
-
-      <!-- TempWatch -->
-      <article class="project-card">
-        <div class="project-header">
-          <div>
-            <span class="project-status">In Entwicklung · <b>2025</b></span>
-            <h2>TempWatch</h2>
-          </div>
-          <span class="project-tag">Eigenentwicklung</span>
-        </div>
-        <div class="project-content">
-          <div class="project-description">
-            <p>
-              Eine kleine Platine auf Basis eines ESP32-S3, die bis zu 8 Temperaturen misst. Die Werte gehen
-              per CAN-Bus oder über ESPHome an Home Assistant.
-            </p>
-            <a href="/projekte/tempwatch/" class="btn-outline">Details</a>
-          </div>
-          <div class="project-image">
-            <div class="project-specs">
-              <h4>Eckdaten</h4>
-              <div class="spec-row"><span class="spec-label">Jahr</span><span class="spec-value">2025</span></div>
-              <div class="spec-row"><span class="spec-label">Kategorie</span><span class="spec-value">Embedded / IoT</span></div>
-              <div class="spec-row"><span class="spec-label">Protokolle</span><span class="spec-value">CAN, ESPHome</span></div>
-              <div class="spec-row"><span class="spec-label">Status</span><span class="spec-value spec-wip">In Entwicklung</span></div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Holzlift -->
-      <article class="project-card">
-        <div class="project-header">
-          <div>
-            <span class="project-status">Abgeschlossen · <b>2025</b></span>
-            <h2>Holzlift-Steuerung</h2>
-          </div>
-          <span class="project-tag">Automatisierung</span>
-        </div>
-        <div class="project-content">
-          <div class="project-description">
-            <p>
-              Ein Lift, der Brennholz vom Keller in den Wohnbereich bringt. Gesteuert mit einer Siemens LOGO!,
-              bedient über Taster. Endschalter sorgen dafür, dass der Lift an der richtigen Stelle stoppt.
-            </p>
-            <a href="/projekte/holzlift/" class="btn-outline">Details</a>
-          </div>
-          <div class="project-image">
-            <div class="project-specs">
-              <h4>Eckdaten</h4>
-              <div class="spec-row"><span class="spec-label">Jahr</span><span class="spec-value">2025</span></div>
-              <div class="spec-row"><span class="spec-label">Kategorie</span><span class="spec-value">Automatisierung</span></div>
-              <div class="spec-row"><span class="spec-label">Steuerung</span><span class="spec-value">Siemens LOGO!</span></div>
-              <div class="spec-row"><span class="spec-label">Status</span><span class="spec-value">Abgeschlossen</span></div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Weitere Projekte -->
-      <div class="project-card-small">
-        <h3>Weitere Projekte folgen</h3>
-        <p>Sie haben eine Idee für eine eigene Elektronik? Schreiben Sie mir kurz, worum es geht.</p>
-        <a href="/kontakt/" class="btn-outline">Anfrage senden</a>
+<main id="inhalt">
+<!-- ============ 01 PROJEKTE ============ -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="sec-num"><b>01</b><span class="label">Projekte</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h1 class="split">Meine Projekte</h1>
+        <p class="lead reveal">Was ich bisher gebaut habe.</p>
       </div>
-
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-col"><span class="accent">Steiger-Systems</span><br><span class="soft">Renato Steiger</span></div>
-      <div class="footer-col"><a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a><br>Schweiz</div>
-      <div class="footer-col"><a href="/">Startseite</a> · <a href="/projekte/">Projekte</a> · <a href="/about/">Über mich</a> · <a href="/kontakt/">Kontakt</a> · <a href="/shop/">Shop</a><br>&copy; {{ site.time | date: "%Y" }}</div>
+<!-- ============ 02 TEMPWATCH ============ -->
+<section class="featured">
+  <div class="wrap">
+    <div class="sec-num"><b>02</b><span class="label">Eigenentwicklung</span></div>
+    <a class="featured__card reveal" href="/projekte/tempwatch/">
+      <div class="featured__media">
+        <!-- TODO: eigenes Foto/Render von TempWatch (16:10) -->
+        <svg viewBox="0 0 1600 900" role="img" aria-label="Zeichnung der TempWatch-Platine"><use href="/Bilder/zeichnungen.svg#tempwatch-board"/></svg>
+      </div>
+      <div class="featured__body">
+        <span class="label">Eigenentwicklung · In Entwicklung · 2025</span>
+        <h2 class="h3">TempWatch</h2>
+        <p>Eine kleine Platine auf Basis eines ESP32-S3, die bis zu 8 Temperaturen misst. Die Werte gehen per CAN-Bus oder über ESPHome an Home Assistant.</p>
+        <dl class="meta">
+          <div><dt>Kategorie</dt><dd>Embedded / IoT</dd></div>
+          <div><dt>Protokolle</dt><dd>CAN, ESPHome</dd></div>
+        </dl>
+        <span class="link-arrow">Details</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 03 HOLZLIFT ============ -->
+<section class="featured">
+  <div class="wrap">
+    <div class="sec-num"><b>03</b><span class="label">Automatisierung</span></div>
+    <a class="featured__card featured__card--flip reveal" href="/projekte/holzlift/">
+      <div class="featured__media">
+        <!-- TODO: eigenes Foto der Holzlift-Anlage (16:10) -->
+        <svg viewBox="0 0 800 500" role="img" aria-label="Schema des Holzlifts: Kabine zwischen Keller und Wohnbereich"><use href="/Bilder/zeichnungen.svg#holzlift"/></svg>
+      </div>
+      <div class="featured__body">
+        <span class="label">Automatisierung · Abgeschlossen · 2025</span>
+        <h2 class="h3">Holzlift-Steuerung</h2>
+        <p>Ein Lift, der Brennholz vom Keller in den Wohnbereich bringt. Gesteuert mit einer Siemens LOGO!, bedient über Taster. Endschalter sorgen dafür, dass der Lift an der richtigen Stelle stoppt.</p>
+        <dl class="meta">
+          <div><dt>Kategorie</dt><dd>Automatisierung</dd></div>
+          <div><dt>Steuerung</dt><dd>Siemens LOGO!</dd></div>
+        </dl>
+        <span class="link-arrow">Details</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 04 WEITERE PROJEKTE ============ -->
+<section class="section section--end">
+  <div class="wrap">
+    <div class="sec-num"><b>04</b><span class="label">Weitere Projekte</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h2 class="split">Weitere Projekte folgen</h2>
+        <p class="lead reveal">Sie haben eine Idee für eine eigene Elektronik? Schreiben Sie mir kurz, worum es geht.</p>
+        <a class="link-arrow reveal" href="/kontakt/">Anfrage senden</a>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
+</main>
 
-  <script src="/JS/animations.js" defer></script>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="/" aria-label="Steiger-Systems — Startseite">
+          <svg class="logo__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1A11 11 0 0 1 23 12A11 11 0 0 1 12 23H3A2 2 0 0 1 1 21V12A11 11 0 0 1 12 1Z"/><circle cx="12" cy="12" r="3.2"/></svg>
+          <span class="logo__word">Steiger<span class="logo__dash">-</span>Systems</span>
+        </a>
+        <!-- TODO: vollständige Adresse (als Kartenlink), sobald sie öffentlich sein darf -->
+        <address>Renato Steiger<br>Schweiz</address>
+      </div>
+      <div><span class="label">Steiger-Systems</span>
+        <ul><li><a href="/#leistungen">Leistungen</a></li><li><a href="/about/">Über mich</a></li><li><a href="/kontakt/">Kontakt</a></li></ul>
+      </div>
+      <div><span class="label">Projekte</span>
+        <ul><li><a href="/projekte/">Alle Projekte</a></li><li><a href="/projekte/tempwatch/">TempWatch</a></li><li><a href="/projekte/holzlift/">Holzlift</a></li><li><a href="/shop/">Shop</a></li></ul>
+      </div>
+      <div><span class="label">Kontakt</span>
+        <ul><li><a href="mailto:steiger.development@gmail.com">E-Mail</a></li><li><a href="/kontakt/">Formular</a></li></ul>
+      </div>
+    </div>
+    <div class="footer__bottom label">
+      <!-- TODO: Impressum und Datenschutz verlinken, sobald die Seiten existieren -->
+      <span>Steiger-Systems | Schweiz</span>
+      <span>© <span id="year">2026</span> Steiger-Systems</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+<script src="/JS/hardtech.js" defer></script>
 </body>
 </html>

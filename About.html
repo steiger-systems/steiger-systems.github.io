@@ -13,134 +13,174 @@ redirect_from:
   <meta name="description" content="Renato Steiger, Steiger-Systems: eigene Elektronik aus der Schweiz – Platinen in KiCad, Firmware in C/C++ für den ESP32, dazu Steuerungen mit Siemens LOGO!.">
   <title>Über mich — Steiger-Systems</title>
   <link rel="canonical" href="https://www.steigersystems.ch/about/">
-  <link rel="icon" type="image/png" href="/Bilder/Adress.png">
+  <link rel="icon" type="image/svg+xml" href="/Bilder/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/Bilder/Adress.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/CSS-Style/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/CSS-Style/hardtech.css">
 </head>
 <body>
-  <header>
-    <nav class="top container">
-      <div class="nav-left">
-        <a href="/" class="brand" aria-label="Steiger-Systems — Startseite"><span class="brand-ring" aria-hidden="true"></span>STEIGER-SYSTEMS</a>
-        <ul id="navMenu">
-          <li><a href="/#leistungen">Leistungen</a></li>
-          <li><a href="/projekte/">Projekte</a></li>
-          <li><a href="/about/" aria-current="page">Über mich</a></li>
-          <li><a href="/kontakt/">Kontakt</a></li>
-          <li><a href="/shop/">Shop</a></li>
-        </ul>
-      </div>
-      <div class="nav-right">
-        <a href="/kontakt/" class="btn-nav">Anfrage</a>
-        <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
-          <span></span><span></span>
-        </button>
-      </div>
-    </nav>
-  </header>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="label"><span>Über mich</span></div>
-      <h1>Renato Steiger</h1>
-      <p>Ich entwickle eigene Elektronik &ndash; von der Platine über die Firmware bis zum Gehäuse.</p>
+<header class="header">
+  <div class="bar">
+    <span class="bar__tag">Projekt</span>
+    <a href="/projekte/tempwatch/">TempWatch: eigene Platine mit ESP32-S3 und CAN-Bus – in Entwicklung</a>
+  </div>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a class="logo" href="/" aria-label="Steiger-Systems — Startseite">
+      <svg class="logo__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1A11 11 0 0 1 23 12A11 11 0 0 1 12 23H3A2 2 0 0 1 1 21V12A11 11 0 0 1 12 1Z"/><circle cx="12" cy="12" r="3.2"/></svg>
+      <span class="logo__word">Steiger<span class="logo__dash">-</span>Systems</span>
+    </a>
+    <div class="nav__links">
+      <a href="/#leistungen">Leistungen</a>
+      <a href="/projekte/">Projekte</a>
+      <a href="/about/" aria-current="page">Über mich</a>
+      <a href="/kontakt/">Kontakt</a>
+      <a href="/shop/">Shop</a>
     </div>
-  </section>
+    <div class="nav__right">
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+<div class="menu" id="menu" aria-hidden="true" inert>
+  <a href="/#leistungen">Leistungen</a>
+  <a href="/projekte/">Projekte</a>
+  <a href="/about/" aria-current="page">Über mich</a>
+  <a href="/kontakt/">Kontakt</a>
+  <a href="/shop/">Shop</a>
+  <a class="label" href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a>
+</div>
 
-  <section class="about-content">
-    <div class="container">
-      <div class="about-intro">
-        <h2>Wer dahintersteckt</h2>
-        <p>
-          Steiger-Systems, das bin ich: Renato Steiger. Ich entwickle eigene Elektronik: Platinen in KiCad,
-          Firmware in C/C++ für den ESP32, Gehäuse aus dem 3D-Drucker &ndash; zum Beispiel TempWatch.
-          Dazu programmiere ich kleinere Steuerungen mit Siemens LOGO!.
-          Mir ist wichtig, dass eine Lösung im Alltag funktioniert und nicht nur auf dem Papier.
-        </p>
-      </div>
-
-      <div class="skills-section">
-        <h2>Was ich kann</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <div class="step-num">01</div>
-            <h3>Elektronik-Entwicklung</h3>
-            <ul class="dash-list">
-              <li>Platinen in KiCad zeichnen</li>
-              <li>Bauteile auswählen</li>
-              <li>Gehäuse in Fusion 360 und aus dem 3D-Drucker</li>
-            </ul>
-          </div>
-          <div class="skill-card">
-            <div class="step-num">02</div>
-            <h3>Firmware</h3>
-            <ul class="dash-list">
-              <li>C/C++ für den ESP32</li>
-              <li>ESPHome und Home Assistant</li>
-              <li>CAN-Bus anbinden</li>
-            </ul>
-          </div>
-          <div class="skill-card">
-            <div class="step-num">03</div>
-            <h3>Steuerungen</h3>
-            <ul class="dash-list">
-              <li>Einfache Programme mit Siemens LOGO!</li>
-              <li>Sensoren und Aktoren anbinden</li>
-              <li>Taster- und Endschalter-Steuerungen</li>
-            </ul>
-          </div>
-          <div class="skill-card">
-            <div class="step-num">04</div>
-            <h3>Projektabwicklung</h3>
-            <ul class="dash-list">
-              <li>Prototyp aufbauen und messen</li>
-              <li>Absprache mit Ihnen, ohne Umwege</li>
-              <li>Dokumentation und Übergabe</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="technologies">
-        <div class="deco deco--sys" aria-hidden="true"></div>
-        <div class="section-head">
-          <h2>Womit ich arbeite</h2>
-          <div class="label"><span>Stand {{ site.time | date: "%Y" }}</span></div>
-        </div>
-        <div class="sys-grid">
-          <span class="cross cross--tl" aria-hidden="true">+</span>
-          <span class="cross cross--tr" aria-hidden="true">+</span>
-          <div class="sys-cell"><div class="sys-cat">Elektronik</div><div class="sys-title">Platinenlayout</div><div class="sys-detail">KiCad</div></div>
-          <div class="sys-cell"><div class="sys-cat">Embedded</div><div class="sys-title">ESP32</div><div class="sys-detail">Firmware in C/C++</div></div>
-          <div class="sys-cell"><div class="sys-cat">Embedded</div><div class="sys-title">ESPHome</div><div class="sys-detail">Home Assistant</div></div>
-          <div class="sys-cell"><div class="sys-cat">Bus</div><div class="sys-title">CAN-Bus</div><div class="sys-detail">MCP2515, ISO 11898</div></div>
-          <div class="sys-cell"><div class="sys-cat">Sensorik</div><div class="sys-title">Sensoren &amp; Aktoren</div><div class="sys-detail">Taster, Endschalter, Fühler</div></div>
-          <div class="sys-cell"><div class="sys-cat">Konstruktion</div><div class="sys-title">3D-Druck</div><div class="sys-detail">Fusion 360, Gehäuse</div></div>
-          <div class="sys-cell"><div class="sys-cat">SPS</div><div class="sys-title">Siemens LOGO!</div><div class="sys-detail">Einfache Steuerungsprogramme</div></div>
-          <div class="sys-cell"><div class="sys-cat">Aufbau</div><div class="sys-title">Prototyping</div><div class="sys-detail">Breadboard, Messtechnik</div></div>
-          <span class="cross cross--bl" aria-hidden="true">+</span>
-          <span class="cross cross--br" aria-hidden="true">+</span>
-        </div>
-      </div>
-
-      <div class="cta-section">
-        <h2>Haben Sie ein Projekt?</h2>
-        <p>Egal ob eigene Elektronik, Firmware oder eine kleine Steuerung: Schreiben Sie mir, worum es geht.</p>
-        <a href="/kontakt/" class="btn-primary">Anfrage senden</a>
+<main id="inhalt">
+<!-- ============ 01 ÜBER MICH ============ -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="sec-num"><b>01</b><span class="label">Über mich</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h1 class="split">Renato Steiger</h1>
+        <p class="lead reveal">Ich entwickle eigene Elektronik – von der Platine über die Firmware bis zum Gehäuse.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-col"><span class="accent">Steiger-Systems</span><br><span class="soft">Renato Steiger</span></div>
-      <div class="footer-col"><a href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a><br>Schweiz</div>
-      <div class="footer-col"><a href="/">Startseite</a> · <a href="/projekte/">Projekte</a> · <a href="/about/">Über mich</a> · <a href="/kontakt/">Kontakt</a> · <a href="/shop/">Shop</a><br>&copy; {{ site.time | date: "%Y" }}</div>
+<!-- ============ 02 WER DAHINTERSTECKT ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-num"><b>02</b><span class="label">Wer dahintersteckt</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div class="prose reveal">
+        <p class="lead">Steiger-Systems, das bin ich: Renato Steiger. Ich entwickle eigene Elektronik: Platinen in KiCad, Firmware in C/C++ für den ESP32, Gehäuse aus dem 3D-Drucker – zum Beispiel TempWatch.</p>
+        <p>Dazu programmiere ich kleinere Steuerungen mit Siemens LOGO!. Mir ist wichtig, dass eine Lösung im Alltag funktioniert und nicht nur auf dem Papier.</p>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="/JS/animations.js" defer></script>
+<!-- ============ 03 WAS ICH KANN ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-num"><b>03</b><span class="label">Was ich kann</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h2 class="split">Was ich kann</h2>
+        <div class="rows" data-stagger>
+          <div class="row"><b>01</b><h3>Elektronik-Entwicklung</h3>
+            <ul class="row__list"><li>Platinen in KiCad zeichnen</li><li>Bauteile auswählen</li><li>Gehäuse in Fusion 360 und aus dem 3D-Drucker</li></ul></div>
+          <div class="row"><b>02</b><h3>Firmware</h3>
+            <ul class="row__list"><li>C/C++ für den ESP32</li><li>ESPHome und Home Assistant</li><li>CAN-Bus anbinden</li></ul></div>
+          <div class="row"><b>03</b><h3>Steuerungen</h3>
+            <ul class="row__list"><li>Einfache Programme mit Siemens LOGO!</li><li>Sensoren und Aktoren anbinden</li><li>Taster- und Endschalter-Steuerungen</li></ul></div>
+          <div class="row"><b>04</b><h3>Projektabwicklung</h3>
+            <ul class="row__list"><li>Prototyp aufbauen und messen</li><li>Absprache mit Ihnen, ohne Umwege</li><li>Dokumentation und Übergabe</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 WERKZEUGE ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-num"><b>04</b><span class="label">Werkzeuge</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h2 class="split">Womit ich arbeite</h2>
+        <dl class="sheet" data-stagger>
+          <div><dt>Platinenlayout</dt><dd>KiCad</dd></div>
+          <div><dt>Embedded</dt><dd>ESP32 <span>· Firmware in C/C++</span></dd></div>
+          <div><dt>Smart Home</dt><dd>ESPHome <span>· Home Assistant</span></dd></div>
+          <div><dt>Bus</dt><dd>CAN-Bus <span>· MCP2515, ISO 11898</span></dd></div>
+          <div><dt>Sensorik</dt><dd>Sensoren &amp; Aktoren <span>· Taster, Endschalter, Fühler</span></dd></div>
+          <div><dt>Konstruktion</dt><dd>3D-Druck <span>· Fusion 360, Gehäuse</span></dd></div>
+          <div><dt>SPS</dt><dd>Siemens LOGO! <span>· einfache Steuerungsprogramme</span></dd></div>
+          <div><dt>Aufbau</dt><dd>Prototyping <span>· Breadboard, Messtechnik</span></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 KONTAKT ============ -->
+<section class="section section--end">
+  <div class="wrap">
+    <div class="sec-num"><b>05</b><span class="label">Kontakt</span></div>
+    <div class="grid-12">
+      <div></div>
+      <div>
+        <h2 class="split">Haben Sie ein Projekt?</h2>
+        <p class="lead reveal">Egal ob eigene Elektronik, Firmware oder eine kleine Steuerung: Schreiben Sie mir, worum es geht.</p>
+        <div class="contact__links reveal">
+          <a class="link-arrow" href="/kontakt/">Anfrage senden</a>
+          <a class="link-arrow" href="mailto:steiger.development@gmail.com">steiger.development@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="/" aria-label="Steiger-Systems — Startseite">
+          <svg class="logo__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1A11 11 0 0 1 23 12A11 11 0 0 1 12 23H3A2 2 0 0 1 1 21V12A11 11 0 0 1 12 1Z"/><circle cx="12" cy="12" r="3.2"/></svg>
+          <span class="logo__word">Steiger<span class="logo__dash">-</span>Systems</span>
+        </a>
+        <!-- TODO: vollständige Adresse (als Kartenlink), sobald sie öffentlich sein darf -->
+        <address>Renato Steiger<br>Schweiz</address>
+      </div>
+      <div><span class="label">Steiger-Systems</span>
+        <ul><li><a href="/#leistungen">Leistungen</a></li><li><a href="/about/">Über mich</a></li><li><a href="/kontakt/">Kontakt</a></li></ul>
+      </div>
+      <div><span class="label">Projekte</span>
+        <ul><li><a href="/projekte/">Alle Projekte</a></li><li><a href="/projekte/tempwatch/">TempWatch</a></li><li><a href="/projekte/holzlift/">Holzlift</a></li><li><a href="/shop/">Shop</a></li></ul>
+      </div>
+      <div><span class="label">Kontakt</span>
+        <ul><li><a href="mailto:steiger.development@gmail.com">E-Mail</a></li><li><a href="/kontakt/">Formular</a></li></ul>
+      </div>
+    </div>
+    <div class="footer__bottom label">
+      <!-- TODO: Impressum und Datenschutz verlinken, sobald die Seiten existieren -->
+      <span>Steiger-Systems | Schweiz</span>
+      <span>© <span id="year">2026</span> Steiger-Systems</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+<script src="/JS/hardtech.js" defer></script>
 </body>
 </html>

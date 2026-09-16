@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Eigene Vektorzeichnungen, eingebunden per <use href="/Bilder/zeichnungen.svg#…">.
+       TODO: durch eigene Fotos/Renders ersetzen, sobald vorhanden. -->
+
+  <!-- TempWatch-Platine, vereinfacht (1600×900) -->
+  <symbol id="tempwatch-board" viewBox="0 0 1600 900">
+    <rect x="262" y="168" width="1100" height="600" rx="28" fill="#12161c" opacity=".05"/>
+    <rect x="250" y="150" width="1100" height="600" rx="28" fill="#ffffff" stroke="#c9c6bd" stroke-width="2"/>
+    <rect x="266" y="166" width="1068" height="568" rx="18" fill="none" stroke="#e7e5df" stroke-width="2"/>
+    <g fill="#f4f3ef" stroke="#c9c6bd" stroke-width="2">
+      <circle cx="300" cy="200" r="16"/><circle cx="1300" cy="200" r="16"/>
+      <circle cx="300" cy="700" r="16"/><circle cx="1300" cy="700" r="16"/>
+    </g>
+    <g fill="none" stroke="#dcd9d1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M630 400 H700 V335 H760"/><path d="M630 440 H720 V355 H760"/>
+      <path d="M870 335 H920"/><path d="M990 335 H1040 V230 H1080"/>
+      <path d="M630 520 H760 V650 H760 V690"/><path d="M630 560 H820 V690"/>
+      <path d="M630 600 H880 V690"/>
+      <path d="M940 690 V620 H1000 V690"/><path d="M1060 690 V600 H1120 V690"/>
+      <path d="M1180 690 V580 H1240 V690"/>
+      <path d="M420 666 H470 V610"/><path d="M306 658 H360"/>
+      <path d="M1100 420 H1180 V500"/>
+    </g>
+    <rect x="330" y="230" width="300" height="380" rx="8" fill="#1c2a3a"/>
+    <path d="M350 250 h40 v40 h30 v-40 h30 v40 h30 v-40 h30 v40 h30 v-40 h40" fill="none" stroke="#6f8aa6" stroke-width="5"/>
+    <rect x="345" y="325" width="270" height="270" rx="6" fill="#e4e7eb" stroke="#b9c0c8" stroke-width="2"/>
+    <text x="480" y="455" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="30" fill="#4b5563">ESP32-S3</text>
+    <text x="480" y="490" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="18" fill="#6b7280">WROOM</text>
+    <rect x="760" y="300" width="110" height="70" rx="4" fill="#1f2328"/>
+    <g fill="#b9bcc2">
+      <rect x="770" y="292" width="8" height="8"/><rect x="790" y="292" width="8" height="8"/><rect x="810" y="292" width="8" height="8"/><rect x="830" y="292" width="8" height="8"/><rect x="850" y="292" width="8" height="8"/>
+      <rect x="770" y="370" width="8" height="8"/><rect x="790" y="370" width="8" height="8"/><rect x="810" y="370" width="8" height="8"/><rect x="830" y="370" width="8" height="8"/><rect x="850" y="370" width="8" height="8"/>
+    </g>
+    <text x="815" y="341" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="15" fill="#9aa1ab">MCP2515</text>
+    <rect x="920" y="310" width="70" height="50" rx="4" fill="#1f2328"/>
+    <text x="955" y="340" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#9aa1ab">HVD230</text>
+    <rect x="1080" y="185" width="150" height="70" rx="6" fill="#2f7d5b"/>
+    <g fill="#1c4f39"><rect x="1095" y="200" width="30" height="40" rx="3"/><rect x="1140" y="200" width="30" height="40" rx="3"/><rect x="1185" y="200" width="30" height="40" rx="3"/></g>
+    <rect x="1100" y="380" width="90" height="60" rx="4" fill="#1f2328"/>
+    <g fill="#d6cfc0" stroke="#b8ae99" stroke-width="2"><rect x="1210" y="385" width="40" height="22" rx="4"/><rect x="1210" y="415" width="40" height="22" rx="4"/><rect x="700" y="470" width="40" height="22" rx="4"/></g>
+    <rect x="360" y="636" width="60" height="60" rx="4" fill="#1f2328"/>
+    <rect x="236" y="640" width="70" height="36" rx="12" fill="#c3c7cd" stroke="#9aa1ab" stroke-width="2"/>
+    <rect x="720" y="680" width="560" height="60" rx="6" fill="#2f7d5b"/>
+    <g fill="#1c4f39">
+      <rect x="735" y="692" width="50" height="36" rx="3"/><rect x="803" y="692" width="50" height="36" rx="3"/>
+      <rect x="871" y="692" width="50" height="36" rx="3"/><rect x="939" y="692" width="50" height="36" rx="3"/>
+      <rect x="1007" y="692" width="50" height="36" rx="3"/><rect x="1075" y="692" width="50" height="36" rx="3"/>
+      <rect x="1143" y="692" width="50" height="36" rx="3"/><rect x="1211" y="692" width="50" height="36" rx="3"/>
+    </g>
+    <text x="1000" y="664" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="16" fill="#9a978f" letter-spacing="6">T1 T2 T3 T4 T5 T6 T7 T8</text>
+    <text x="1300" y="560" text-anchor="end" font-family="Inter Tight, Arial, sans-serif" font-weight="600" font-size="34" fill="#c9c6bd" letter-spacing="4">TEMPWATCH</text>
+    <text x="1300" y="592" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="16" fill="#c9c6bd">STEIGER-SYSTEMS</text>
+    <circle cx="680" cy="250" r="18" fill="#2b9af3" opacity=".15"/><circle cx="680" cy="250" r="9" fill="#2b9af3"/>
+  </symbol>
+
+  <!-- Holzlift, Schema (800×500) -->
+  <symbol id="holzlift" viewBox="0 0 800 500">
+    <rect width="800" height="500" fill="#ffffff"/>
+    <g stroke="#e7e5df" stroke-width="1"><path d="M0 100 H800 M0 200 H800 M0 300 H800 M0 400 H800 M100 0 V500 M200 0 V500 M300 0 V500 M400 0 V500 M500 0 V500 M600 0 V500 M700 0 V500"/></g>
+    <g fill="none" stroke="#12161c" stroke-width="3">
+      <path d="M120 130 H340 M460 130 H680"/>
+      <path d="M120 390 H340 M460 390 H680"/>
+      <path d="M340 40 V470 M460 40 V470"/>
+    </g>
+    <rect x="352" y="168" width="96" height="96" fill="#f4f3ef" stroke="#12161c" stroke-width="3"/>
+    <g stroke="#5f6168" stroke-width="3"><path d="M366 222 H434 M372 206 H428 M366 238 H434"/></g>
+    <path d="M400 150 V60" stroke="#5f6168" stroke-width="2" stroke-dasharray="6 6"/>
+    <path d="M400 70 l-10 16 h20 z" fill="#1464c4"/>
+    <g fill="#1464c4"><circle cx="340" cy="130" r="7"/><circle cx="340" cy="390" r="7"/></g>
+    <g font-family="JetBrains Mono, monospace" font-size="15" fill="#5f6168" letter-spacing="2">
+      <text x="120" y="118">WOHNBEREICH</text><text x="120" y="378">KELLER</text>
+      <text x="480" y="220">LOGO!</text><text x="480" y="244" fill="#9a978f">ENDSCHALTER</text>
+    </g>
+  </symbol>
+</svg>
