@@ -118,6 +118,23 @@
     return function () { if (lenis) lenis.destroy(); };
   });
 
+  // 3D-Modell im Showcase: Callouts folgen den Bauteil-Hotspots
+  var twModel = $("model-viewer[data-callouts]");
+  if (twModel) {
+    var placeCallouts = function () {
+      if (!twModel.loaded || !twModel.queryHotspot) return;
+      twModel.closest(".showcase__frame").querySelectorAll(".callout[data-hotspot]").forEach(function (c) {
+        var h = twModel.queryHotspot(c.dataset.hotspot);
+        if (!h) return;
+        c.style.setProperty("--x", h.canvasPosition.x + "px");
+        c.style.setProperty("--y", h.canvasPosition.y + "px");
+      });
+    };
+    twModel.addEventListener("load", function () { requestAnimationFrame(placeCallouts); });
+    twModel.addEventListener("camera-change", function () { requestAnimationFrame(placeCallouts); });
+    window.addEventListener("resize", function () { requestAnimationFrame(placeCallouts); });
+  }
+
   // Gepinnter Produkt-Showcase (ein Pin pro Seite): Callouts nacheinander
   if ($(".showcase")) {
     mm.add("(min-width: 901px) and (prefers-reduced-motion: no-preference)", function () {
@@ -130,6 +147,8 @@
           onUpdate: function (self) {
             var i = Math.min(callouts.length - 1, Math.floor(self.progress * callouts.length));
             callouts.forEach(function (c, n) { c.classList.toggle("is-active", n === i); });
+            // Modell dreht sich beim Scrollen langsam mit
+            if (twModel) twModel.cameraOrbit = (-12 + self.progress * 24).toFixed(1) + "deg 32deg 0.15m";
           }
         }
       });
