@@ -19,6 +19,7 @@ redirect_from:
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/CSS-Style/hardtech.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -75,8 +76,12 @@ redirect_from:
     <div class="sec-num"><b>02</b><span class="label">Eigenentwicklung</span></div>
     <a class="featured__card reveal" href="/projekte/tempwatch/">
       <div class="featured__media">
-        <!-- TODO: eigenes Foto/Render von TempWatch (16:10) -->
-        <svg viewBox="0 0 1600 900" role="img" aria-label="Zeichnung der TempWatch-Platine"><use href="/Bilder/zeichnungen.svg#tempwatch-board"/></svg>
+        <model-viewer class="featured__model" src="/Bilder/tempwatch/tempwatch-leicht.glb" alt="3D-Modell der TempWatch-Platine"
+          camera-orbit="22deg 50deg 0.115m" field-of-view="24deg" environment-image="neutral" exposure="1.05"
+          shadow-intensity="1" shadow-softness="0.8" interaction-prompt="none" loading="lazy">
+          <svg slot="poster" class="tw-poster" viewBox="0 0 1600 900" aria-hidden="true"><use href="/Bilder/zeichnungen.svg#tempwatch-board"/></svg>
+          <div slot="progress-bar"></div>
+        </model-viewer>
       </div>
       <div class="featured__body">
         <span class="label">Eigenentwicklung · In Entwicklung · 2025</span>

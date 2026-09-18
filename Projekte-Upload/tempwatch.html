@@ -18,6 +18,7 @@ redirect_from:
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/CSS-Style/hardtech.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -87,10 +88,19 @@ redirect_from:
   <div class="showcase">
     <div class="showcase__stage">
       <div class="showcase__frame">
-        <!-- TODO: eigenes freigestelltes Produkt-Render, 1600×900 -->
-        <svg class="showcase__img" viewBox="0 0 1600 900" role="img" aria-label="TempWatch-Platine mit markierten Baugruppen"><use href="/Bilder/zeichnungen.svg#tempwatch-board"/></svg>
+        <model-viewer class="showcase__img" src="/Bilder/tempwatch/tempwatch-leicht.glb" alt="3D-Modell der TempWatch-Platine mit markierten Baugruppen"
+          camera-orbit="-12deg 32deg 0.15m" field-of-view="22deg" environment-image="neutral" exposure="1.05"
+          shadow-intensity="1" shadow-softness="0.8" interaction-prompt="none" loading="lazy" data-callouts>
+          <svg slot="poster" class="tw-poster" viewBox="0 0 1600 900" aria-hidden="true"><use href="/Bilder/zeichnungen.svg#tempwatch-board"/></svg>
+          <div slot="progress-bar"></div>
+          <div class="tw-anchor" slot="hotspot-mcu" data-position="-0.0082 0.0048 0.0072" data-normal="0 1 0"></div>
+          <div class="tw-anchor" slot="hotspot-wifi" data-position="0.0005 0.0048 0.0110" data-normal="0 1 0"></div>
+          <div class="tw-anchor" slot="hotspot-can" data-position="-0.0143 0.0020 -0.0065" data-normal="0 1 0"></div>
+          <div class="tw-anchor" slot="hotspot-temp" data-position="0.0107 0.0045 -0.0138" data-normal="0 1 0"></div>
+          <div class="tw-anchor" slot="hotspot-usb" data-position="0.0298 0.0048 -0.0029" data-normal="0 1 0"></div>
+        </model-viewer>
 
-        <div class="callout" style="--x: 30%; --y: 51.5%;" data-side="left">
+        <div class="callout" data-hotspot="hotspot-mcu" style="--x: 30%; --y: 51.5%;" data-side="left">
           <span class="callout__dot"></span><span class="callout__line"></span>
           <div class="callout__box">
             <h3><span class="callout__num">01</span>Mikrocontroller</h3>
@@ -101,19 +111,19 @@ redirect_from:
             </dl>
           </div>
         </div>
-        <div class="callout" style="--x: 30%; --y: 29.5%;">
+        <div class="callout" data-hotspot="hotspot-wifi" style="--x: 30%; --y: 29.5%;">
           <span class="callout__dot"></span><span class="callout__line"></span>
           <div class="callout__box"><h3><span class="callout__num">02</span>ESPHome</h3><p>Per WLAN landen die Werte in Home Assistant oder einer anderen Smart-Home-Plattform.</p></div>
         </div>
-        <div class="callout" style="--x: 72.2%; --y: 24.4%;">
+        <div class="callout" data-hotspot="hotspot-can" style="--x: 72.2%; --y: 24.4%;" data-side="left">
           <span class="callout__dot"></span><span class="callout__line"></span>
           <div class="callout__box"><h3><span class="callout__num">03</span>CAN-Bus</h3><p>MCP2515 und SN65HVD230D nach ISO 11898 – direkt an ein Industrie- oder Fahrzeugnetzwerk.</p></div>
         </div>
-        <div class="callout" style="--x: 62.5%; --y: 80%;">
+        <div class="callout" data-hotspot="hotspot-temp" style="--x: 62.5%; --y: 80%;">
           <span class="callout__dot"></span><span class="callout__line"></span>
           <div class="callout__box"><h3><span class="callout__num">04</span>8 Temperatureingänge</h3><p>NTC, PT100 oder DS18B20 – bis zu 8 Kanäle gleichzeitig.</p></div>
         </div>
-        <div class="callout" style="--x: 25%; --y: 74%;">
+        <div class="callout" data-hotspot="hotspot-usb" style="--x: 25%; --y: 74%;">
           <span class="callout__dot"></span><span class="callout__line"></span>
           <div class="callout__box"><h3><span class="callout__num">05</span>USB</h3><p>Programmierung über USB mit dem CP2102N.</p></div>
         </div>
