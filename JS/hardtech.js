@@ -104,7 +104,7 @@
 
     // Hero der Startseite: Render schwebt ein, Parallaxe beim Scrollen
     if ($(".hero")) {
-      gsap.from(".hero__render", { y: 60, autoAlpha: 0, scale: 0.96, duration: 1.4, ease: "expo.out", delay: 0.15 });
+      gsap.from(".hero__stage", { y: 60, autoAlpha: 0, scale: 0.96, duration: 1.4, ease: "expo.out", delay: 0.15 });
       gsap.to(".hero__media", { yPercent: 18, scale: 1.06, ease: "none",
         scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
       gsap.to(".hero__scroll, .hero__caption", { autoAlpha: 0, ease: "none",
@@ -164,7 +164,7 @@
   }
 
   mm.add("(prefers-reduced-motion: reduce)", function () {
-    gsap.set(".reveal, [data-stagger] > *, .sec-num, .hero__render", { clearProps: "all" });
+    gsap.set(".reveal, [data-stagger] > *, .sec-num, .hero__stage", { clearProps: "all" });
   });
 
   window.addEventListener("load", function () { ScrollTrigger.refresh(); });
