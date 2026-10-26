@@ -76,8 +76,10 @@
         SplitText.create(h, {
           type: "lines", mask: "lines", autoSplit: true,
           onSplit: function (self) {
+            // Zeilenmaske endet am Zeilenkasten: unten etwas Luft, sonst werden g, j und p beschnitten
+            (self.masks || []).forEach(function (m) { m.style.paddingBottom = "0.18em"; m.style.marginBottom = "-0.18em"; });
             return gsap.from(self.lines, {
-              yPercent: 110, duration: 1.1, ease: "expo.out", stagger: 0.08,
+              yPercent: 125, duration: 1.1, ease: "expo.out", stagger: 0.08,
               scrollTrigger: { trigger: h, start: "top 88%", once: true }
             });
           }

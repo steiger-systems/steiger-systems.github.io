@@ -125,6 +125,8 @@ section { position: relative; }
 /* ═══════════ 01 Steiger-Systems ═══════════ */
 .mission { padding: clamp(6rem, 16vh, 11rem) 0; }
 .mission .lead { margin-top: 0; }
+/* Zweisatz-Headline: Grösse folgt der schmalen rechten Spalte, nicht der vollen Fensterbreite */
+.mission__title { font-size: clamp(2.2rem, 5.5vw, 5rem); text-wrap: balance; }
 
 /* ═══════════ 02 Produkt: TempWatch ═══════════ */
 .product { padding-bottom: clamp(3rem, 8vh, 6rem); }
