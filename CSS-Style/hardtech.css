@@ -113,14 +113,22 @@ section { position: relative; }
     linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 80px 80px,
     linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 80px 80px,
     radial-gradient(ellipse at 60% 45%, #ffffff, var(--bg) 70%); }
-.hero__render { width: min(1200px, 88vw); height: auto; margin-top: calc(var(--bar-h) + var(--nav-h) / 2);
-  filter: drop-shadow(0 30px 60px rgb(18 22 28 / .08)); }
+/* 3D-Wortmarke: Canvas liegt transparent über dem Raster, Three.js füllt die Bühne */
+.hero__stage { position: absolute; inset: 0; margin-top: calc(var(--bar-h) + var(--nav-h) / 2);
+  display: grid; place-items: center; touch-action: pan-y; cursor: grab; }
+.hero__stage.is-dragging { cursor: grabbing; }
+.hero__stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block;
+  /* Schlagschatten wächst mit der Schriftgrösse – fix in Pixeln wirkt auf dem Handy wie eine zweite Schrift */
+  filter: drop-shadow(0 clamp(2px, .8vw, 12px) clamp(6px, 1.7vw, 24px) rgb(18 22 28 / .13)); }
+/* Schriftzug als Text, bis das Modell steht – und dauerhaft, falls es nicht lädt */
+.hero__wordmark { position: relative; margin: 0; max-width: none; color: var(--text);
+  font-weight: 500; font-size: clamp(2rem, 7vw, 6rem); letter-spacing: .16em; text-transform: uppercase;
+  line-height: 1; text-align: center; transition: opacity .6s var(--ease); }
+.hero__wordmark span { color: var(--accent); }
+.hero__stage.is-ready .hero__wordmark { opacity: 0; }
 .hero::after { content: ""; position: absolute; inset: auto 0 0; height: 30%; background: linear-gradient(to top, var(--bg), transparent); pointer-events: none; }
 .hero__scroll { position: absolute; z-index: 1; left: var(--pad); bottom: 2rem; }
 .hero__caption { position: absolute; z-index: 1; right: var(--pad); bottom: 2rem; }
-@media (max-width: 700px) {
-  .hero__render { width: 120vw; max-width: none; }
-}
 
 /* ═══════════ 01 Steiger-Systems ═══════════ */
 .mission { padding: clamp(6rem, 16vh, 11rem) 0; }
@@ -134,8 +142,7 @@ section { position: relative; }
 .showcase__frame { position: relative; width: min(1100px, 80vw); }
 .showcase__img { width: 100%; height: auto; background: radial-gradient(ellipse, #ffffff, transparent 70%); }
 /* 3D-Modell (model-viewer): Zeichnung als Platzhalter, bis das Modell geladen ist */
-model-viewer.hero__render, model-viewer.showcase__img { display: block; aspect-ratio: 16 / 9; height: auto; --poster-color: transparent; }
-model-viewer.hero__render { cursor: grab; }
+model-viewer.showcase__img { display: block; aspect-ratio: 16 / 9; height: auto; --poster-color: transparent; }
 .featured__model { display: block; width: 100%; height: 100%; --poster-color: transparent; transition: transform .8s var(--ease); }
 .featured__card:hover .featured__model { transform: scale(1.04); }
 .tw-poster { width: 100%; height: 100%; }
