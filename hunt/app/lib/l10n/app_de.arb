@@ -1,0 +1,206 @@
+{
+  "@@locale": "de",
+  "appTitle": "Hunt",
+  "startTagline": "Verstecken in echt. Hunter gegen Runner.",
+  "startNameLabel": "Dein Name",
+  "startCodeLabel": "Spielcode",
+  "startCreate": "Spiel erstellen",
+  "startJoin": "Beitreten",
+  "startOr": "oder",
+  "startOpenGames": "Zurück ins Spiel",
+  "notConfigured": "App nicht konfiguriert: SUPABASE_URL und SUPABASE_ANON_KEY fehlen (siehe README).",
+  "connectionError": "Keine Verbindung zum Server.",
+  "retry": "Nochmals versuchen",
+  "cancel": "Abbrechen",
+  "teamHunter": "Hunter",
+  "teamRunner": "Runner",
+  "youLabel": "du",
+  "hostLabel": "Host",
+  "lobbyTitle": "Lobby",
+  "lobbyShareHint": "Freunde geben diesen Code in der App ein.",
+  "lobbyHostHint": "Tippe auf einen Spieler, um das Team zu wechseln. Lange drücken zum Entfernen.",
+  "lobbyWaitingForHost": "Warte, bis der Host das Spiel startet …",
+  "lobbySetZone": "Zone auf Karte setzen",
+  "lobbyZoneSet": "Zone gesetzt, Radius {radius} m",
+  "@lobbyZoneSet": {
+    "placeholders": {
+      "radius": {
+        "type": "int"
+      }
+    }
+  },
+  "lobbyZoneMissing": "Zone noch nicht gesetzt",
+  "lobbyZoneOff": "Ohne Zone",
+  "lobbyStart": "Spiel starten",
+  "lobbyLeave": "Verlassen",
+  "lobbyRemoveTitle": "{name} entfernen?",
+  "@lobbyRemoveTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "lobbyRemove": "Entfernen",
+  "settingsTitle": "Einstellungen",
+  "settingsRound": "Rundenlänge",
+  "settingsHeadstart": "Vorsprung",
+  "settingsPings": "Pings für Hunter",
+  "settingsPingInterval": "Ping alle",
+  "settingsZone": "Schrumpfende Zone",
+  "settingsZoneRadius": "Startradius",
+  "settingsShrinkInterval": "Zone schrumpft alle",
+  "settingsShrinkPercent": "Schrumpft um",
+  "settingsSpectators": "Getaggte sehen alle Positionen",
+  "settingsSpectatorsHint": "Aus: Getaggte sehen nur, was die Hunter sehen.",
+  "settingsSave": "Speichern",
+  "minutesValue": "{n} Min.",
+  "@minutesValue": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "metersValue": "{n} m",
+  "@metersValue": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "percentValue": "{n} %",
+  "@percentValue": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "zoneTitle": "Zone festlegen",
+  "zoneHint": "Tippe auf die Karte, um den Mittelpunkt zu setzen.",
+  "zoneSave": "Zone übernehmen",
+  "zoneMyPosition": "Meine Position",
+  "phaseHeadstart": "Vorsprung",
+  "phaseRunning": "Jagd läuft",
+  "headstartRunner": "Versteck dich!",
+  "headstartHunter": "Warten – die Runner verstecken sich.",
+  "nextPingIn": "Nächster Ping in {time}",
+  "@nextPingIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "zoneShrinksIn": "Zone schrumpft in {time}",
+  "@zoneShrinksIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "pingAge": "vor {time}",
+  "@pingAge": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "tagButton": "Getaggt!",
+  "tagChooseRunner": "Wen hast du getaggt?",
+  "tagReported": "Tag gemeldet – warte auf Bestätigung.",
+  "tagIncomingTitle": "Wurdest du getaggt?",
+  "tagIncomingText": "{hunter} sagt, du wurdest getaggt.",
+  "@tagIncomingText": {
+    "placeholders": {
+      "hunter": {
+        "type": "String"
+      }
+    }
+  },
+  "tagConfirm": "Ja, erwischt",
+  "tagReject": "Nein",
+  "tagHostDecideTitle": "Host entscheidet",
+  "tagHostDecideText": "{hunter} hat {runner} getaggt.",
+  "@tagHostDecideText": {
+    "placeholders": {
+      "hunter": {
+        "type": "String"
+      },
+      "runner": {
+        "type": "String"
+      }
+    }
+  },
+  "tagReasonRejected": "Der Runner hat abgelehnt.",
+  "tagReasonNoAnswer": "Der Runner hat nicht geantwortet.",
+  "tagHostConfirm": "Tag zählt",
+  "tagHostReject": "Zählt nicht",
+  "tagConfirmedSnack": "{runner} ist raus!",
+  "@tagConfirmedSnack": {
+    "placeholders": {
+      "runner": {
+        "type": "String"
+      }
+    }
+  },
+  "taggedBanner": "Du bist raus – Zuschauermodus.",
+  "outOfZoneWarning": "Ausserhalb der Zone! Zurück, sonst sehen dich die Hunter.",
+  "outOfZoneVisible": "Ausserhalb der Zone – die Hunter sehen dich!",
+  "endGame": "Spiel beenden",
+  "endGameConfirm": "Spiel wirklich für alle beenden?",
+  "chat": "Team-Chat",
+  "chatHint": "Nachricht",
+  "chatEmpty": "Noch keine Nachrichten.",
+  "chatSpectator": "Als Zuschauer kannst du nicht schreiben.",
+  "locationOff": "Standort ist ausgeschaltet.",
+  "locationDenied": "Kein Zugriff auf den Standort. Bitte in den Einstellungen erlauben.",
+  "trackingNotificationTitle": "Hunt läuft",
+  "trackingNotificationText": "Dein Standort wird mit deinem Team geteilt.",
+  "endTitleHunters": "Die Hunter gewinnen!",
+  "endTitleRunners": "Die Runner gewinnen!",
+  "endTitleAborted": "Spiel abgebrochen",
+  "endStats": "Statistik",
+  "statSurvived": "überlebt {time}",
+  "@statSurvived": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "statDistance": "{km} km",
+  "@statDistance": {
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "statTags": "{count, plural, =1{1 Tag} other{{count} Tags}}",
+  "@statTags": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statusTagged": "getaggt",
+  "endBackHome": "Zur Startseite",
+  "errorGeneric": "Das hat nicht geklappt.",
+  "errorGameNotFound": "Kein Spiel mit diesem Code.",
+  "errorAlreadyStarted": "Das Spiel läuft schon.",
+  "errorGameFull": "Das Spiel ist voll.",
+  "errorInvalidName": "Bitte einen Namen mit 1 bis 24 Zeichen eingeben.",
+  "errorNeedBothTeams": "Es braucht mindestens einen Hunter und einen Runner.",
+  "errorZoneMissing": "Bitte zuerst die Zone auf der Karte setzen.",
+  "errorNotHost": "Nur der Host kann das.",
+  "errorTagPending": "Für diesen Runner ist schon ein Tag offen.",
+  "errorTagNotDecidable": "Der Runner hat noch Zeit zu antworten.",
+  "errorInvalidSettings": "Ungültige Einstellungen.",
+  "errorNotRunning": "Das Spiel läuft gerade nicht."
+}
