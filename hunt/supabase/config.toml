@@ -1,0 +1,9 @@
+# Supabase CLI config (only the settings Hunt relies on; the rest uses CLI defaults).
+project_id = "hunt"
+
+[db]
+major_version = 15
+
+[auth]
+# Players join without an account.
+enable_anonymous_sign_ins = true
